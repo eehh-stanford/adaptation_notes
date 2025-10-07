@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Evolutionary Foundations – Adaptation Notes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./populations.html" rel="next">
+<link href="./models.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./evolution.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Adaptation Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolution.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./populations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk, Uncertainty, and Decision-Making</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efficiency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency Is the Enemy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#nothing-in-biology-makes-sense" id="toc-nothing-in-biology-makes-sense" class="nav-link active" data-scroll-target="#nothing-in-biology-makes-sense"><span class="header-section-number">2.1</span> Nothing In Biology Makes Sense</a>
+  <ul class="collapse">
+  <li><a href="#mechanisms-of-evolution" id="toc-mechanisms-of-evolution" class="nav-link" data-scroll-target="#mechanisms-of-evolution"><span class="header-section-number">2.1.1</span> Mechanisms of Evolution</a></li>
+  <li><a href="#modes-of-selection" id="toc-modes-of-selection" class="nav-link" data-scroll-target="#modes-of-selection"><span class="header-section-number">2.1.2</span> Modes of Selection</a></li>
+  <li><a href="#fitness" id="toc-fitness" class="nav-link" data-scroll-target="#fitness"><span class="header-section-number">2.1.3</span> Fitness</a></li>
+  <li><a href="#what-is-adaptation" id="toc-what-is-adaptation" class="nav-link" data-scroll-target="#what-is-adaptation"><span class="header-section-number">2.1.4</span> What is Adaptation?</a></li>
+  <li><a href="#the-misunderstanding-of-spencer-morgan" id="toc-the-misunderstanding-of-spencer-morgan" class="nav-link" data-scroll-target="#the-misunderstanding-of-spencer-morgan"><span class="header-section-number">2.1.5</span> The Misunderstanding of Spencer, Morgan</a></li>
+  <li><a href="#on-race" id="toc-on-race" class="nav-link" data-scroll-target="#on-race"><span class="header-section-number">2.1.6</span> On Race</a></li>
+  </ul></li>
+  <li><a href="#sec-response" id="toc-sec-response" class="nav-link" data-scroll-target="#sec-response"><span class="header-section-number">2.2</span> Response to Selection</a></li>
+  <li><a href="#approaches-to-human-evolutionary-ecology-and-behavior" id="toc-approaches-to-human-evolutionary-ecology-and-behavior" class="nav-link" data-scroll-target="#approaches-to-human-evolutionary-ecology-and-behavior"><span class="header-section-number">2.3</span> Approaches to Human Evolutionary Ecology and Behavior</a>
+  <ul class="collapse">
+  <li><a href="#which-humans-behave-adaptively-and-why-does-it-matter" id="toc-which-humans-behave-adaptively-and-why-does-it-matter" class="nav-link" data-scroll-target="#which-humans-behave-adaptively-and-why-does-it-matter"><span class="header-section-number">2.3.1</span> Which humans behave adaptively and why does it matter?</a></li>
+  <li><a href="#human-behavioral-ecology" id="toc-human-behavioral-ecology" class="nav-link" data-scroll-target="#human-behavioral-ecology"><span class="header-section-number">2.3.2</span> Human Behavioral Ecology</a></li>
+  <li><a href="#cultural-evolution" id="toc-cultural-evolution" class="nav-link" data-scroll-target="#cultural-evolution"><span class="header-section-number">2.3.3</span> Cultural Evolution</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-evolution" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="nothing-in-biology-makes-sense" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="nothing-in-biology-makes-sense"><span class="header-section-number">2.1</span> Nothing In Biology Makes Sense</h2>
+<p>Except in light of evolution.</p>
+<p>Evolution is defined as change over time in inherited characteristics <span class="citation" data-cites="futuyma2013">(<a href="references.html#ref-futuyma2013" role="doc-biblioref">Futuyma 2013</a>)</span>. <span class="citation" data-cites="mayr1982">Mayr (<a href="references.html#ref-mayr1982" role="doc-biblioref">1982</a>)</span> defined organic evolution as the change in allele frequencies over time. This is a bit old-fashioned because it doesn’t count certain important forms of evolutionary change.</p>
+<p>It’s important to remember that not all change is evolutionary. For example, developmental change over the course of a single lifespan or the change in species composition over short time period (i.e., hundreds of years) are not evolutionary because they are not changes in inherited characteristics.</p>
+<section id="mechanisms-of-evolution" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="mechanisms-of-evolution"><span class="header-section-number">2.1.1</span> Mechanisms of Evolution</h3>
+<dl>
+<dt>Mutation</dt>
+<dd>
+Changes to the underlying genetic sequence. By itself, mutation doesn’t have a big effect on changing allele frequencies, but it is the raw material of (organic) evolution.
+</dd>
+<dt>Drift</dt>
+<dd>
+Random change in allele frequencies (or other heritable characteristics) due to sampling effects of finite populations.
+</dd>
+<dt>Migration</dt>
+<dd>
+Movement can change the frequencies of heritable characteristics across a landscape
+</dd>
+<dt>Natural Selection</dt>
+<dd>
+Natural selection is the only mechanism that can produce adaptation
+</dd>
+</dl>
+<p>There are three necessary and sufficient conditions for natural selection (3NS4NS)</p>
+<ol type="1">
+<li>Variation in a phenotype</li>
+<li>Heritability of those phenotypes</li>
+<li>Differential fitness based on this variation</li>
+</ol>
+<p>Note that natural selection is not equivalent to evolution. Natural Selection is just one mechanism by which organisms evolve. Now, it happens to be the most important mechanism from the standpoint of adaptation since adaptations can only arise from the action of natural selection.</p>
+<p>Drift is a mechanism that is systematically ignored by many evolution popularizers. The interactions of drift and natural selection can be powerful.</p>
+<p>What does natural selection explain? Two main phenomena: <em>Diversity</em> and <em>Fitness</em>. There have probably been more than 2 billion species (including extinct ones). where did they come from and why? The Darwinian solution is that “small heritable variations among individuals within a species become the basis of large differences between species” <span class="citation" data-cites="lewontin1978">(<a href="references.html#ref-lewontin1978" role="doc-biblioref">Lewontin 1978</a>)</span>. Second, as noted by <span class="citation" data-cites="lewontin1978">Lewontin (<a href="references.html#ref-lewontin1978" role="doc-biblioref">1978</a>)</span>, “Organisms fit remarkably well into the external world in which they live.”</p>
+</section>
+<section id="modes-of-selection" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="modes-of-selection"><span class="header-section-number">2.1.2</span> Modes of Selection</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="at">length=</span><span class="dv">1000</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> x[x<span class="sc">&gt;</span><span class="fl">1.5</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(x0[<span class="dv">1</span>], x0)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>dn <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dn1 <span class="ot">&lt;-</span> dn[x<span class="sc">&gt;</span><span class="fl">1.5</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(dn1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 250</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[1] 250</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dn1 <span class="ot">&lt;-</span> <span class="fu">c</span>(dn1[<span class="dv">250</span>],dn1)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">dnorm</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">frame=</span><span class="cn">TRUE</span>, <span class="at">xlab=</span><span class="st">"Phenotype"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Probability Density"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(x0,dn1,<span class="at">col=</span><span class="fu">grey</span>(<span class="fl">0.65</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x[x<span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">1.5</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">c</span>(x1[<span class="dv">1</span>], x1)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dn2 <span class="ot">&lt;-</span> dn[x<span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">1.5</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(dn2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 250</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[1] 250</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dn2 <span class="ot">&lt;-</span> <span class="fu">c</span>(dn2,dn2[<span class="dv">1</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">dnorm</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">frame=</span><span class="cn">TRUE</span>, <span class="at">xlab=</span><span class="st">"Phenotype"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Probability Density"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(x0,dn1,<span class="at">col=</span><span class="fu">grey</span>(<span class="fl">0.65</span>))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(x1,dn2,<span class="at">col=</span><span class="fu">grey</span>(<span class="fl">0.65</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> x[x<span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="dv">1</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(x2[<span class="dv">1</span>],x2)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dn3 <span class="ot">&lt;-</span> dn[x<span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="dv">1</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(dn3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 332</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#[1] 332</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dn3 <span class="ot">&lt;-</span> dn3[<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dn3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,dn3,<span class="dv">0</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="fu">dnorm</span>(x), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">frame=</span><span class="cn">TRUE</span>, <span class="at">xlab=</span><span class="st">"Phenotype"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Probability Density"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(x2,dn3,<span class="at">col=</span><span class="fu">grey</span>(<span class="fl">0.65</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="fitness" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="fitness"><span class="header-section-number">2.1.3</span> Fitness</h3>
+<p>What is fitness? Fitness is a demographic measure of proportional representation in a population <span class="citation" data-cites="futuyma2013">Futuyma (<a href="references.html#ref-futuyma2013" role="doc-biblioref">2013</a>)</span>: “average per capita rate of increase in numbers” (individual) “average per capita lifetime contribution of individuals of that genotype to the population after one or more generations” (genotype) Fitness combines survival and reproduction</p>
+<p>Steve Stearns has characterized fitness as a property “everyone understands; no one can define.”</p>
+<p>Critics of NS theory claim that fitness is tautological Dennett: “x is fitter than y if and only if x’s traits enable it to solve the”design problems” set by the environment more fully than y’s traits do.” Problem is that there are many design problems What counts as a ‘design problem’? A bit vague and metaphorical</p>
+<p>Propensity theory of fitness.</p>
+<p><span class="citation" data-cites="rosenberg_bouchard2015">Rosenberg and Bouchard (<a href="references.html#ref-rosenberg_bouchard2015" role="doc-biblioref">2015</a>)</span> “there has been a wide consensus that the solution to problem of defining individual”fitness” is given by treating it as a probabilistic disposition.” propensity means that the fitter individual will not always succeed, therefore, “putting aside the tautology issue, there is also a scientific reason for favoring propensity approaches: since the theory of natural selection allows for drift, this qualification on its claims will be a welcome one.”</p>
+</section>
+<section id="what-is-adaptation" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="what-is-adaptation"><span class="header-section-number">2.1.4</span> What is Adaptation?</h3>
+<p>Adaptation is a process by which organisms become better suited to their environments. <span class="citation" data-cites="lasker1969">Lasker (<a href="references.html#ref-lasker1969" role="doc-biblioref">1969, 1481</a>)</span> provides a grand view of adaptation: “Adaptation is the change by which organisms surmount the challenges to life. In the broadest sense biological adaptation encompasses every necessary biological process.” Biological adaptation can only be achieved through natural selection We will refer to the adaptation that is produced by natural selection as “big-A Adaptation.”</p>
+<p>Writers within the human evolutionary sciences, such as <span class="citation" data-cites="alland1975">Alland (<a href="references.html#ref-alland1975" role="doc-biblioref">1975</a>)</span>, <span class="citation" data-cites="bennett1976">Bennett (<a href="references.html#ref-bennett1976" role="doc-biblioref">1976</a>)</span>, and <span class="citation" data-cites="lasker1969">Lasker (<a href="references.html#ref-lasker1969" role="doc-biblioref">1969</a>)</span> noted that adaptation can be biological in the sense of the transgenerational change of phenotypes in response to regularities in the environment (what we would call “Big-A Adaptation”), but can also be <em>physiological</em> <span class="citation" data-cites="alland1975">(<a href="references.html#ref-alland1975" role="doc-biblioref">Alland 1975</a>)</span>, meaning a systemic adjustment to local conditions aimed at ensuring homeostasis within an individual’s lifetime. This is one variety of “Little-a adaptation.” The third variety noted by these authors is cultural adaptation that was the preoccupation of cultural ecologists. <span class="citation" data-cites="bennett1976">Bennett (<a href="references.html#ref-bennett1976" role="doc-biblioref">1976</a>)</span> suggests that adaptation is one of the three primary subjects of study in cultural anthropology, along with thought and “interhuman activity.” Bennett (1976: 269) defines this form of adaptation as “The patterns and rules of social adjustment and change in behavior by individuals and groups in the course of realizing goals or simply maintaining the staus quo, and called by such terms as coping, adjustment, adaptation, adaptive dynamics, adaptive strategies, achievement, compromise, fulfillment.”</p>
+<p><span class="citation" data-cites="goodman1963">Goodman (<a href="references.html#ref-goodman1963" role="doc-biblioref">1963</a>)</span> noted that in adapting, biological systems simultaneous face in two directions: they must respond to the external environment such that they improve their chances of survival and reproduction. However, they must also adapt to the internal environment, which favors “the coherence and parsimony of the system as a system.” This idea that adaptation is simultaneously internal and external was also discussed by Godelier and other structural Marxists in the late 1960s and 1970s <span class="citation" data-cites="alland1975">(<a href="references.html#ref-alland1975" role="doc-biblioref">Alland 1975</a>)</span>.</p>
+<p>Physiological constancy is called <em>homeostasis</em> and the desirability of homeostasis in physiological systems became a popular metaphor for adaptation more generally. For example, <span class="citation" data-cites="rappaport1971">Rappaport (<a href="references.html#ref-rappaport1971" role="doc-biblioref">1971, 60</a>)</span> wrote “Adaptation here refers to the processes by which organisms or groups of organisms, through responsive changes in their own states, structures, or compositions, maintain homeostasis in and among themselves in the face of both short term environment fluctuations and long term changes in the composition or structure of their environments.”</p>
+<p><span class="citation" data-cites="vayda_mccay1975">Vayda and McCay (<a href="references.html#ref-vayda_mccay1975" role="doc-biblioref">1975</a>)</span> likened adaptation to risk management, echoing the sentiments of pioneering development thinkers when talking about the economic preferences of the peasantry like <span class="citation" data-cites="lipton1968">Lipton (<a href="references.html#ref-lipton1968" role="doc-biblioref">1968</a>)</span> (“Survival Algorithms”) and <span class="citation" data-cites="scott1977">Scott (<a href="references.html#ref-scott1977" role="doc-biblioref">1977</a>)</span> (“Safety First”).</p>
+<p>The modern view of adaptation is articulated by <span class="citation" data-cites="lewontin1978">Lewontin (<a href="references.html#ref-lewontin1978" role="doc-biblioref">1978</a>)</span>, namely, that the external world sets certain “problems” that organisms need to “solve”: “Adaptation is the process of evolutionary change by which the organism provides a better and better ‘solution’ to the ‘problem’ and the end result is the state of being adapted.” Naturally, we need to be careful with our intentional language. Intentional language in evolutionary biology is a shorthand for this more correct but cumbersome phrasing and its existence should necessarily not imply conscious choices, reasoning, or agency. Of course, things get complicated when talking about humans since these qualities often (though not always!) apply to human decision-making, as we will see in <a href="culture.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
+<p>Of course, engineering analysis has its own problems. Two sets of a priori decisions required: (1) Appropriate way to divide the organism, and (2) Describe what problem each part solves.</p>
+<p>This amounts to creating descriptions of the organism and of the environment and then relating the descriptions by functional statements.</p>
+<p>There are two ways to do this. First, start with the problems and try to infer which aspect of the organism is the solution, and second, start with the organism and then ascribe adaptive functions to each part. A basic assumption of all engineering analyses is <em>ceteris paribus</em>, that is all things being equal. How often do you think everything else is actually equal?</p>
+<p>Strongly adaptationist accounts focus on the engineering aspects of “organismal design” and tend to short-change the diversity that underlies all adaptation. Indeed, most contemporary approaches to to evolution and human behavior employ some element of what’s known as the <em>phenotypic gambit</em>. The basic idea of the phenotypic gambit is that we can ignore the genetic (and developmental) architecture of adaptation and focus simply on selection with the assumption that if selection is strong enough, phenotypes will respond. The problem is that selection is, in fact, constrained. It is constrained by the variability available for selection to work on. Moreover, it is constrained by correlations with other traits, as we will see in <a href="#sec-response" class="quarto-xref"><span>Section 2.2</span></a>.</p>
+<p>When we actually manage to test it, the phenotypic gambit often fails <span class="citation" data-cites="hadfield_etal2007">(<a href="references.html#ref-hadfield_etal2007" role="doc-biblioref">Hadfield et al. 2007</a>)</span>.</p>
+</section>
+<section id="the-misunderstanding-of-spencer-morgan" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="the-misunderstanding-of-spencer-morgan"><span class="header-section-number">2.1.5</span> The Misunderstanding of Spencer, Morgan</h3>
+<p>“This survival of the fittest, which I have here sought to express in mechanical terms, is that which Mr.&nbsp;Darwin has called ‘natural selection’, or the preservation of favoured races in the struggle for life.” (Spencer 1864: 444)</p>
+<p>Spencer and his followers clearly muddle the colloquial and technical meanings of “fitness” when they evoke this famous collocation. Fitness is a complex measure which, at the bare minimum, involves the product of survival and fertility. “Survival of the fittest,” therefore, is both tautological and incomplete. Those with higher fitness survive. What defines fitness? Survival. But, of course, it’s more than survival since fitness also depends on fertility. Individuals need to survive <em>in order to reproduce</em>.</p>
+<p>Alas this 19th century neckbeard is making a real resurgence in American culture.</p>
+<p>Lewis Henry Morgan suggested that all societies passed through three stages of development. <em>Savagery</em> is characterized by acephalous social organization of bands of foragers. <em>Barbarism</em> is characterized by authoritarian leadership (“big man”), largely tribal social organization, food production and surpluses. <em>Civilization</em> is characterized by complex social organization and role differentiation.</p>
+<p>Unfortunately for the theories of Morgan and other unilineal social evolutionists, there is very little evidence for the type of lockstep, unilineal transformation envisioned by the Victorian cultural evolutionists. Ethnographically and archaeologically, we see frequent shifts from “more complex” to “simple” social organization, modes of production, and technology. A canonical example of this phenomenon of moving in and out of complex societies is the Kachin of Burma as described by Leach in his <em>The Political Systems of Highland Burma</em>.</p>
+<p>The Kachin (Jingpo/Singpo) are native to Burma’s Kachin state and neighboring Dehong Dai and Jingpo Autonomous Prefecture in China, as well as Northeastern India’s Arunachal Pradesh and Assam. “Kachin” is probably British colonial name: Jinghpaw in their own (eponymous) language. Name derives from Kachin Hills of far-northern Burma/Myanmar. They were characterized as “barbarous” hill people, practicing animist religion (now mostly Christian). Kachin livelihoods are derived primarily from yam and upland-rice cultivation. Society was organized around clans with shifting alliances. Live in Lived in long houses.</p>
+<p>In contrast, the Shan, native to Shan province immediately to the Southeast of Kachin province, were Theravāda Buddhists, occupying river valleys, who practiced lowland, wet-rice agriculture and had the associated “complex,” hierarchical social organization. They are the second largest ethnic group in Burma.</p>
+<p>As documented by Leach, it turns out, they’re the same people! Leach writes that, rather than talking about different political systems in the north of Burma as independent entities, “they should clearly be thought of as part of a total system.”</p>
+<p>Scott, <em>Art of Not Being Governed</em>, argues that the sort of social fluidity that Leach observed in the Burmese Highlands has actually been the rule for states historically. Indeed, Scott goes so far as to suggest that that the “barbarism” characteristic of the highland cultures of the Asian Massif are adaptations to prevent their societies from being incorporated into neighboring state actors! He doesn’t specifically use adaptationist language, but this is clearly the spirit of his argument.</p>
+<p>Historian Richard Hofstader first coined the term Social Darwinism in 1944. In reference to philosophy of Progressive Era reformers that included Laissez-Faire capitalism, Eugenics, Imperialism. It relies on Spencer’s misunderstanding of “survival of the fittest”. So it’s not Darwinism at all, but Spencerism. Social Darwinsim has come to be associated with racist, nationalist philosophy of fascism and it is making a resurgence in the US among so-called “race scientists” and other self-appointed “rationalists.”</p>
+<p>Typological thinking is not how it works. Mayr: population thinking.</p>
+<p>Adaptation is the foil to typology and progressivism. Adaptation is local, environmentally specific and historically situated It is nonsensical to say that one species or population is ‘more evolved’ or ‘more advanced’ Statements about advancement are normative and should be understood as such</p>
+<p>Adaptation is dynamic and specific to local (and historically situated) environmental conditions Adaptations arise because certain phenotype variants have higher fitness in a particular environment Organisms do not necessarily become progressively more complex or better morphological complexity seems to be hard to lose once gained social complexity appears to move easily in either direction</p>
+</section>
+<section id="on-race" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="on-race"><span class="header-section-number">2.1.6</span> On Race</h3>
+<p>“People are people so why should it be, you and I should get along so awfully?” Depeche Mode</p>
+<p>In a pioneering study in 1972, Richard Lewontin capitalized on the explosion in molecular data on protein polymorphism to characterize the nature of human genetic diversity. Using standard statistical tools, he apportioned the total variation into three levels: individual, race, and subgroup within race. Lewontin used the standard five-race classification. He found that the great majority of the total genetic variation in the human species is contained at the level of the individual (87%). Race accounted for only 6% of the variation, with the rest held in subpopulations within race <span class="citation" data-cites="lewontin1972">(<a href="references.html#ref-lewontin1972" role="doc-biblioref">Lewontin 1972</a>)</span>.</p>
+<p>This result has been replicated repeatedly. For example, <span class="citation" data-cites="brown_armelagos2001">Brown and Armelagos (<a href="references.html#ref-brown_armelagos2001" role="doc-biblioref">2001</a>)</span> review studies in the approximately 30 years following Lewontin’s study. Every study showed the same qualitative pattern.</p>
+<p>But what about the principal components plots that show clustering of human racial groups? <span class="citation" data-cites="lewis_etal2022">Lewis et al. (<a href="references.html#ref-lewis_etal2022" role="doc-biblioref">2022</a>)</span> note that sampling of human populations for studies of diversity is circular. When samples are designed to maximize differences, it should not be surprising when differences (however small) appear.</p>
+<p>Lewontin: “Human racial classification is of no social value and is positively destructive of social and human relations. Since such racial classification is now seen to be of virtually no genetic or taxonomic significance either, no justification can be offered for its continuance.”</p>
+<p>Humans are not very genetically diverse. Phylogenetic studies regularly show that the distances separating the most divergent humans from each other are much shorter than those separating the most-divergent apes <span class="citation" data-cites="gagneux_etal1999">(e.g., <a href="references.html#ref-gagneux_etal1999" role="doc-biblioref">Gagneux et al. 1999</a>)</span>. Overall, the much smaller popualtions of the other great apes have much more genetic diversity than the global human populations <span class="citation" data-cites="ruvolo1997">(<a href="references.html#ref-ruvolo1997" role="doc-biblioref">Ruvolo 1997</a>)</span>.</p>
+<p>For example, chimpanzee populations on either bank of the Sanga River in Cameroon are about as different from each other as are different continental human populations <span class="citation" data-cites="bowden_etal2012">(<a href="references.html#ref-bowden_etal2012" role="doc-biblioref">Bowden et al. 2012</a>)</span>. As the Oxford geneticist <a href="https://www.ox.ac.uk/news/2012-03-02-chimps-show-much-greater-genetic-diversity-humans">Peter Donnelly noted</a>, “that chimpanzees from habitats in the same country, separated only by a river, are more distinct than humans from different continents is really interesting. It speaks to the great genetic similarities between human populations, and to much more stability and less interbreeding over hundreds of thousands of years in the chimpanzee groups.”</p>
+<p>You might hear the term “Lewontin’s Paradox” or “Lewontin’s Fallacy” thrown around by so-called “race scientists.” The paradox turns out not to be paradoxical at all, as shown by <span class="citation" data-cites="roseman2021">Roseman (<a href="references.html#ref-roseman2021" role="doc-biblioref">2021</a>)</span>, but arises from a misunderstanding of genetic diversity, phylogeny, and evolutionary process more generally. In brief, it is possible to assign people to ancestry groups based on shared derived genetic markers even when the great majority of overall genetic variation is contained at the individual level.</p>
+<p>The biological insignificance of race is a highly unusual instance where the views of the population geneticsists like Lewontin and the evolutionary psychologists like John Tooby coincide. This is remarkable, as Tooby once commented to me that taking Dick Lewontin’s graduate seminar on population genetics was the biggest waste of time he had ever experienced! EPs maintain that psychological adaptations are complex and require a complex genetic (and ontogenetic) architecture to support. Complex adaptations tend to have low heritability, in the strict sense of the fraction of total phenotypic variance that is attributable to additive genetic variance. For EPs, psychological adaptations are like head number in humans: genetically controlled but essentially zero additive genetic variation underlying them.</p>
+</section>
+</section>
+<section id="sec-response" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-response"><span class="header-section-number">2.2</span> Response to Selection</h2>
+<p>Most of our understanding of the response of traits to selection comes from animal and plant breeding. Indeed, it was the artificial selection of breeders that inspired Darwin’s theory of natural selection.</p>
+<p>When selection acts on a trait, how will it respond? For a single trait, the <em>response to selection</em> depends on two things: (1) the strength of selection, and (2) the amount of variation in the trait.</p>
+<p>The so-called <em>Breeders’ Equation</em> combines these elements. Consider the change in some phenotypic trait <span class="math inline">\(z\)</span> under a single generation of selection. The predicted change is simply the product of the variability and the intensity of selection:</p>
+<p><span class="math display">\[
+\Delta z = h^2 S,
+\]</span> where <span class="math inline">\(S\)</span> is the selection coefficient and <span class="math inline">\(h^2\)</span> is a very particular measure of trait variability, called (narrow-sense) <em>heritability</em>. While the term “heritability” means colloquially how under genetic control a trait is, it means something quite specific in the breeders’ equation. In particular, heritability is the fraction of the total phenotypic variance that is attributable to additive genetic variance. Additive genetic variance is the variability contributed by independently-assorting loci and is the part of genetic variability that allows us to make predictions. There are other forms of genetic variability that are not accounted for by the breeders’ equation. For example, there is variability contributed by non-additive genetic effects like dominance. There is epistatic variance that arises from gene-gene interactions. There are non-genetic sources of total variance as well.</p>
+<p>Note that heritability is not squared. It’s just called <span class="math inline">\(h^2\)</span> by convention to remind us that it’s a variance, which is conventionally <span class="math inline">\(s^2\)</span>.</p>
+<p>The greater the variance, the greater the response. The greater the selection, the greater the response.</p>
+<p>When we consider more than one trait, we need to account for the possibility that different traits may covary. <span class="citation" data-cites="lande1979">Lande (<a href="references.html#ref-lande1979" role="doc-biblioref">1979</a>)</span> generalized the breeders’ equation to multiple traits, known as the <em>multivariate breeders’ equation</em>. Rather than a single heritability value, the multivariate breeders’ equation uses a matrix which contains the additive genetic variances and covariances. Consider a simple <span class="math inline">\(2 \times 2\)</span> covariance matrix:</p>
+<p><span class="math display">\[
+\mathbf{G} = \left( \begin{array}{cc} V_1 &amp; C_{12} \\ C_{21} &amp; V_2 \end{array} \right)
+\]</span> On the diagonal of the matrix are the variances of the two traits (<span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span>). On the off-diagonals are the covariances <em>between</em> the traits. A covariance is essentially an unnormalized correlation. More technically, it is the expected value (average) of the product of the deviations of the two variables from their means:</p>
+<p><span class="math display">\[
+\operatorname{Cov}(X,Y) = E \left[ (X-\bar{X}) (Y - \bar{Y}) \right].
+\]</span> Because we work with the additive-genetic covariance matrix, rather than heritabilties, we change the selection coeficients somewhat to account for this. Rather than straight selection coefficients, the multivariate breeders’ equation typically uses a vector of selection coefficients divided by the phenotypic variance in each trait.</p>
+<p>Putting this all together, we get the change in the mean of a vector of <span class="math inline">\(k\)</span> traits <span class="math inline">\(\mathbf{z} = (z_1,z_2, \ldots, z_k)\)</span> as:</p>
+<p><span class="math display">\[ \Delta \mathbf{\bar{z}} = \mathbf{G \beta}, \]</span></p>
+<p>where <span class="math inline">\(\Delta \mathbf{\bar{z}}\)</span> is the change in the mean fitness of a multivariate trait, <span class="math inline">\(\mathbf{G}\)</span> is the additive genetic variance-covariance matrix, and <span class="math inline">\(\beta\)</span> is the normalized selection gradient on <span class="math inline">\(\mathbf{\bar{z}}\)</span>.</p>
+<p>In effect, <span class="math inline">\(\beta\)</span> is a vector pointing in the direction of the optimal change in the phenotype. The matrix <span class="math inline">\(\mathbf{G}\)</span> does two things to this gradient pushing <span class="math inline">\(\mathbf{\bar{z}}\)</span> toward its optimum: (1) it scales the response depending on how much additive variance there is in each trait and (2) it rotates it as a function of the covariances between traits. I won’t get too much into matrix multiplication here (this is a very nice reference too). The key point is that <span class="math inline">\(\mathbf{G}\)</span> is a square <span class="math inline">\(k \times k\)</span> matrix (where <span class="math inline">\(k\)</span> is the number of traits we’re looking at) the diagonal elements of which are variances and the off-diagonal elements of which, <span class="math inline">\(g_{ij}\)</span> represent the covariances between traits <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Selection requires variance. Without sufficient variance, even strong selection won’t change the phenotype much between generations. But variance isn’t all there is to it. When the covariances are positive, there will be substantial indirect selection, and when they are negative, you have genetic constraints at work. Selection may be pointing in a particular direction, but the structure of the trade-offs could very easily mean that you can’t actually get there.</p>
+<p>Let’s consider three quick (toy) examples. Say we have two traits, maybe “length” and “width” (this could be something less vague and insipid: Lande (1979) looks at brain mass and body mass in a serious two-trait example). We will assume that the selection gradient is <span class="math inline">\(\mathbf{\beta} = \{0.5, 0.25\}'\)</span>. That is, the force of selection is twice as high on length as it is on width, but it is pretty strong and positive on both. We’ll demonstrate the effect of variance and constraint in three ways: (1) more variance in the trait under weaker selection (<span class="math inline">\(\mathbf{G_1}\)</span>), (2) positive covariance between the two traits (<span class="math inline">\(\mathbf{G_2}\)</span>), and (3) negative covariance between the two traits (<span class="math inline">\(\mathbf{G_3}\)</span>).</p>
+<p><span class="math display">\[ \mathbf{G_1} = \left( \begin{array}{cc} 0.33 &amp; 0.00 \\ 0.00 &amp; 0.67 \end{array} \right) \]</span></p>
+<p><span class="math display">\[ \mathbf{G_2} = \left( \begin{array}{cc} 0.33 &amp; 0.33 \\ 0.33 &amp; 0.67 \end{array} \right) \]</span></p>
+<p><span class="math display">\[ \mathbf{G_3} = \left( \begin{array}{cc} 0.33 &amp; -0.33 \\ -0.33 &amp; 0.67 \end{array} \right) \]</span></p>
+<p>The figure below plots the response to selection in the three different types of genetic architecture. The direction of selection is indicated in the grey arrow. If the variances of the two traits were equal to 1 and there were zero covariances, this is where selection would move the phenotype pair (try it). We can see that the response to selection moves toward width (the trait under weaker selection) even when covariances are zero (black arrow). Why? Because there is more variance for width than there is for length (<span class="math inline">\(0.67 \times 0.25 &gt; 0.33 \times 0.5\)</span>). This effect becomes more pronounced when there is positive covariance between the traits (blue arrow) – the selection toward width is <span class="math inline">\(0.33 \times 0.5 +0.67 \times 0.25 = 0.3325\)</span>. When the covariances are negative, we see something cool (red arrow). The response to selection is small and moves (almost) entirely in the direction of length. This is because the negative covariance between length and width, when acted on by the strong selection on length, all but cancels out the positive response to selection (<span class="math inline">\(-0.33 \times 0.5 + 0.67 \times 0.25 = 0.0025\)</span>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fl">0.25</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fl">0.5</span><span class="sc">*</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">nr=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>G1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.33</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">0.67</span>), <span class="at">nr=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>G2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.33</span>,<span class="fl">0.33</span>,<span class="fl">0.33</span>,<span class="fl">0.67</span>), <span class="at">nr=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>G3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.33</span>,<span class="sc">-</span><span class="fl">0.33</span>,<span class="sc">-</span><span class="fl">0.33</span>,<span class="fl">0.67</span>), <span class="at">nr=</span><span class="dv">2</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>(Dw1 <span class="ot">&lt;-</span> G1<span class="sc">%*%</span>s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]
+[1,] 0.1650
+[2,] 0.1675</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(Dw2 <span class="ot">&lt;-</span> G2<span class="sc">%*%</span>s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]
+[1,] 0.2475
+[2,] 0.3325</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(Dw3 <span class="ot">&lt;-</span> G3<span class="sc">%*%</span>s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]
+[1,] 0.0825
+[2,] 0.0025</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## simple plotting function to demonstrate stretching and rotation of</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">## the G matrix on the seleciton gradient G in two dimensions</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plot.vector <span class="ot">&lt;-</span> <span class="cf">function</span>(s,<span class="at">G=</span><span class="cn">NULL</span>,<span class="at">plot.both=</span><span class="cn">TRUE</span>,<span class="at">color=</span><span class="st">"black"</span>){</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length=</span><span class="dv">100</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(x,x, <span class="at">type=</span><span class="st">"n"</span>, <span class="at">xlab=</span><span class="st">"Length"</span>, <span class="at">ylab=</span><span class="st">"Width"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="dv">0</span>,s[<span class="dv">1</span>],s[<span class="dv">2</span>], <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">col=</span><span class="fu">grey</span>(<span class="fl">0.85</span>))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(plot.both){</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    Dw <span class="ot">&lt;-</span> G<span class="sc">%*%</span>s</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrows</span>(<span class="dv">0</span>,<span class="dv">0</span>,Dw[<span class="dv">1</span>],Dw[<span class="dv">2</span>], <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col=</span>color)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># independent</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.vector</span>(s,G1)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Independent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># positive covariance</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.vector</span>(s,G2, <span class="at">color=</span><span class="st">"blue"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Positive Covariance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># negative covariance</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.vector</span>(s,G3, <span class="at">color=</span><span class="st">"red"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Negative Covariance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="evolution_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This simple demonstration shows that the response to selection can be complex. Making an argument that some trait would be under selection is not sufficient to say that it actually evolved (or will evolve) that way. Entirely plausible arguments for the direction of selection are made all the time in evolutionary anthropology. Here is one from a very important paper in paleoanthropology <span class="citation" data-cites="lovejoy1981">(<a href="references.html#ref-lovejoy1981" role="doc-biblioref">Lovejoy 1981</a>: 344)</span>:</p>
+<blockquote class="blockquote">
+<p>Any behavioral change that increases reproductive rate, survivorship, or both, is under selection of maximum intensity. Higher primates rely on social behavioral mechanisms to promote survivorship during all phases of the life cycle, and one could cite numerous methods by which it theoretically could be increased. Avoidance of dietary toxins, use of more reliable food sources, and increased competence in arboreal locomotion are obvious examples. Yet these are among the many that have remained under stading selection throughout much of the course of primate evolution, and therefore unlikely that early hominid adaptation was a product of intensified selection for adaptations almost universal to anthropoid primates.</p>
+</blockquote>
+<p>Arguing for selection without considering trade-offs can get you into trouble. Selection in the presence of quantitative genetic constraints (or even differential variance in the traits) can produce counter-intuitive results. In the case of Lovejoy’s argument, there are good reasons to think that survivorship and reproductive rate are, indeed, strongly negatively correlated. Moreover, Lovejoy’s quote seems to imply that behavioral changes that increase either reproductive rate (i.e., fertility) or survivorship are under equal selection (namely, maximum). Is this true? In general, the selection intensity tends to change quite systematically across different demographic traits (i.e., survival, fertility). For humans (or hominins more generally), which traits are under under stronger selection, fertility or survival? Which have more additive variance? How strong are the negative covariances?</p>
+<p>When we make selectionist or adaptationist arguments, we should always keep in the back of our minds the three questions:</p>
+<ol type="1">
+<li>How strong is the force of selection?</li>
+<li>How much variance is there on which selection can act?</li>
+<li>How is the trait constrained through negative correlations with other traits?</li>
+</ol>
+</section>
+<section id="approaches-to-human-evolutionary-ecology-and-behavior" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="approaches-to-human-evolutionary-ecology-and-behavior"><span class="header-section-number">2.3</span> Approaches to Human Evolutionary Ecology and Behavior</h2>
+<p>Evolutionary concepts have been systematically applied to the study of human behavior. Different schools of thought have emerged. Overall, there are three broadly recognized approaches: (1) evolutionary psychology, (2) human behavioral ecology, and (2) cultural evolution. These approaches certainly suffer from the narcissism of small differences, but there are also some important substantive differences</p>
+<p>Evolutionary psychology (EP) is an approach to studying human behavioral biology that largely developed out of the sociobiology tradition in the late 1980s and 1990s. Central to EP is the logic of natural selection leading to extensive adaptation, particularly in psychological mechanisms. As the name implies, the clear analytical focus of EP is psychological mechanisms. The ubiquity of adaptation in psychological mechanisms is related to the concept of modularity. The idea of cognitive modules is attributable to the work of Fodor (1983). According to Fodor, modules are reflex-like encapsulations of critical functions that are anatomically localized within the brain. The encapsulation of function suggests that modules are domain specific.</p>
+<p>Because of the complexity of adaptive psychological mechanisms, there is also a very strong emphasis on human universality. For EP, complexity of design implies uniformity across individuals, as seen, for instance, in the argument of <span class="citation" data-cites="tooby_cosmides1990b">John Tooby and Cosmides (<a href="references.html#ref-tooby_cosmides1990b" role="doc-biblioref">1990, 17</a>)</span>, “complex adaptations necessarily require many genes to regulate their development, and (b) sexual recombination makes it improbable that all the necessary genes for a complex adaptation would be together at once in the same individual, if genes coding for complex adaptations varied substantially between individuals.”</p>
+<p>The scientific process of EP is largely inductive. Relying heavily on the ubiquity of adaptation, regularities in human behavior are “reverse-engineered” to determine what adaptive problem they solve. Historically, there is less emphasis in understanding the building blocks of evolution. EP tends to focus on universals in human behavior with little interest in understanding the variability the underlies evolution by natural selection.</p>
+<p>A feature of EP that is particularly noteworthy in the context of human decision-making and ultimately understanding human health in the contemporary world is the emphasis on adaptive lag. This logic can be seen in a paraphrase of the title of Tooby &amp; Cosmides’s foundational paper <span class="citation" data-cites="tooby_cosmides1990a">(<a href="references.html#ref-tooby_cosmides1990a" role="doc-biblioref">J. Tooby and Cosmides 1990</a>)</span>, the past explains the present. Adaptations arise as solutions to problems in particular environments. When the specific environmental, physiological, social, or information-processing problems remain relatively stable for long periods of time, we expect to see extensive, frequently complex, adaptations to these problems. When selective milieux change relatively abruptly, there is no expectation that adaptations will track these changes. The putative existence of such adaptive lags have proven central to the emerging field of Darwinian Medicine as we will see in several later chapters.</p>
+<p>For much of its history, EP has been largely laboratory-based and experimental in its approach to hypothesis-testing. Increasingly, EP-associated anthropologists (and other scientists) have taken ideas from EP to the field in more traditional ethnographic contexts.</p>
+<p>In the context of human decision-making, Evolutionary psychologists have shown that the framing of decision problems matters enormously. For example, Cosmides has shown that people are generally much better at the Wason Selection Test, a test of logical reasoning, when the test is framed as a social contract than when the test is presented as an abstract problem (as is more typical in psychological research).</p>
+<p>A research tradition at the intersection of Psychology and Economics, which <span class="citation" data-cites="todd_gigerenzer2012">Todd and Gigerenzer (<a href="references.html#ref-todd_gigerenzer2012" role="doc-biblioref">2012</a>)</span> have called the <em>Biases and Heuristics</em> tradition (discussed further in section <a href="decision.html" class="quarto-xref"><span>Chapter 5</span></a>), has repeatedly demonstrated that people are not particularly good probabilists. For example, in probably the canonical paper on the subject, <span class="citation" data-cites="kahneman_tversky1973">Kahneman and Tversky (<a href="references.html#ref-kahneman_tversky1973" role="doc-biblioref">1973, 237</a>)</span> write, “In making predictions and judgments under uncertainty, people do not appear to follow the calculus of chance or the statistical theory of prediction. Instead, they rely on a limited number of heuristics which sometimes yield reasonable judgments and sometimes lead to severe and systematic errors.” <span class="citation" data-cites="gigerenzer1991">Gigerenzer (<a href="references.html#ref-gigerenzer1991" role="doc-biblioref">1991</a>)</span> and <span class="citation" data-cites="cosmides_tooby1996">Cosmides and Tooby (<a href="references.html#ref-cosmides_tooby1996" role="doc-biblioref">1996</a>)</span> have shown that people are generally much better at reasoning about probabilities when they are presented as frequencies than as abstract probabilities. When presented with probabilistic reasoning tasks similar to those employed by Kahneman &amp; Tvesrsky, these authors find that subjects’ decision-making under uncertainty improves substantially, coming much closer to the normative utilitarian predictions of classical decision theory. These authors argue that reasoning about frequencies is a much more ecological and evolutionarily salient activity than reasoning about one-off probabilities.</p>
+<section id="which-humans-behave-adaptively-and-why-does-it-matter" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="which-humans-behave-adaptively-and-why-does-it-matter"><span class="header-section-number">2.3.1</span> Which humans behave adaptively and why does it matter?</h3>
+<p>There is a fundamental tension in the way that evolutionary anthropologists think about natural selection and adaptation of human populations. On the one hand, evolutionary psychologists emphasize environmental inertia and adaptive disequilibrium. This contrasts with the approach of human behavioral ecologists, who generally favor adaptation in the present, largely by means of behavioral plasticity. We first see these issues brought to the fore in the late 1980s and early 1990s, starting with a couple provocative papers by Donald Symons, an anthropologist at UCSB.</p>
+<p><span class="citation" data-cites="symons1989">Symons (<a href="references.html#ref-symons1989" role="doc-biblioref">1989</a>)</span> writes “adaptive design is usually manifested at the psychological rather than at the behavioral level, that measuring reproductive differentials is at best an inefficient and ambiguous way to illuminate adaptation, and that Darwin’s theory of natural selection sheds light on human affairs only insofar as it promotes understanding of the psychology that underpins these affairs.” In a classic study of Tibetan polyandry (an extremely rare marriage form in humans), <span class="citation" data-cites="crook_crook1988">Crook and Crook (<a href="references.html#ref-crook_crook1988" role="doc-biblioref">1988</a>)</span> argue that the adoption of polyandry is, in fact, functional in an adaptive sense. Symons criticizes this position by suggesting that it could only be an adaptation if humans possessed a “polyandry gene.” <span class="citation" data-cites="irons1990">Irons (<a href="references.html#ref-irons1990" role="doc-biblioref">1990</a>)</span> defends Crook and Crook, noting “in criticizing Crook and Crook (1988) for arguing that Tibetan polyandry is an expression of evolved mechanisms without postulating specific genes for polyandry. If human beings evolved to track a wide variety of different mating opportunities and arrangements, their psychological mechanisms might well lead some of them to form polyandrous unions not because of genes for polyandry but because of genes for tracking many possibilities.”</p>
+<p>A foundational work in the development of contemporary evolutionary psychology was written by John Tooby and Leda Cosmides in 1990 in part of the exchange surrounding the publication of Symons’s provocative paper. In it, they write: “an evolutionary functionalism that leapfrogs the characterization of adaptations and in its place simply catalogues correspondences between present behavior and present fitness is incomplete and is often guided by serious misinterpretations of Darwinism” <span class="citation" data-cites="tooby_cosmides1990a">(<a href="references.html#ref-tooby_cosmides1990a" role="doc-biblioref">J. Tooby and Cosmides 1990</a>: 377)</span>.</p>
+<p>Central to the argument of Tooby, Cosmides, and other evolutionary psychologists is the idea of the Environment of Evolutionary Adaptedness (EEA). This idea was borrowed by Tooby from the developmental psychologist, John Bowlby, the father of attachment theory. Bowlby saw the environment of evolutionary adaptedness as the environment in which a behavior is adaptive. Tooby &amp; Cosmides write that the second goal of EP analysis is: “An analysis of how these principles were manifested as a species-specific array of selection pressures, refracted through the specific ecological, social, genetic, phylogenetic, and informational circumstances experienced along a given species’ evolutionary history.” Together, these characterize the “ancestral conditions,” or “the environment of evolutionary adaptedness.” For Tooby &amp; Cosmides, the task of evolutionary psychology is the “task analyses of what information processing problems an adaptation must solve.”</p>
+<p>There is, unfortunately, a tendency for this interesting idea of an EEA to devolve into a caricature of the human hunter-gatherer Pleistocene. Anatomically modern <em>Homo sapiens sapiens</em> appears just over 50,000 years ago, with substantial discontinuities in behavior as indicated by the archaeological record (art, ritual, distinct local cultural variation). <span class="citation" data-cites="foley1995">Foley (<a href="references.html#ref-foley1995" role="doc-biblioref">1995, 195–96</a>)</span> noted, “New chronologies for the evolution of <em>Homo sapiens</em>, which stress a break between archaic and modern humans and involve recent colonization (<span class="math inline">\(&lt;60\)</span> Kyr) of most parts of the world, have removed the notion of ‘two million years of hunter-gathering,’ reduced the chronological disparity between agriculture and hunting and gathering, and highlighted major differences between continents.”</p>
+<p>Is 400 generations really such a short time? Particularly if selection is very strong?</p>
+<p>Irons, citing the work of Richard Alexander, suggests that most human psychological adaptations are to dealing with other human beings and that there is continuity in this over the Holocene. The Pleistocene was hardly constant.</p>
+<p>Always ask yourself what are the testable, unique hypotheses being posited by a particular approach to human behavior? If there is no empirical jeopardy of the adaptive predictions, is it science?</p>
+<p>To what extent do contemporary humans need to be in a state of adaptive disequilibrium for the past-explains-the-present type reasoning to still apply? Does evidence of extensive recent adaptation jeopardize the EP position?</p>
+<p>Life is full of trade-offs. If all cognitive mechanisms are specific to the particular domain, i.e., if they “carve the psyche more nearly to its joints” <span class="citation" data-cites="daly_wilson1999">(<a href="references.html#ref-daly_wilson1999" role="doc-biblioref">Daly and Wilson 1999</a>: 510)</span>, how does behavior arise when a decision affects two (or more) distinct domains? What mechanism adjudicates the trade-off between the two domain-specific information processing mechanisms? Presumably, this will be some general-purpose executive function. If such trade-offs are common, then does it not make more sense to focus on this executive function and the conditions in which one decision is favored over another?</p>
+<p>As noted by <span class="citation" data-cites="smith_etal2001">Smith, Mulder, and Hill (<a href="references.html#ref-smith_etal2001" role="doc-biblioref">2001, 131</a>)</span>, “two decades of research on the psychological adaptations underlying mating preferences has generated a list of the sexual and parental cues men and women look for in mates, but almost no information on how these cues are contextually weighted, how they interact with one another, and how they are used in the real world of mating markets and biological clocks.”</p>
+<p>On the EP emphasis on adaptive lag, Laland &amp; Brown (2002: 144) write, “since no one really knows to what extent the past and present selective environments differe from that trait, itis entirely possible that most human adaptations could produce adaptive behaviour in the modern environment, and it would be premature to assume that most would not.”</p>
+<p>We certainly need <em>an</em> evolutionary psychology. I’m not sure we need <em>the</em> evolutionary psychology as currently practiced. This said, there has been a great deal of scientific progress in the field by the best practitioners (and a great deal of regression toward some social bads such as race science and social Darwinism more generally) by the worst practitioners.</p>
+<p>I am hopeful for a better EP in the future that incorporates more insights from developmental and cognitive psychology in particular.</p>
+</section>
+<section id="human-behavioral-ecology" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="human-behavioral-ecology"><span class="header-section-number">2.3.2</span> Human Behavioral Ecology</h3>
+<p>There are a couple of common uses of the term <em>adaptation</em> in the literature on human ecology and behavior <span class="citation" data-cites="jones_etal2020">(<a href="references.html#ref-jones_etal2020" role="doc-biblioref">Jones, Ready, and Pisor 2020</a>)</span>. Acclimatization refers to the modulation of physiological parameters to adjust to local environmental changes such as temperature, altitude (i.e., pressure), drought or other physiological stresses. An “adaptation” in the physiological sense refers to an acclimatization that essentially becomes permanent within an individual’s lifetime. If the environmental changes that led to acclimatization and eventually adaptation become regular, then the organism might specifically change its phenotype in response to selection. There are efficiency gains to having the adapted phenotype more “hard-wired.” However, there is a potential cost in terms of reduced capacity to respond to further environmental change.</p>
+<p>Adaptive plasticity is clearly a major part of the human adaptive suite. This of course raises questions about what types of environments favor extensive adaptive plasticity?</p>
+<p>The HBE approach to understanding human behavior relies heavily on the idea of adaptive plasticity. It assumes that people are generally able to make sensible decisions over important matters of evolutionary significance (e.g., food acquisition, reproductive decisions). It favors the specification of optimality solutions to problems, placing a premium on measuring costs and benefits associated with particular behavioral decisions.</p>
+<p>Davies &amp; Krebs (1977) define behavioral ecology, noting principally its comparative approach to studying adaptation, which dates to the work of Crook and Lack (e.g., Crook 1964, Crook &amp; Garland 1966; Lack 1948). The then-coalescing field of behavioral ecology combined this comparative approach to understanding adaptation with ethological work testing hypotheses about the “survival value” of behavior that emerged from Tinbergen’s work (Tinbergen et al.&nbsp;1967) and the formal approach to ecology championed by Robert MacArthur.</p>
+<p>In many respects Human Behavioral Ecology is a distinct field but with obvious linkages. HBE comes as much out of the cultural ecology of Julian Stewart as the behavioral ecology that that synthesized the approaches of Lack, Crook, Tinbergen, and MacArthur.</p>
+<p>The key features of HBE include: (1) the underlying logic of natural selection, (2) a hypothetico-deductive approach, and (3) an emphasis on behavioral strategies, flexibility, and decision-rules, (4) a piecemeal approach.</p>
+<p>The logic of natural selection drives behavioral ecology generally and HBE in particular. On the whole, actual fitness is rarely measured. As noted by Davies &amp; Krebs (1977: 1) “although pure population genetics and ecology only rarely appear in explicit form they obviously lurk just beneath the surface.” HBE uses an approach to studying adaptation identified by Grafen (1984) as the phenotypic gambit. In practice, taking the phenotypic gambit means that the researcher believes that the details of mechanism (both cognitive and genetic) and phylogeny do not matter, at least to a first approximation, for understanding adaptive behavior. More technically, it means assuming that there is sufficient additive genetic variation and a permissive covariance structure to this variation and that cognitive or other proximate mechanisms exist for making appropriately adaptive decisions in the ecological context.</p>
+<p>The logic of natural selection allows HBE to overcome some of the shortcomings of functionalism by greatly limiting the domains of functional response and the currencies with which we measure this response <span class="citation" data-cites="winterhalder_smith2000">(<a href="references.html#ref-winterhalder_smith2000" role="doc-biblioref">Winterhalder and Smith 2000</a>)</span>. Many applications of HBE focus on behavior that is proximate to fitness. In particular, two of the most popular domains include foraging and life history. Efficiency is emphasized in foraging since energy saved in foraging can be reinvested in other fitness-promoting activities (e.g., having more children, generating new immune cells, spending more time socializing with potential political allies), though as we will see in section <a href="efficiency.html" class="quarto-xref"><span>Chapter 9</span></a>, there are substantial limits to the utility of efficiency as a behavioral or evolutionary objective.</p>
+<p>In contrast to much of the classical work in cultural ecology, HBE is largely guided by a principle of methodological indvidualism. The primary locus of adaptive response is the individual and not the community or culture. Adaptive response of culture are seen as emergent phenomena of individual adaptations. Once again, this has some weaknesses.</p>
+<p>The hypothetico-deductive approach of HBE essentially boils down to a simple, idealized recipe for the practice of science. First, the researcher formulates a simple model. Second, using some formal mechanism (e.g., logic, mathematics, computation), she generates hypotheses that can be tested using empirically gathered data. Third, gather data relevant to test the hypothesis. Fourth, confront the model predictions with the empirical data. Fifth, modify the original model as a result of this confrontation and start the cycle all over again. This is obviously an idealized rendition of the way that research is actually performed and says little about why a researcher might formulate a particular model in the first place.</p>
+<p>Behavioral flexibility is essential to the approach of HBE. An emphasis is generally placed on decision-making and the use of conditional strategies. A conditional strategy takes the form “If condition <span class="math inline">\(X_1\)</span>, perform action <span class="math inline">\(Y_1\)</span>, else <span class="math inline">\(Y_2\)</span>.” For example, a forager encountering prey type <span class="math inline">\(i\)</span> will choose to pursue that prey if the expected rate of energy return for that type exceeds the overall average for the environment (Kaplan &amp; Hill 1992).</p>
+<p>HBE shares a strong committment with anthropology more generally of ethnography. This is the extended <em>in situ</em> observation, measurement, and recording of behavior as performed in its immediate social, cultural, and ecological context.</p>
+<p>Classical behavioral ecology is actually a heavily experimental discipline (e.g., see Krebs &amp; Davies 1977, 1984, 1991, 1998). This is generally not true of HBE. One exception to this lies in the articulation between HBE and ethno-archaeology. Archaeological evidence indicated the Great Basin foragers in the early Holocene largely ignored grass seed but later foragers relied on it heavily. Simms (1984) experimentally measured return rates for edible seeds and found that the processing costs were generally prohbitive. He was then able to calculate the threshold prey density at which seed-processing would become economically viable.</p>
+<p>More observational approaches to to HBE also abound in ethnoarchaeological research <span class="citation" data-cites="bird_etal2002">Bird et al. (<a href="references.html#ref-bird_etal2002" role="doc-biblioref">2002</a>)</span> show that the general lack of key species (e.g., large tridacnid clams) in Holocene shell middens in the Torres Straits does not mean that Holocene foragers did not take these prey. They show that the lack of these species’ remains in middens is consistent with contemporary foraging behavior on Mer where ethnographic evidence shows they are heavily exploited but nonetheless do not leave residues in contemporary middens. This puzzle is solved by understanding the nature of foraging trade-offs, noting that simple models of central-place foraging predict that such resources should be field-processed because of the burden of transporting the heavy shells of these large mollusks.</p>
+<p>The most commonly voiced criticism of HBE comes primarily from EP. In particular, fitness maximization is taken to be naïve in confusing proximate motivation and ultimate mechanism. <span class="citation" data-cites="daly_wilson1999">Daly and Wilson (<a href="references.html#ref-daly_wilson1999" role="doc-biblioref">1999, 512</a>)</span>, while complaining that the views of EP were being caricatured by human behavioral ecologists, reduce the optimality approach favored by HBE as “imagining that evolution imparts a magic ability to find the course of action that maximizes inclusive fitness even in the face of evolutionarily unforeseen challenges.” <span class="citation" data-cites="daly_wilson1999">Daly and Wilson (<a href="references.html#ref-daly_wilson1999" role="doc-biblioref">1999, 513</a>)</span> incorrectly attribute the preponderance of studies in HBE happening in small-scale societies as the desire by behavioral ecologists to study populations similar to the EEA: “An irony is that those who deride the EEA concept include researchers who have taken the trouble to study people in nonstate, face-to-face societies, presumably believing that such studies can afford important insights into human nature that could not be attained by studying the citizens of modern mass society.” Indeed, human behavioral ecologists tend to focus on small-scale societies because these are where functional hypotheses about subsistence and reproduction are most salient. Real people making real decisions with regard to real-world trade-offs, uncluttered (at least conditionally) by the complexities of the state. Furthermore, the importance of the comparative approch for behavioral ecology and HBE in particular places a premium on studies of face-to-face societies since the vast majority of behavioral and social research is performed on people living in (and fully integrated with) modern nation-states and market economies. This said, human behavioral ecologists have increasingly made forays into the behavior of people integrated with states and market economies <span class="citation" data-cites="gibson_lawson2014">(<a href="references.html#ref-gibson_lawson2014" role="doc-biblioref">Gibson and Lawson 2014</a>)</span></p>
+<p><span class="citation" data-cites="symons1989">Symons (<a href="references.html#ref-symons1989" role="doc-biblioref">1989</a>)</span> and <span class="citation" data-cites="tooby_cosmides1990a">J. Tooby and Cosmides (<a href="references.html#ref-tooby_cosmides1990a" role="doc-biblioref">1990</a>)</span> dismiss the measurement of present-day fitness consequences of behavior altogether. <span class="citation" data-cites="laland_brown2002">Laland and Brown (<a href="references.html#ref-laland_brown2002" role="doc-biblioref">2002</a>)</span> importantly note that measuring fitness consequences in the present, while no panacea, is certainly an important part of the evolutionary biologist’s toolkit (e.g., <span class="citation" data-cites="endler1986">Endler (<a href="references.html#ref-endler1986" role="doc-biblioref">1986</a>)</span>).</p>
+<p><span class="citation" data-cites="turke1990">Turke (<a href="references.html#ref-turke1990" role="doc-biblioref">1990</a>)</span> notes that observing the contexts in which a particular behavior is adaptive – and importantly those in which it is not – provides important information about the selective background of the trait.</p>
+<p>Perhaps the best scientific rejoinder to the criticisms leveled by EP is simply the ability of a particular approach to make empirically supported predictions about behavior. Optimality models that use some form of fitness maximization as an objective function have fared well when applied to both human and nonhuman animal decisions <span class="citation" data-cites="real1991">(e.g., <a href="references.html#ref-real1991" role="doc-biblioref">Real 1991</a>)</span>.</p>
+<p>Beyond the criticisms of EP, there are other more general criticisms of HBE. One criticism of hypothetico-deductive approach is the ease with which it can be divorced from actual problems in the world. However, the analyses of HBE do, in fact, stem from observations of the world and regularities therein. For example, anthropologists of the functionalist tradition have long noted the remarkable fit between many human behaviors and the environments in which they are embedded. For example, the small size and flexibility of social organization of dry country hunter-gatherers such as the Western Shoshone or Ju/’hoansi.</p>
+<p>Optimality models have been more broadly criticized for assuming that observed phenotypes are, in fact, optimal. In their famous critique of adaptationist perspectives in biology, <span class="citation" data-cites="gould_lewontin1979">Gould and Lewontin (<a href="references.html#ref-gould_lewontin1979" role="doc-biblioref">1979</a>)</span> deride the assumption of optimality as being “Panglossian,” alluding to the character of Dr.&nbsp;Pangloss in Voltaire’s <em>Candide</em>, who suggested that all was for the best in every situation.</p>
+<p><span class="citation" data-cites="maynard-smith1978">Maynard Smith (<a href="references.html#ref-maynard-smith1978" role="doc-biblioref">1978</a>)</span> and <span class="citation" data-cites="parker_maynardsmith1990">Parker and Maynard Smith (<a href="references.html#ref-parker_maynardsmith1990" role="doc-biblioref">1990</a>)</span> note that the purpose of optimality models is not to show that the behavior is optimal. Rather, they are tools for understanding the behavior. <span class="citation" data-cites="oster_wilson1978">Oster and Wilson (<a href="references.html#ref-oster_wilson1978" role="doc-biblioref">1978, 311–12</a>)</span> write, “Rather than a grande scheme for predicting the course of natural selection, optimization theory provides a tactical tool for making educated guesses about evolutionary trends.” <span class="citation" data-cites="oster_wilson1978">Oster and Wilson (<a href="references.html#ref-oster_wilson1978" role="doc-biblioref">1978</a>)</span> go on to note that when predictions of a particular optimality model prove inadequate, the investigator knows precisely how to revise it since the assumptions that went into the model were explicitly and precisely made at the outset.</p>
+<p>All the main evolutionary approaches to understanding human behavior take as their foundation such observations of fit between environment and behavior. It uses <em>a priori</em> reasoning about the action of natural selection (e.g., maximizing the long-run rate of energy gain in foraging or reproductive value in life history decision-making) to posit models for decisions.</p>
+<p>As a distinct subset of the human evolutionary sciences, HBE is fading. We have largely failed to culturally reproduce. This said, the ideas of HBE permeate the human evolutionary sciences and human ecology more generally. Many of the latest generation of students trained by human behavioral ecologists have moved into more applied work in health, demography, conservation, development, and adaptation!</p>
+</section>
+<section id="cultural-evolution" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="cultural-evolution"><span class="header-section-number">2.3.3</span> Cultural Evolution</h3>
+<p>Humans are cultural animals. Much of human adaptability is mediated by culture <span class="citation" data-cites="alvard2003">(<a href="references.html#ref-alvard2003" role="doc-biblioref">Alvard 2003</a>)</span>.</p>
+<p>The perspective that I ultimately take on human adaptability melds these different approaches. We will discuss this topic at length in <a href="culture.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-alland1975" class="csl-entry" role="listitem">
+Alland, Alexander. 1975. <span>“Adaptation.”</span> <em>Annual Review of Anthropology</em> 4 (1): 59–73. <a href="https://doi.org/10.1146/annurev.an.04.100175.000423">https://doi.org/10.1146/annurev.an.04.100175.000423</a>.
+</div>
+<div id="ref-alvard2003" class="csl-entry" role="listitem">
+Alvard, Michael S. 2003. <span>“The Adaptive Nature of Culture.”</span> <em>Evolutionary Anthropology</em> 12 (3): 136–49. <a href="https://doi.org/10.1002/evan.10109">https://doi.org/10.1002/evan.10109</a>.
+</div>
+<div id="ref-bennett1976" class="csl-entry" role="listitem">
+Bennett, J. W. 1976. <span>“Anticipation, Adaptation, and Concept of Culture in Anthropology.”</span> <em>Science</em> 192 (4242): 847–53. <a href="https://doi.org/10.1126/science.192.4242.847">https://doi.org/10.1126/science.192.4242.847</a>.
+</div>
+<div id="ref-bird_etal2002" class="csl-entry" role="listitem">
+Bird, R. B., D. W. Bird, E. A. Smith, and G. C. Kushnick. 2002. <span>“Risk and Reciprocity in <span>Meriam</span> Food Sharing.”</span> <em>Evolution and Human Behavior</em> 23 (4): 297–321. <a href="https://doi.org/10.1016/S1090-5138(02)00098-3">https://doi.org/10.1016/S1090-5138(02)00098-3</a>.
+</div>
+<div id="ref-bowden_etal2012" class="csl-entry" role="listitem">
+Bowden, Rory, Tammie S. MacFie, Simon Myers, Garrett Hellenthal, Eric Nerrienet, Ronald E. Bontrop, Colin Freeman, Peter Donnelly, and Nicholas I. Mundy. 2012. <span>“Genomic Tools for Evolution and Conservation in the Chimpanzee: <span><em>Pan Troglodytes Ellioti</em></span> Is a Genetically Distinct Population.”</span> <em>PLOS Genetics</em> 8 (3): e1002504. <a href="https://doi.org/10.1371/journal.pgen.1002504">https://doi.org/10.1371/journal.pgen.1002504</a>.
+</div>
+<div id="ref-brown_armelagos2001" class="csl-entry" role="listitem">
+Brown, R. A., and G. J. Armelagos. 2001. <span>“Apportionment of Racial Diversity: A Review.”</span> <em>Evolutionary Anthropology</em> 10: 34–40. <a href="https://doi.org/10.1002/1520-6505(2001)10:1<34::AID-EVAN1011>3.0.CO;2-P">https://doi.org/10.1002/1520-6505(2001)10:1&lt;34::AID-EVAN1011&gt;3.0.CO;2-P</a>.
+</div>
+<div id="ref-cosmides_tooby1996" class="csl-entry" role="listitem">
+Cosmides, Leda, and John Tooby. 1996. <span>“Are Humans Good Intuitive Statisticians After All? Rethinking Some Conclusions from the Literature on Judgment Under Uncertainty.”</span> <em>Cognition</em> 58 (1): 1–73. <a href="https://doi.org/10.1016/0010-0277(95)00664-8">https://doi.org/10.1016/0010-0277(95)00664-8</a>.
+</div>
+<div id="ref-crook_crook1988" class="csl-entry" role="listitem">
+Crook, John H., and Stamati J. Crook. 1988. <span>“Tibetan Polyandry: Problems of Adaptation and Fitness.”</span> In <em>Human Reproductive Behavior</em>, edited by L. Betzig, M. Borgerhoff Mulder, and P. W. Turke, 97–114. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-daly_wilson1999" class="csl-entry" role="listitem">
+Daly, Martin, and Margo I. Wilson. 1999. <span>“Human Evolutionary Psychology and Animal Behaviour.”</span> <em>Animal Behaviour</em> 57 (3): 509–19. <a href="https://doi.org/10.1006/anbe.1998.1027">https://doi.org/10.1006/anbe.1998.1027</a>.
+</div>
+<div id="ref-endler1986" class="csl-entry" role="listitem">
+Endler, J. A. 1986. <em>Natural Selection in the Wild</em>. Princeton: Princeton University Press. <a href="https://books.google.com/books?id=MYk1XbelDssC">https://books.google.com/books?id=MYk1XbelDssC</a>.
+</div>
+<div id="ref-foley1995" class="csl-entry" role="listitem">
+Foley, Robert. 1995. <span>“The Adaptive Legacy of Human Evolution: A Search for the Environment of Evolutionary Adaptedness.”</span> <em>Evolutionary Anthropology</em> 4 (6): 194–203. <a href="https://doi.org/10.1002/evan.1360040603">https://doi.org/10.1002/evan.1360040603</a>.
+</div>
+<div id="ref-futuyma2013" class="csl-entry" role="listitem">
+Futuyma, D. J. 2013. <em>Evolution</em>. 3rd ed. Sunderland, MA: Sinauer Associates. <a href="https://books.google.com/books?id=YkrRlwEACAAJ">https://books.google.com/books?id=YkrRlwEACAAJ</a>.
+</div>
+<div id="ref-gagneux_etal1999" class="csl-entry" role="listitem">
+Gagneux, Pascal, Christopher Wills, Ulrike Gerloff, Diethard Tautz, Phillip A. Morin, Christophe Boesch, Barbara Fruth, Gottfried Hohmann, Oliver A. Ryder, and David S. Woodruff. 1999. <span>“Mitochondrial Sequences Show Diverse Evolutionary Histories of <span>African</span> Hominoids.”</span> <em>Proceedings of the National Academy of Sciences</em> 96 (9): 5077–82. <a href="https://doi.org/10.1073/pnas.96.9.5077">https://doi.org/10.1073/pnas.96.9.5077</a>.
+</div>
+<div id="ref-gibson_lawson2014" class="csl-entry" role="listitem">
+Gibson, M. A., and D. W. Lawson. 2014. <em>Applied Evolutionary Anthropology: Darwinian Approaches to Contemporary World Issues</em>. Springer New York. <a href="https://books.google.com/books?id=xAS9BAAAQBAJ">https://books.google.com/books?id=xAS9BAAAQBAJ</a>.
+</div>
+<div id="ref-gigerenzer1991" class="csl-entry" role="listitem">
+Gigerenzer, Gerd. 1991. <span>“How to Make Cognitive Illusions Disappear: Beyond <span>‘Heuristics and Biases’</span>.”</span> <em>European Review of Social Psychology</em> 2 (1): 83–115. <a href="https://doi.org/10.1080/14792779143000033">https://doi.org/10.1080/14792779143000033</a>.
+</div>
+<div id="ref-goodman1963" class="csl-entry" role="listitem">
+Goodman, M. 1963. <span>“Man’s Place in the Phylogeny of the Primates as Reflected in Serum Proteins.”</span> In <em>Classification and Human Evolu­tion</em>, edited by S. L. Washburn, 204–34. Chicago: Aldine.
+</div>
+<div id="ref-gould_lewontin1979" class="csl-entry" role="listitem">
+Gould, S. J., and R. C. Lewontin. 1979. <span>“Spandrels of <span class="nocase">San Marco and the Panglossian Paradigm</span>: A Critique of the Adaptationist Program.”</span> <em>Proceedings of the Royal Society Series B-Biological Sciences</em> 205 (1161): 581–98. <a href="https://doi.org/10.1098/rspb.1979.0086">https://doi.org/10.1098/rspb.1979.0086</a>.
+</div>
+<div id="ref-hadfield_etal2007" class="csl-entry" role="listitem">
+Hadfield, J. D., A. Nutall, D. Osorio, and I. P. F. Owens. 2007. <span>“Testing the Phenotypic Gambit: Phenotypic, Genetic and Environmental Correlations of Colour.”</span> <em>Journal of Evolutionary Biology</em> 20 (2): 549–57. <a href="https://doi.org/10.1111/j.1420-9101.2006.01262.x">https://doi.org/10.1111/j.1420-9101.2006.01262.x</a>.
+</div>
+<div id="ref-irons1990" class="csl-entry" role="listitem">
+Irons, W. 1990. <span>“Let’s Make Our Perspective Broader Rather Than Narrower: A Comment on <span>Turke</span> Which Humans Behave Adaptively, and Why Does It Matter and on the so-Called <span>DA-DP</span> Debate.”</span> <em>Ethology and Sociobiology</em> 11 (4-5): 361–74. <a href="https://doi.org/10.1016/0162-3095(90)90016-Y">https://doi.org/10.1016/0162-3095(90)90016-Y</a>.
+</div>
+<div id="ref-jones_etal2020" class="csl-entry" role="listitem">
+Jones, James Holland, Elspeth Ready, and Anne C. Pisor. 2020. <span>“Want Climate-Change Adaptation? Evolutionary Theory Can Help.”</span> <em>American Journal of Human Biology</em> 33 (4): e23539. <a href="https://doi.org/10.1002/ajhb.23539">https://doi.org/10.1002/ajhb.23539</a>.
+</div>
+<div id="ref-kahneman_tversky1973" class="csl-entry" role="listitem">
+Kahneman, Daniel, and Amos Tversky. 1973. <span>“On the Psychology of Prediction.”</span> <em>Psychological Review</em> 80 (4): 237–51. <a href="https://doi.org/10.1037/h0034747">https://doi.org/10.1037/h0034747</a>.
+</div>
+<div id="ref-laland_brown2002" class="csl-entry" role="listitem">
+Laland, Kevin N., and Gillian R. Brown. 2002. <em>Sense and Nonsense: Evolutionary Perspectives on Human Behaviour</em>. New York: Oxford University Press.
+</div>
+<div id="ref-lande1979" class="csl-entry" role="listitem">
+Lande, Russell. 1979. <span>“Quantitative Genetic Analysis of Multivariate Evolution, Applied to Brain:body Size Allometry.”</span> <em>Evolution</em> 33 (1): 402–16. <a href="https://doi.org/10.1111/j.1558-5646.1979.tb04694.x">https://doi.org/10.1111/j.1558-5646.1979.tb04694.x</a>.
+</div>
+<div id="ref-lasker1969" class="csl-entry" role="listitem">
+Lasker, Gabriel W. 1969. <span>“Human Biological Adaptability.”</span> <em>Science</em> 166 (3912): 1480–86. <a href="https://doi.org/10.1126/science.166.3912.1480">https://doi.org/10.1126/science.166.3912.1480</a>.
+</div>
+<div id="ref-lewis_etal2022" class="csl-entry" role="listitem">
+Lewis, Anna C. F., Santiago J. Molina, Paul S. Appelbaum, Bege Dauda, Anna Di Rienzo, Agustin Fuentes, Stephanie M. Fullerton, et al. 2022. <span>“Getting Genetic Ancestry Right for Science and Society.”</span> <em>Science</em> 376 (6590): 250–52. <a href="https://doi.org/10.1126/science.abm7530">https://doi.org/10.1126/science.abm7530</a>.
+</div>
+<div id="ref-lewontin1972" class="csl-entry" role="listitem">
+Lewontin, R. C. 1972. <span>“The Apportionment of Human Diversity.”</span> In <em>Evolutionary Biology: Volume 6</em>, edited by Theodosius Dobzhansky, Max K. Hecht, and William C. Steere, 381–98. New York, NY: Springer US. <a href="https://doi.org/10.1007/978-1-4684-9063-3_14">https://doi.org/10.1007/978-1-4684-9063-3_14</a>.
+</div>
+<div id="ref-lewontin1978" class="csl-entry" role="listitem">
+———. 1978. <span>“Adaptation.”</span> <em>Scientific American</em> 239 (9): 212–30. <a href="https://doi.org/10.1038/scientificamerican0978-212">https://doi.org/10.1038/scientificamerican0978-212</a>.
+</div>
+<div id="ref-lipton1968" class="csl-entry" role="listitem">
+Lipton, Michael. 1968. <span>“Theory of Optimising Peasant.”</span> <em>Journal of Development Studies</em> 4 (3): 327–51. <a href="https://doi.org/10.1080/00220386808421262">https://doi.org/10.1080/00220386808421262</a>.
+</div>
+<div id="ref-lovejoy1981" class="csl-entry" role="listitem">
+Lovejoy, C. Owen. 1981. <span>“The Origin of Man.”</span> <em>Science</em> 211 (4480): 341–50. <a href="https://doi.org/10.1126/science.211.4480.341">https://doi.org/10.1126/science.211.4480.341</a>.
+</div>
+<div id="ref-maynard-smith1978" class="csl-entry" role="listitem">
+Maynard Smith, John. 1978. <span>“Optimization Theory in Evolution.”</span> <em>Annual Review of Ecology and Systematics</em> 9 (1): 31–56. <a href="https://doi.org/10.1146/annurev.es.09.110178.000335">https://doi.org/10.1146/annurev.es.09.110178.000335</a>.
+</div>
+<div id="ref-mayr1982" class="csl-entry" role="listitem">
+Mayr, E. 1982. <em>The Growth of Biological Thought</em>. Cambridge: Belknap.
+</div>
+<div id="ref-oster_wilson1978" class="csl-entry" role="listitem">
+Oster, G. F., and E. O. Wilson. 1978. <em>Caste and Ecology in the Social Insects</em>. Princeton: Princeton University Press.
+</div>
+<div id="ref-parker_maynardsmith1990" class="csl-entry" role="listitem">
+Parker, Geoffrey A., and John Maynard Smith. 1990. <span>“Optimality Theory in Evolutionary Biology.”</span> <em>Nature</em> 348: 27–33. <a href="https://doi.org/10.1038/348027a0">https://doi.org/10.1038/348027a0</a>.
+</div>
+<div id="ref-rappaport1971" class="csl-entry" role="listitem">
+Rappaport, Roy A. 1971. <span>“Ritual, Sanctity, and Cybernetics.”</span> <em>American Anthropologist</em> 73 (1): 59–76. <a href="https://doi.org/10.2307/671812">https://doi.org/10.2307/671812</a>.
+</div>
+<div id="ref-real1991" class="csl-entry" role="listitem">
+Real, LA. 1991. <span>“Animal Choice Behavior and the Evolution of Cognitive Architecture.”</span> <em>Science</em> 253 (5023): 980–86. <a href="https://doi.org/10.1126/science.1887231">https://doi.org/10.1126/science.1887231</a>.
+</div>
+<div id="ref-roseman2021" class="csl-entry" role="listitem">
+Roseman, Charles C. 2021. <span>“Lewontin Did Not Commit <span class="nocase">Lewontin’s</span> Fallacy, His Critics Do: Why Racial Taxonomy Is Not Useful for the Scientific Study of Human Variation.”</span> <em>BioEssays</em> 43 (12): 2100204. <a href="https://doi.org/10.1002/bies.202100204">https://doi.org/10.1002/bies.202100204</a>.
+</div>
+<div id="ref-rosenberg_bouchard2015" class="csl-entry" role="listitem">
+Rosenberg, Alexander, and Frederic Bouchard. 2015. <span>“Fitness.”</span> In <em>The Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta. Metaphysics Research Lab, Stanford University. <a href="https://plato.stanford.edu/entries/fitness/">https://plato.stanford.edu/entries/fitness/</a>.
+</div>
+<div id="ref-ruvolo1997" class="csl-entry" role="listitem">
+Ruvolo, M. 1997. <span>“Genetic Diversity in Hominoid Primates.”</span> <em>Annual Review of Anthropology</em> 26: 515–40. <a href="http://www.jstor.org/stable/2952533">http://www.jstor.org/stable/2952533</a>.
+</div>
+<div id="ref-scott1977" class="csl-entry" role="listitem">
+Scott, James C. 1977. <em><span class="nocase">The Moral Economy of the Peasant: Rebellion and Subsistence in Southeast Asia</span></em>. New Haven: Yale University Press.
+</div>
+<div id="ref-smith_etal2001" class="csl-entry" role="listitem">
+Smith, Eric A., Monique Borgerhoff Mulder, and Kim Hill. 2001. <span>“Controversies in the Evolutionary Social Sciences: A Guide for the Perplexed.”</span> <em>Trends in Ecology &amp; Evolution</em> 16 (3): 128–35. <a href="https://doi.org/10.1016/S0169-5347(00)02077-2">https://doi.org/10.1016/S0169-5347(00)02077-2</a>.
+</div>
+<div id="ref-symons1989" class="csl-entry" role="listitem">
+Symons, D. 1989. <span>“A Critique of <span>D</span>arwinian Anthropology.”</span> <em>Ethology and Sociobiology</em> 10 (1-3): 131–44. <a href="https://doi.org/10.1016/0162-3095(89)90016-2">https://doi.org/10.1016/0162-3095(89)90016-2</a>.
+</div>
+<div id="ref-todd_gigerenzer2012" class="csl-entry" role="listitem">
+Todd, P. M., and G. Gigerenzer. 2012. <em>Ecological Rationality: Intelligence in the World</em>. Oxford: Oxford University Press. <a href="https://books.google.com/books?id=lO4EdShcg7AC">https://books.google.com/books?id=lO4EdShcg7AC</a>.
+</div>
+<div id="ref-tooby_cosmides1990a" class="csl-entry" role="listitem">
+Tooby, J., and L. Cosmides. 1990. <span>“The Past Explains the Present: Emotional Adaptations and the Structure of Ancestral Environments.”</span> <em>Ethology and Sociobiology</em> 11 (4-5): 375–424. <a href="https://doi.org/10.1016/0162-3095(90)90017-Z">https://doi.org/10.1016/0162-3095(90)90017-Z</a>.
+</div>
+<div id="ref-tooby_cosmides1990b" class="csl-entry" role="listitem">
+Tooby, John, and Leda Cosmides. 1990. <span>“On the Universality of Human Nature and the Uniqueness of the Individual: The Role of Genetics and Adaptation.”</span> <em>Journal of Personality</em> 58 (1): 17–67. <a href="https://doi.org/10.1111/j.1467-6494.1990.tb00907.x">https://doi.org/10.1111/j.1467-6494.1990.tb00907.x</a>.
+</div>
+<div id="ref-turke1990" class="csl-entry" role="listitem">
+Turke, P. W. 1990. <span>“Which Humans Behave Adaptively, and Why Does It Matter?”</span> <em>Ethology and Sociobiology</em> 11 (4-5): 305–39. <a href="https://doi.org/10.1016/0162-3095(90)90013-V">https://doi.org/10.1016/0162-3095(90)90013-V</a>.
+</div>
+<div id="ref-vayda_mccay1975" class="csl-entry" role="listitem">
+Vayda, A. P., and B. J. McCay. 1975. <span>“New Directions in Ecology and Ecological Anthropology.”</span> <em>Annual Review of Anthropology</em> 4: 293–306. <a href="https://doi.org/10.1146/annurev.an.04.100175.001453">https://doi.org/10.1146/annurev.an.04.100175.001453</a>.
+</div>
+<div id="ref-winterhalder_smith2000" class="csl-entry" role="listitem">
+Winterhalder, B., and E. A. Smith. 2000. <span>“Analyzing Adaptive Strategies: Human Behavioral Ecology at Twenty-Five.”</span> <em>Evolutionary Anthropology</em> 9 (2): 51–72. <a href="https://doi.org/10.1002/(SICI)1520-6505(2000)9:2<51::AID-EVAN1>3.0.CO;2-7">https://doi.org/10.1002/(SICI)1520-6505(2000)9:2&lt;51::AID-EVAN1&gt;3.0.CO;2-7</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./models.html" class="pagination-link" aria-label="Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./populations.html" class="pagination-link" aria-label="Population Ecology">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

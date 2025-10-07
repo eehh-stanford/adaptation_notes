@@ -1,0 +1,32 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Adaptation Notes"
+  author: "James Holland Jones"
+  date: "6/24/2024"
+  chapters:
+    - index.qmd
+    - models.qmd
+    - evolution.qmd
+    - populations.qmd
+    - culture.qmd
+    - decision.qmd
+    - complex.qmd
+    - commons.qmd
+    - dynamic.qmd
+    - efficiency.qmd
+    - robust.qmd
+    - references.qmd
+
+bibliography: adaptation.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

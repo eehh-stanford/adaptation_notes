@@ -1,0 +1,203 @@
+# Models {#sec-models}
+
+## The Great Nothings
+
+Nothing in Biology Makes Sense Except in Light of Evolution (Theodosius Dobzhansky) and There is Nothing More Practical Than a Good Theory (Kurt Lewin).
+
+Scientific theory is an explanation of some aspect of the world. Good scientific theories have been tested and corroborated repeatedly by established research methods. Scientific Theory goes beyond facts or observations by providing a structure for investigation and providing answers to *how* questions. To be useful, a scientific theory must make testable predictions. These should distinguish it from competing theories. Some examples of scientific theories include the germ theory of disease, heliocentric solar system, plate tectonics, and of course, the theory of evolution by natural selection.
+
+Theory allows us to make rigorous statements about things we have not yet observed. It is therefore particularly important for a branch of science focused on the future. As noted by @roughgarden_etal1989, "More importantly, perhaps, theory can imagine and explore a wider range of worlds than the unique one we inhabit, and by so doing can lead to fresh perceptions and new questions about why our actual world came to be as it is."
+
+My colleague, the political scientist Jon Bendor, once quipped that while there is nothing more practical than a good theory, "there is nothing more impractical than a bad theory." Obviously, we need rigorous mechanisms to adjudicate the good theory and weed out the bad.
+
+The physicist-turned-philosopher-of-science, Karl Popper, promoted a model of scientific reasoning that seems to be largely the default for many practicing scientists. Popper's model of science is known as the Hypothetico-Deductive model. I won't belabor it, but I will say that I am generally not big on prescriptive approaches to science --- as long as the science can eventually be placed into something like a formal framework (to avoid ambiguity, etc.).
+
+@lehman1986 "Those who embrace constraints crafted by others in the form of Popperian or hypothetico-deductive straight jackets may have divined a means to restrict their imagination, but there is no evidence in my view that those constraints encourage breakthroughs in the biological sciences"
+
+## Models Are Dumb
+
+With complex explanatory frameworks for complex real-world phenomena, our intuition often fails us. @smaldino2017 argues for the fundamental importance of formal models in science (especially in areas, such as psychology and anthropology where they are not typically employed). A formal model requires us to delineate parts of a system, and then specify the relationships between those parts. The model helps us develop intuition for problems. It allows us to examine the logical conclusions of assumptions and to examine appropriateness of assumptions. @gunawardena2014 noted that "a mathematical model is a logical machine for converting assumptions into conclusions"
+
+@hilborn_mangel1997 suggest that formal models serve four purposes: 
+
+1. They are tools for evaluating scientific hypotheses. 
+2. They are a means of formalizing a verbal description. 
+3. They are a means of identifying important features of a system. 
+4. They are a means of refining investigation and guiding future experimental or observational work.
+
+In addition to these features, formalizing verbal models allows us to avoid *strategic ambiguity*, a term coined by @eisenberg1984. He meant it in a positive sense. @smaldino2017 re-purposes the term with a decidedly less positive implication. From Eisenberg's perspective of organizational communication, strategic ambiguity is a tool for organization that promotes "unified diversity", facilitates organizational change, and preserves the power structure of institutions. From a scientific perspective, the strategic ambiguity of verbal models gives the illusion of understanding while undermining actual understanding.
+
+Related to The Motte-and-Bailey Fallacy, where a speaker initially advances an indefensible claim ("the bailey") and, when challenged, retreats to a more modest claim ("the motte") that shares some similarities with the indefensible claim. This is a common tactic employed by racist pseudoscientists.
+
+Two specific modes of strategic ambiguity include Theory stretching and Post-Hoc precision. Theory stretching: interpretation of an ambiguous claim more expansively to absorb data outside the scope of the original claim. Post-hoc precision: interpretation of an ambiguous theoretical claim narrowly so that it appears more precisely aligned with the data
+
+In a tweet on 8 December 2021 the psychologist Julia Rohrer suggested that "[i]t is the curse of transparency that the more you disclose about your research process, the more there is to criticize."
+
+@frankenhuis_etal2022: "Clarity can have the perverse effect of making it easier for evaluators to identify flaws that might have remained hidden in a more ambiguous description."
+
+Ambiguous theories promote confirmation bias. Natural selection for bad science [@smaldino_mcelreath2016]. Ambiguous theories are often given a pass by reviewers, editors, and the general public, while precise theories are seen as narrow and uninteresting. In a tweet (RIP) on 30 November 2020, Paul Smaldino coined the name RAPPing (Rewarding Ambiguity and Penalizing Precision) for this phenomenon [@frankenhuis_etal2022].
+
+@frankenhuis_etal2022 identify six questions that you can ask to avoid RAPPing: 
+
+1. Is each term defined? 
+2. Are all the relations between terms specified? 
+3. Are all the assumptions stated explicitly? 
+4. Has the theory been formalized? 
+5. Is the scope of the theory well-specified? 
+6. Is the theory consistent across papers?
+
+Models may be dumb, but they are also democratic. @muthukrishna_henrich2019 note that "[b]y formally defining assumptions, logic, and predictions, anyone can challenge the theory by either testing the predictions or by challenging or modifying the assumptions or logic and showing how the predictions would change."
+
+In the spirit of moving beyond the existing empirical evidence, "[r]igorous formal theory may also be a way to evaluate the existing literature for plausibility based on connections to well-established theories and data."
+
+Thompson et al. (2022), cited in @frankenhuis_etal2022, used machine learning, trained on evaluations of work for the UK Research Excellence Framework, to show that harder-to-understand abstracts rated more highly than than easier-to-understand abstracts!
+
+Think about the language of the contemporary humanities, especially cultural anthropology...
+
+### Three Ambiguous Models in the Study of Adaptation
+
+Resilience: started out as serious population biology, but has become overrun by woo. 
+
+The Availability Heuristic. See @sec-decision
+
+Adaptation itself!
+
+### Types of Models
+
+@holling1966 made a distinction between strategic and tactical models. Strategic Models typically have a small number of parameters and are "uncluttered with extraneous details," and are important for developing general theory. Tactical models, on the other hand, are more detailed, possibly fit to empirical data. The aim of a tactical model is making more precise predictions or to provide refinements of general theory.
+
+@levins1966 suggested that models inherently entail trade-offs. In particular, he suggested that a model cannot simultaneously maximize generality, precision, and realism. In the framework of @holling1966, we can say that strategic models are more general, while tactical models are more realistic & precise.
+
+@orzack_sober1994 don't like it one bit. Like I'm a little worried that Steve Orzack is going to come for me because I actually cited Levins unironically. @evans_etal2013 suggest that complex models can be general and that theoretical progress depends on combining simple and complex models. I agree with that in principle.
+
+@schelling1960 similarly praises simple models. Similarly, so does @western2001, who notes notes that they are easy to refute because their prior probability mass is more highly concentrated.
+
+## The Power of False Models
+
+@wimsatt1987 provides a comprehensive list of the benefits of
+
+## The Power of Simple Models: Optimality in Human Behavioral Ecology
+
+We can illustrate the power of simple (false) models by examining an old debate in human ecology. To do this, we first need to spend a little time introducing optimality models.
+
+### Optimality Models
+
+Optimality models are generally relatively simple, tactical explanation for behavior. The foundational approach for human behavioral ecology (HBE) [@smith1992a, @smith1992b]
+
+Different authors break up the requirements for optimality models in different ways. I like the approach of @smith_winterhalder1992 best. In this formulation, optimality models require the specification of four things"
+
+1. **Actor**: A definition of the unit of analysis.  Who or what is doing the optimizing?
+2. **Objective Function**: What is it that people seek to optimize? 
+3. **Strategy Set**:  What are the possible alternative actions from which the best choice is being made?
+4. **Constraints** What is possible?
+  
+The use of simple optimality models provides a coherent framework for structuring research.
+
+Optimality models tend to be simple.  As such, they frequently fail to fully explain human decisions.  What then is the point? As we discuss in more detail elsewhere (e.g., Chapter 5), simple models allow us to make very general qualitative statements. When people fail to conform to the predictions of optimality models, what is happening?  Importantly, people may simply not be optimizing.  However, we can make far more out of the result.  Have we mis-specified the objective function or the currencey?  Did we fail to properly enumerate the possible alternative strategies?  Is there a constraint on indivudals' choice that we failed to account for? 
+
+Levins, in his classic (1966) paper, noted that models can fufill three goals: generality, realism, and precision. He further suggests that a single model can not maximize all three of these features simultaneously [@levins1966]. A highly realistic model will not typically apply to a broad range of cases because it will include a great deal of information specific to the situation. 
+
+@holling1964 and @holling1966 has proposed a similar typology of models, noting particularly the distinction between tactical and strategic models.
+
+@schelling1960 similarly praises simple models.
+
+### Optimal Foraging Theory
+
+However, the optimality approach has drawn criticism from other ecological anthropologists and may continue to create a barrier to fruitful integration of different traditions of human ecology. @vayda1995a and @vayda1995b has been particularly critical of HBE and other functionalist approaches to human ecology. The strong criticism that comes out of Vayda's work [@driscoll_stich2008] is that the fit between functional predictions and observed human behavior frequently can not rule out alternative explanations. The formal methods of evaluating multiple hypotheses that I present below addresses this criticism and are consistent with Vayda's emphasis on event-driven explanatory models [@vayda_walters1999]. In general, I am sympathetic to many of Vayda's criticisms of both behavioral and political ecology, though there are shortcomings in his criticism of HBE.
+
+Arguing from a Pragmatic perspective, Vayda criticizes both HBE and political ecology, suggesting that they are shackled in their ability to explain human action by their respective theoretical perspectives. While Vayda clearly sees both traditions as blinded by their strong theoretical perspectives, he specifically levels criticism against HBE (what he initially called "Darwinian Ecological Anthropology" or DEA (though later identified DEA as HBE) based on its nomological-deductive approach to explanation. In the place of theoretically-committed research strategies, Vayda persuasively argues for an event-based causal/explanatory (CE) style of science. He suggests that the best research strategy is Chamberlin's "multiple working hypothesis" approach: observe an event; reason backward through potential chains of causation; evaluate the empirical support for these various candidate explanations. Supporting this idea of multiple working hypotheses is Peirce's concept of abductive reasoning. Abduction is essentially reasoning from effect to probable cause. Your colleague is uncharacteristically short with you one morning. You reason that he must be experiencing stress at home. Or perhaps he just had a paper rejected. Or he harbors resentment at the way you treated him at last Friday's faculty meeting. Of course, there are an infinite number of possible causes for your colleague's grumpiness, but the universe of probable causes is greatly reduced by that person's attributes (e.g., age, gender, profession, martial status, etc.) and contextual factors (e.g., recent history, current political climate, the weather). Abduction is the reasoning from event back to cause. However, determining the correct cause(s) requires deductive and inductive inference. Theory helps too, as it is theory that allows us to reduce the infinite universe of possible explanation to something manageable.
+
+Peirce (CP, 5:189) defined abduction as a form of inference as follows: "The surprising fact, C, is observed; But if A were true, C would be a matter of course, Hence, there is reason to suspect that A is true." However, the definition of abduction raises the fundamental question of what exactly makes C surprising in the first place? Peirce suggests that humans possess a special capacity for reasoning about nature, an intriguing idea, consistent with some threads in evolutionary psychology. In the context of science, there is the issue of Peirce's "economy of science," which combines notions of parsimony and generativity of scientific results as a means of ordering preferences for scientific explanations. A particular scientific hypothesis is better than competitors, all else being equal, if it generates more possible empirical tests and future scientific work.
+
+Contrary to Vayda's critique, I suggest that the logic of HBE research, and particularly the reliance of simple models based on law-like generalizations, provides a fertile environment for the generation of surprising facts, as much the raw material of abduction as mutations are the raw material for natural selection. However, just as mutations are not sufficient to explain complex adaptations, so are the violations of simple models not sufficient for explanation of complex natural phenomena. Abduction generates new ideas. However, we still need deduction to reduce the universe of possible cause and generate testable predictions from our new ideas and we still need induction to allow empirical confirmation. Indeed, this is exactly Peirce's perspective on the practice of science.
+
+The prey-choice or diet-breadth model of which Vayda is so critical serves as an excellent starting point for understanding how positing a simple model that generally fits observations can yield new insights that allow for more complete explanation of human behavior. Assume random, sequential encounters (i.e., no clumping). Encounters are with individual prey items and chosen items and handled one at a time. Foraging is not dangerous for the forager, but it is all-encompassing, in that while foraging, an individual can not engage in any other behaviors.
+
+Let $En$ be the total net energy gain from foraging and $T$ be the total time spent foraging. Individual items $i \in 1,2, \ldots, k$ have energy $E_i$ and require handling time $h_i$. The expected number of encounters per unit of foraging time is $\lambda_i$ and the probability of attack conditional on encounter is $P_i$. Of these variables, the only one under the forager's control is $P_i$.
+
+The goal is to maximize $En/T$:
+
+$$
+\frac{E n}{T}=\frac{\sum \lambda_i E_i P_i}{1+\sum \lambda_i h_i P_i}
+$$
+
+@macarthur_pianka1966 proved that the optimal diet can be found by ranking the items from most profitable to least profitable based on their measures of $E_i/h_i$, the energy of the item per unit of handling time. The optimal diet includes all (and only) the items for which:
+
+$$
+\frac{E_i}{h_i} > \frac{En}{T}.
+$$ 
+That is, include all items whose net energy gain is greater than the average for the environment and ignore everything else. This is sometimes known as the *zero-one rule* because if an item is included in the diet, it should always be pursued when encountered and if it is not, it should never be pursued [@stephens_krebs1986]. Research on hunter-gatherers from a variety of localities shows that the of the prey-choice model predicts foragers' diets remarkably well in general. People preferentially target items that yield high energy returns. There are nonetheless some systematic deviations from predictions. In particular, men typically avoid items that have high values of $E_i/h_i$ but come in small packages, particularly if those things are plant-based, favoring instead large-package items like big game that carry high prestige. @hawkes_etal1982, for example, showed that Aché men regularly ignore high-return items like biaju fruit or palm fiber. When captured, big game provides large energy returns. However, its relative scarcity and the very high handling/transport costs associated with its consumption means that other, ignored items may actually be better from a strictly energetic standpoint.
+
+It is this reasoning that led researchers such as @hawkes1991 and @bird_etal2001 to suggest that men are driven by alternative motives other than simply energy maximization in pursuing high-prestige food items (and, more importantly, forgoing high-return, low-prestige items). @bird1999, in particular, argues that by widely sharing desirable food items within social groups, men gain prestige within communities, forge political alliances with other households, and potentially increase reproductive opportunities for themselves. The ensuing debate in the HBE literature over the motivations for men's foraging decisions, while at times intense, has been extremely productive and has led to important theoretical developments in our attempts to explain observed human behavioral patterns. Chief among these are the theory of embodied capital of Kaplan and colleagues [@kaplan_etal2000, @gurven_hill2009] and theories of costly signaling as laid out by @bird_smith2005. Moreover, this debate has done the most valuable thing that scientific theory can do for science, namely, it has motivated the collection of more highly detailed data on foraging, food sharing, cooperation, and has generated novel theoretical linkages between different threads of human evolutionary biology (Hawkes 1991; Marlowe 2003; Alvard and Gillespie 2004; Marlowe 2004; Tucker 2004; Zeanah 2004; Wood 2006; Bird, et al. 2009; Gurven and Hill 2009; Kramer and Ellison 2010; Marlowe 2010; Nolin 2010; Carmody, et al. 2011; Codding, et al. 2011; Winking and Gurven 2011; Nolin 2012; Jones, et al. 2013; Wood and Marlowe 2013). **gotta deal with these, ugh**
+
+This line of work and the research program it has spawned would not have been possible were it not for the simple model (i.e., the prey-choice model) that conditioned our expectations and the observed anomalies generated by attempts at empirical evaluation of the its predictions. The results score very favorably in terms of Peirce's economy of science because of this generativity. It seems quite reasonable to posit that the best case for scientific progress is for a generally well-fitting model to generate occasional surprising exceptions. This provides a rather strong incentive for the development of general models. Of course, it also requires that researchers be open to --- and willing to accept --- the failure of their models in pursuit of improved scientific explanation.
+
+@vayda1995b dismissed cost-benefit analysis of foraging theory in @kaplan_hill1992 and related work as mere "economizing," suggesting that the fact that hunters forego prey that are not sufficiently profitable is a commonsense result that holds no deep insight into evolutionary process. Of course, it begs the question of why people behave in an economical manner? There are plenty of domains of human activity in which economizing is, apparently, not the rule. Indeed, demonstrating the apparent economic irrationality of the human mind is something of a cottage industry in behavioral economics [@ariely2008, @kahneman2011, @thaler2015]. Why should economizing be commonsense in the realm of foraging decisions? The answer, of course, comes from the biologically integrated theory of preferences that lies at the heart of HBE. Foraging, and subsistence behavior more generally, fall into the category of human actions that are economized because success in these domains actually matters for survival, reproduction, political success, and offspring recruitment. This explanation is consistent with the exciting counter-narrative to the irrationality of behavioral economics that comes from examining the savvy economic decision-making of the very poor, for whom the stakes of "economizing" presumably matter most [@mullainathan_shafir2013, @collins_etal2010, @frankenhuis_nettle2020].
+
+The causal-mechanistic explanation that is advocated by Vayda can produce rich narratives to account for events. It can also lead to highly convoluted explanations when an event's causes are complex. While description is seen as the epistemic ideal in some schools of anthropological investigation [@geertz1973], scientific approaches generally favor explanation, which necessarily involves simplification and generalization. Models -- particularly strategic models --- simplify, facilitating general explanation [@levins1966, @schelling1978]. Thus, the simple models favored by HBE, and of which Vayda is so critical, can actually work in a complementary manner to mechanistic accounts, serving as an important check to potential runaway complexity of mechanistic accounts. This strategy is supported in the masterful statements on the philosophy of model-building by @levins1966 in the biological sciences and by @schelling1978 in the social sciences.
+
+## Whence the Replication Crisis?
+
+@muthukrishna_henrich2019: "without a unifying theoretical framework, we don't know whether we should expect the results to replicate with older individuals, poorer individuals, or individuals in other societies. And without such a framework, even after the onerous replication effort, doubt remains as to whether one of the infinite space of moderators explains the lack of replication. To understand the importance of theory to data and data to theory, it's worth remembering the abductive challenge."
+
+The limited imaginations of homogeneous researchers:
+
+"Many creative hypotheses have been drawn from the imaginations of researchers from societies that are WEIRD, but there is a certain circularity to testing these WEIRD intuitions on WEIRD participants that can mislead us into believing we are drawing closer to a deeper and more general understanding of human behaviour."
+
+## WEIRD/MYOPICS
+
+@henrich_etal2010
+
+In a [blog post](https://neuroanthropology.net/2010/07/10/we-agree-its-weird-but-is-it-weird-enough/) reviewing @henrich_etal2010, the cultural anthropologist Greg Downey suggested that WEIRD, while a great advance, is a wee bit self-congratulatory: "rich," "educated," "democratic," and all that. Somewhat jokingly, he presented an alternative typology that is a bit more mechanistic, namely, MYOPICS:
+
+-   Materialist
+-   Young
+-   self-Obsessed
+-   Pleasure-seeking
+-   Isolated
+-   Consumerist
+-   Sedentary
+
+## Do Big Data Obviate the Need for Theory?
+
+No.
+
+Proponents of "Big Data" argue that we are moving beyond the need for theory. For example, in probably the strongest early articulation of this idea, WIRED Magazine's editor, Chris Anderson [suggested](https://www.wired.com/2008/06/pb-theory/) that "with enough data, the numbers speak for themselves" In a brief note for the annual big-question solicitation by the Edge, mathematician Steven Strogratz (2007) suggested that we are approaching "the end of insight."
+
+However, Big Data is no panacea and actually creates its own problems. Meng's Paradox is a notable example. Sampling theory is central to modern statistical practice. There is a general impression that with large enough collections of data, we don't need to woryy about sampling designs, etc.
+
+@meng2018 described his "Law of Large Populations" (LLP), which shows that the estimation error, relative to the benchmarking rate from normal theory, $1/\sqrt{n}$, increases with $\sqrt{N}$, where $n$ is the sample size and $N$ is the census size of the population from which the sample of size $n$ is drawn. Using polling data for the 2016 US presidential election, he shows that because of LLP, the simple sample proportion of the self-reported voting preference for Trump from 1% of the US eligible voters ($n \approx 2,300,000$) had the same MSE as the corresponding sample proportion from a genuine simple random sample of size $n \approx 400$. This represents a 99.98% reduction of sample size (and hence confidence) and helps explain why so many media outlets were blindsided by the Trump electoral victory. @bradley_etal2021 showed that the same phenomenon led to massive over-estimation of COVID-19 vaccination uptake in the US.
+
+Meng shows that the relative error of an outcome of interest, $\bar{G}$ is given by 
+
+$$ Z_{n,N} =  \rho_{R,G} \sqrt{N-1},$$
+where $N$ is the total population size, $n$ is the sample size, and $\rho_{R,G}$ is the correlation between the response rate and the outcome. 
+
+Obviously, if the correlation between response and outcome is zero, then the relative error is zero. This is the case of a probability sample, which eliminates the correlation by design. However, even a minuscule correlation can blow up the relative error when the study population is large. The larger the underlying population, the larger the error. 
+
+Meng concludes, "population inferences with Big Data are subject to a Big Data Paradox: the more the data, the surer we fool ourselves." [@meng2018]
+
+"Although we often hear that data speak for themselves, their voices can be soft and sly." (Mosteller 1983: 234) We might add that the data also generally speak a foreign language and their soft voices typically require the expertise of a translator. That translator, of course, is theory. 
+
+
+@succi_coveney2019 note that complex systems are strongly correlated, hence they do not (generally) obey Gaussian statistics. No data are big enough for systems with strong sensitivity to data inaccuracies. Moreover, correlation does not imply causation, the link between the two becoming exponentially fainter at increasing data size. In a finite-capacity world, too much data is just as bad as no data.
+
+It seems that theory might actually be more important than ever.
+
+This has proved to be the case in genetics. The surfeit of genomic data means that theoretical population geneticists are required now more than ever to help formulate scientifically-interesting questions.
+
+## On Nuance and Rigor
+
+Do formal models capture every last detail of the human experience? No, of course not. They're not meant to do that. In fact, the simplification of a model is very much a feature and not a bug. Nuance turns out not to be a desirable feature in theory [@healy2017].
+
+## Worldview of Ecology vs. Worldview of Physics
+
+The mechanistic model of the world does not work
+
+Economics, social behavior, society, politics are not physical systems
+
+This should be foregrounded. Maybe read Brian Arthur's article:
+
+@arthur2021: "The economy becomes something not given and existing but constantly forming from a developing set of actions, strategies and beliefs --- something not mechanistic, static, timeless and perfect but organic, always creating itself, alive and full of messy vitality."
+
+Also seen in the work of, e.g., @may_etal2008, @may_pathy2010

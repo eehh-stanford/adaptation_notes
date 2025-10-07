@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Population Ecology – Adaptation Notes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./culture.html" rel="next">
+<link href="./evolution.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./populations.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Adaptation Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./populations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk, Uncertainty, and Decision-Making</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efficiency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency Is the Enemy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#population-growth" id="toc-population-growth" class="nav-link active" data-scroll-target="#population-growth"><span class="header-section-number">3.1</span> Population Growth</a>
+  <ul class="collapse">
+  <li><a href="#simple-models-of-population-growth" id="toc-simple-models-of-population-growth" class="nav-link" data-scroll-target="#simple-models-of-population-growth"><span class="header-section-number">3.1.1</span> Simple Models of Population Growth</a></li>
+  <li><a href="#balance" id="toc-balance" class="nav-link" data-scroll-target="#balance"><span class="header-section-number">3.1.2</span> Balance</a></li>
+  <li><a href="#growth-rate-of-a-mixture-of-populations" id="toc-growth-rate-of-a-mixture-of-populations" class="nav-link" data-scroll-target="#growth-rate-of-a-mixture-of-populations"><span class="header-section-number">3.1.3</span> Growth Rate of a Mixture of Populations</a></li>
+  <li><a href="#how-fast-can-human-populations-grow" id="toc-how-fast-can-human-populations-grow" class="nav-link" data-scroll-target="#how-fast-can-human-populations-grow"><span class="header-section-number">3.1.4</span> How Fast Can Human Populations Grow?</a></li>
+  </ul></li>
+  <li><a href="#models-for-structured-populations" id="toc-models-for-structured-populations" class="nav-link" data-scroll-target="#models-for-structured-populations"><span class="header-section-number">3.2</span> Models for Structured Populations</a></li>
+  <li><a href="#matrix-population-models-for-structured-populations" id="toc-matrix-population-models-for-structured-populations" class="nav-link" data-scroll-target="#matrix-population-models-for-structured-populations"><span class="header-section-number">3.3</span> Matrix Population Models for Structured Populations</a></li>
+  <li><a href="#density-dependent-growth" id="toc-density-dependent-growth" class="nav-link" data-scroll-target="#density-dependent-growth"><span class="header-section-number">3.4</span> Density Dependent Growth</a>
+  <ul class="collapse">
+  <li><a href="#logistic-growth" id="toc-logistic-growth" class="nav-link" data-scroll-target="#logistic-growth"><span class="header-section-number">3.4.1</span> Logistic Growth</a></li>
+  <li><a href="#the-recruitment-curve" id="toc-the-recruitment-curve" class="nav-link" data-scroll-target="#the-recruitment-curve"><span class="header-section-number">3.4.2</span> The Recruitment Curve</a></li>
+  </ul></li>
+  <li><a href="#stability-analysis-of-the-logistic-model" id="toc-stability-analysis-of-the-logistic-model" class="nav-link" data-scroll-target="#stability-analysis-of-the-logistic-model"><span class="header-section-number">3.5</span> Stability Analysis of the Logistic Model</a>
+  <ul class="collapse">
+  <li><a href="#steps-to-calculating-fprimen-for-the-logistic-model" id="toc-steps-to-calculating-fprimen-for-the-logistic-model" class="nav-link" data-scroll-target="#steps-to-calculating-fprimen-for-the-logistic-model"><span class="header-section-number">3.5.1</span> Steps to Calculating <span class="math inline">\(F^{\prime}(N)\)</span> for the Logistic Model</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-pops" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A fundamental feature of the human predicament is the growth and size of human populations. Here, we will introduce some simple models of population growth that are essential for understanding human ecology, resource use, etc.</p>
+<section id="population-growth" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="population-growth"><span class="header-section-number">3.1</span> Population Growth</h2>
+<p>The total human population now substantially exceeds six billion people. Yet when modern humans first emerged on the savannas of Africa, our population was very small. Population growth—often dramatic—is a central feature of human history and the human experience. Here is a plot of the growth of the global human population from 10,000 years before present to the present day.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>year <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>, <span class="sc">-</span><span class="dv">8000</span>, <span class="sc">-</span><span class="dv">6500</span>,<span class="sc">-</span><span class="dv">5000</span>,<span class="sc">-</span><span class="dv">4000</span>,<span class="sc">-</span><span class="dv">3000</span>,<span class="sc">-</span><span class="dv">2000</span>,<span class="sc">-</span><span class="dv">1000</span>, <span class="sc">-</span><span class="dv">500</span>, <span class="sc">-</span><span class="dv">400</span>, <span class="sc">-</span><span class="dv">200</span>, <span class="dv">1</span>, <span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">800</span>, <span class="dv">900</span>, <span class="dv">1000</span>, <span class="dv">1100</span>, <span class="dv">1200</span>, <span class="dv">1250</span>, <span class="dv">1300</span>, <span class="dv">1340</span>, <span class="dv">1400</span>, <span class="dv">1500</span>, <span class="dv">1600</span>, <span class="dv">1650</span>, <span class="dv">1700</span>, <span class="dv">1750</span>, <span class="dv">1800</span>, <span class="dv">1850</span>, <span class="dv">1900</span>, <span class="dv">1910</span>, <span class="dv">1920</span>, <span class="dv">1930</span>, <span class="dv">1940</span>, <span class="dv">1950</span>, <span class="dv">1975</span>, <span class="dv">2000</span>, <span class="dv">2024</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pop <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">14</span>, <span class="dv">27</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">162</span>, <span class="dv">150</span>, <span class="dv">170</span>, <span class="dv">190</span>, <span class="dv">190</span>, <span class="dv">190</span>, <span class="dv">200</span>, <span class="dv">207</span>, <span class="dv">220</span>, <span class="dv">226</span>, <span class="dv">254</span>, <span class="dv">301</span>, <span class="dv">360</span>, <span class="dv">400</span>, <span class="dv">360</span>, <span class="dv">443</span>, <span class="dv">350</span>, <span class="dv">425</span>, <span class="dv">545</span>, <span class="dv">470</span>, <span class="dv">600</span>, <span class="dv">629</span>, <span class="dv">813</span>, <span class="dv">1128</span>, <span class="dv">1550</span>, <span class="dv">1750</span>, <span class="dv">1860</span>, <span class="dv">2070</span>, <span class="dv">2300</span>, <span class="dv">2400</span>, <span class="dv">4100</span>, <span class="dv">6100</span>, <span class="dv">8100</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year, pop, <span class="at">type=</span><span class="st">"l"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">col=</span><span class="st">"red"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">axes=</span><span class="cn">FALSE</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">frame=</span><span class="cn">TRUE</span>,                </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">xlab=</span><span class="st">"Year"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ylab=</span><span class="st">"Human Population (millions)"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>pts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10000</span>,<span class="sc">-</span><span class="dv">7500</span>,<span class="sc">-</span><span class="dv">5000</span>,<span class="sc">-</span><span class="dv">2500</span>, <span class="dv">0</span>, <span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>lbls <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"10000"</span>,<span class="st">"7500"</span>,<span class="st">"5000"</span>,<span class="st">"2500"</span>,<span class="st">"0"</span>,<span class="st">"1000"</span>, <span class="st">"1500"</span>, <span class="st">"2000"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span>pts, <span class="at">labels=</span>lbls)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="populations_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>,</p>
+<p>We can see from this plot that there appear to be multiple regimes of apparent stagnation, moderate growth, occasional decline, and very rapid growth.</p>
+<p><span class="citation" data-cites="coale1974">Coale (<a href="references.html#ref-coale1974" role="doc-biblioref">1974</a>)</span> suggested that the median estimate for world hunter-gatherer populations at the dawn of agriculture was 8 million. Coale took the emergence of humans to be about a million years ago. Our contemporary understanding of human evolution indicates that it was a much more complicated process than was generally thought when Coale wrote his important paper on human population history. Rather than a million years of human history, contemporary paleoanthropologists would argue that anatomically modern humans represent the relevant population and that they have considerably less than a million years. Regardless of when we begin counting modern human populations (200Kya as suggested by mtDNA or 60Kya as suggested by the Upper Paleolithic Revoution), this implies a very small growth rate for much of human history on earth.</p>
+<p>Even if human population started with a hypothetical Adam and Eve, it has only doubled 32 times, with an average doubling time of 30,000 years. Coale, in fact, stated that the world has doubled 31 times. It just so happens that the total human population has approximately doubled again from the value of 3.9 billion that Coale cites in his 1974 paper!</p>
+<section id="simple-models-of-population-growth" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="simple-models-of-population-growth"><span class="header-section-number">3.1.1</span> Simple Models of Population Growth</h3>
+<p>Consider a closed population that has <span class="math inline">\(N\)</span> individuals in it. A closed population is one in which there is neither immigration nor emigration. We perform a census every year and thus have measurements of the annual population size. Assume that the population is characterized by a per capita birth rate of <span class="math inline">\(B\)</span> and a per capita death rate of <span class="math inline">\(D\)</span>. This means that in any given year there will be <span class="math inline">\(N \times B\)</span> births and <span class="math inline">\(N \times D\)</span> deaths. Note also that if there are <span class="math inline">\(N \times D\)</span> deaths, the surviving fraction of the population will be <span class="math inline">\(N \times (1-D)\)</span>. Assume that these rates remain constant over some period of time. What happens to the population? As we move from one year to the next, the population will change. Next year’s population will consist of those who survived the current year (<span class="math inline">\(N \times (1-D)\)</span>) and those who entered the population in the current year (<span class="math inline">\(N \times B\)</span>). It is not difficult to see that as we go from our starting time, <span class="math inline">\(t=0\)</span>, to the next time, <span class="math inline">\(t=1\)</span>, the size of the population will simply be</p>
+<p><span class="math display">\[
+N_1 = BN_0 + (1-D)N_0,
+\]</span></p>
+<p>where the population size is subscripted by the year in which it is measured (thus, <span class="math inline">\(N_0\)</span> is the population size in time zero).</p>
+<p>Using elementary algebra, and writing <span class="math inline">\(R = 1 + B - D\)</span>, we can re-write this equation as</p>
+<p><span class="math display">\[
+N_1 = RN_0.
+\]</span></p>
+<p>Say now that we want to find the population size in for <span class="math inline">\(t=2\)</span>. This is clearly</p>
+<p><span class="math display">\[
+N_2 = RN_1 = R(RN_0) = R^2N_0.
+\]</span> It should not be difficult to see that for any arbitrary time <span class="math inline">\(t\)</span>, given an initial population <span class="math inline">\(N_0\)</span> and constant per capita birth and death rates <span class="math inline">\(B\)</span> and <span class="math inline">\(D\)</span>, the size of the population will be</p>
+<p><span class="math display">\[
+N_t = R^tN_0
+\]</span></p>
+<p>This is what is known as geometric growth. <span class="math inline">\(R\)</span> is the multiplicative annual growth rate. Geometric growth occurs when constant birth and death rates work on a population in discrete time steps. Each year, the population increases (or decreases if deaths exceed births) by a factor of <span class="math inline">\(R\)</span>. Another way to think of this is that the ratio of the population size from one year to the next is a constant <span class="math inline">\(R\)</span>. This constant growth, without regard to the size of the population, can lead to very large populations quite quickly. This arises because the process of geometric growth is compounding. When t gets even moderately large and <span class="math inline">\(R&gt;1\)</span>, <span class="math inline">\(R^t\)</span> can be a very big number.</p>
+<div class="cell" data-fig.asp="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fl">1.02</span>,<span class="dv">100</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>RR <span class="ot">&lt;-</span> R<span class="sc">^</span>t</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">100</span>, <span class="fu">c</span>(<span class="dv">1</span>,RR),<span class="at">type=</span><span class="st">"l"</span>, <span class="at">xlab=</span><span class="st">"Time"</span>, <span class="at">ylab=</span><span class="st">"Population Size"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">0</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">20</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">0</span>,<span class="dv">20</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">20</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">20</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">20</span>,<span class="dv">40</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">20</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">40</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">20</span>,<span class="dv">40</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">40</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">40</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">40</span>,<span class="dv">60</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">40</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">60</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">40</span>,<span class="dv">60</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">60</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">60</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">60</span>,<span class="dv">80</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">60</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">80</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">60</span>,<span class="dv">80</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">80</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">80</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">80</span>,<span class="dv">100</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">80</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">100</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">80</span>,<span class="dv">100</span>,<span class="fl">1.02</span><span class="sc">^</span><span class="dv">100</span>,<span class="at">lty=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="populations_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Geometric growth applies when constant rates work on a population in discrete time steps. Remember, we measured the population size via a census every year and we assume that we only know the per capita birth and death rates on an annual time scale. In principle, human births and deaths do not happen on an annual scale. Rather, they occur more or less continuously throughout the year. However, data limitations usually mean that we only know things like population size or vital rates on an annual (or longer!) basis. The term geometric growth is perhaps not as familiar in common parlance as a related term, exponential growth. Exponential growth is simply the result of constant instantaneous birth and death rates working on a population in continuous time. Most applied work in demography (e.g., population forecasts) is done in discrete time because data are collected on an annual or decadal basis (e.g., the United States census). There are also some organisms in which life-cycle transitions do, in fact, happen on a more or less discrete basis. The population dynamics of organisms with marked birth seasonality or discrete life-cycle stages, such as most insects and many plants, are more naturally modeled in discrete time. However, most demographic and evolutionary theory is done in terms of continuous time so it is important to have a familiarity with the notation for this process as well. Unlike the geometric growth model, which requires only elementary algebra, solving the growth equation in continuous time requires calculus.</p>
+<p>When we work in continuous time, we write our instantaneous rates as lower case symbols, <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span>, and we define the instantaneous rate of increase (or decrease) as <span class="math inline">\(r=b-d\)</span>. The continuous growth model for an unstructured population is represented as a simple differential equation:</p>
+<p><span class="math display">\[
+\frac{dN}{dt} = rN
+\]</span> We solve this by separating variables and integrating, yielding</p>
+<p><span class="math display">\[
+N(t) = N(0) e^{rt},
+\]</span></p>
+<p>where <span class="math inline">\(e=2.7183\ldots\)</span> is the base of the natural logarithm.</p>
+<p>Note tha in the exponential growth case, all we have really done is substitute <span class="math inline">\(e^r\)</span> for <span class="math inline">\(R\)</span> (since <span class="math inline">\((e^r)^t=e^{rt})\)</span>. Thus the ratio of the population size in two successive years will be <span class="math inline">\(e^r\)</span> and the ratio of population sizes between two times <span class="math inline">\(t\)</span> years apart is <span class="math inline">\(e^{rt}\)</span></p>
+<p>As with geometric growth, exponential growth can lead to very large population sizes quite quickly. Indeed, in everyday speech when a people say something is “increasing exponentially,” they are usually using a shorthand for “increasing really, really fast.” Populations can increase rapidly and not be increasing exponentially. Also, exponential growth is hardly the most rapid type of growth, as we will see shortly. When we use the term “exponential growth” what we mean is that the ratio of the population in two successive time steps is <span class="math inline">\(e^r\)</span>. Another way of saying this is that for exponential growth, the per capita rate of increase of the population remains constant, regardless of the size of the population.</p>
+<p>To understand how this constant per capita growth works, it is useful to think in terms of the doubling time of the population. That is, how many years will it take for a population growing at instantaneous rate <span class="math inline">\(r\)</span> to become twice as big as it currently is? We begin by noting that all we care about is the ratio of population size—we want to know when the population will be twice as big as it currently is, regardless of the specifics of the current size. We thus use values of <span class="math inline">\(N(0)=1\)</span> and <span class="math inline">\(N(t)=2\)</span>. We can now solve the exponential gowth equation for <span class="math inline">\(t\)</span> by taking natural logarithms of both sides and rearranging to yield</p>
+<p><span class="math display">\[
+\frac{0.6931}{r}=t.
+\]</span></p>
+<p>The numerator is simply the natural logarithm of 2 to four decimal places. If a population is growing with an instantaneous rate of 0.01 (1%), then it will take approximately 69 years to double. If it is growing at 2%, then it will double in 35 years. In the twentieth century, the world population increased at a rate of approximately 1.37%. This means a doubling time of 50.6 years. Thus, the human population doubled approximately twice in the twentieth century alone if we assume that the growth rate was constant. This equation can just as easily be used to find the halving time of a population that is declining at a constant rate as well (<span class="math inline">\(\log(0.5)=-0.6931\)</span>). Thus, a population declining at a constant rate of 1% (i.e., <span class="math inline">\(r=-0.01\)</span>) will be half its current size in 69 years.</p>
+<p>We can use this equation to calculate the average growth rate under an exponential model when we have two population estimates with a known interval between censuses. This time, we simply solve for <span class="math inline">\(r\)</span>, again taking natural logarithms of both sides:</p>
+<p><span class="math display">\[
+r = \frac{\log N(t) - \log N(0)}{t},
+\]</span></p>
+<p>Using values from the US Census Bureau’s historical estimates of world population, we can calculate the implied exponential growth rate for the total human population in the twentieth century as</p>
+<p><span class="math display">\[
+r = \frac{\log(6100) - \log(1550)}{100} = 0.0137.
+\]</span></p>
+<p>Returning to Coale’s (1974) statement that the the human population has doubled only 32 times with an average doubling time of 30,000 years, even if it started from a hypothetical two individuals, we can see that the growth rate for <em>Homo sapiens</em> has been <span class="math inline">\((\log(6.7\times 10^9) - \log(2))/200,000=0.00011\)</span>. Here, I have used the more conservative value for the origin of modern humans of 200kya, which is based on the coalescence time of mtDNA. Calculating the doubling time from this growth rate, we actually get <span class="math inline">\(\log(2)/0.0001=6,321\)</span>. This doubling time is approximately five times shorter than Coale’s estimate because we use a time of 200k years instead of 1M years.</p>
+<p>When we plot the population size against time for the cases of both geometric and exponential growth, we will see that the curves are convex (i.e., bend up). They are characterized by positive second derivatives. A useful graphical diagnostic for such growth is to plot the logarithm of population size against time. Because of the role that the base of the natural logarithm plays in the exponential growth model, population biologists typically work with natural logarithms and that is what we will use here. For the case of exponential growth, take the natural logarithms of both sides of the growth equation:</p>
+<p><span class="math display">\[
+\log N(t) = \log N(0) + rt
+\]</span></p>
+<p>This is an equation for a straight line with a <span class="math inline">\(y\)</span>-intercept of <span class="math inline">\(\log N(0)\)</span> and slope of <span class="math inline">\(r\)</span>. This result is useful for a number of reasons. First, it is much easier to visually diagnose the existence of a straight line compared to an exponential curve. Second, it provides a simple means for estimating <span class="math inline">\(r\)</span> using the statistical technique of linear regression.</p>
+</section>
+<section id="balance" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="balance"><span class="header-section-number">3.1.2</span> Balance</h3>
+<p>We have seen how a net excess of births over deaths can lead to explosive population growth. For instance the growth of the total human population from a hypothetical first woman and man to the 8 billion people inhabiting the earth today resulted from an excess of just one ten-thousandth over 200 thousand years. When thinking about mortality and fertility, it is useful to employ summary measures that have more intuitive appeal than annual (or especially instantaneous!) rates. The two most often used summary measures of mortality and fertility are life expectancy at birth and the total fertility rate respectively. Life expectancy at birth, which we denote as <span class="math inline">\(e_0\)</span>, actually has several interpretations that actually all mean the same thing. The most natural of these is that <span class="math inline">\(e_0\)</span> is the average number of years lived by an individual born into the population. It is also the average age of death in a population. The total fertility rate is simply the sum of a hypothetical average woman’s age-specific fertility assuming that she lived to the end of her reproductive span.</p>
+<p>Human populations exhibit tremendous diversity in demographic rates. In <span class="citation" data-cites="jones2009">Jones (<a href="references.html#ref-jones2009" role="doc-biblioref">2009</a>)</span>, I used four populations that largely bracket the demographic space our species occupies. I only considered combinations of mortality and fertility that yield a growth rate of <span class="math inline">\(r&gt;0\)</span> since, in the long run, any population that averages a growth rate of <span class="math inline">\(r \leq 0\)</span> goes extinct.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/growth-space.png" class="img-fluid figure-img"></p>
+<figcaption>Human demographic space. Isoclines show the growth rate implied by the combination of TFR and life expectancy. Triangles represent four populations that largely define the boundaries of human demographic space. From left to right: USA (low mortality, low fertility), !Kung (high mortality, low fertility, Venezuela in 1967 (low mortality, high fertility), and the Forest-period Ache (high mortality, high fertility).</figcaption>
+</figure>
+</div>
+<p>Despite all the demographic diversity exhibited by our species, in the aggregate, the world population has been very close to zero growth for nearly its entire history as seen in the long horizontal leg of the plot of historical population growth or in the calculation that the long-run rate of increase of the human species is just over one on-hundredth of a percent per year. This observation suggests that, while there is a large degree of diversity in observed patterns, the possible combination of fertility and mortality patterns are highly constrained. Zero growth means that the ratio of population size from one generation to the next is equal to one. This means that from the geometric-growth equation, <span class="math inline">\(R=1\)</span> or from the exponential-growth equation, <span class="math inline">\(r=0\)</span> so that <span class="math inline">\(e^r=1\)</span>. In order for this ratio to be equal to one from one generation to the next, it should be clear that the average person should exactly replace herself. If the average person lives for <span class="math inline">\(e_0\)</span> years, then the average person should also have <span class="math inline">\(1/e_0\)</span> (same-sex) offspring. If we denote the gross fertility rate as <span class="math inline">\(b\)</span>, the simple equation that specifies these relationships is</p>
+<p><span class="math display">\[
+e_0\, b = 1.
+\]</span> This equation comes in handy when you want to assess the plausibility of demographic arguments.</p>
+</section>
+<section id="growth-rate-of-a-mixture-of-populations" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="growth-rate-of-a-mixture-of-populations"><span class="header-section-number">3.1.3</span> Growth Rate of a Mixture of Populations</h3>
+<p>A population size <span class="math inline">\(Q\)</span>, with growth rate <span class="math inline">\(r\)</span>, increases in numbers by <span class="math inline">\(Qe^{rt}\)</span> over the interval <span class="math inline">\(t\)</span>. The intrinsic rate of increase, <span class="math inline">\(r\)</span>, is the <em>per capita rate of increase of the population</em>. Thus, by definition, we can write it as:</p>
+<p><span class="math display">\[
+  r = \frac{1}{N(t)}\cdot\frac{dN(t)}{dt}
+\]</span></p>
+<p>For a mixture of <span class="math inline">\(n\)</span> subpopulations, each with its own rate of increase <span class="math inline">\(r_{i}\)</span>, the increase in interval <span class="math inline">\(t\)</span> will simply be</p>
+<p><span class="math display">\[ N(t) = \sum_{i}^{n} Q_i e^{r_i t} \]</span></p>
+<p>The derivative of <span class="math inline">\(N(t)\)</span> is</p>
+<p><span class="math display">\[ \frac{dN(t)}{dt} = \sum_{i}^{n} Q_i r_i e^{r_i t} \]</span></p>
+<p>Substituting these, the overall rate of increase, <span class="math inline">\(\tilde{r}\)</span> is thus</p>
+<p><span class="math display">\[
+\tilde{r} = \frac{1}{N(t)}\cdot\frac{dN(t)}{dt} =
+  \frac{\sum_{i}^{n} Q_i r_i e^{r_i t}}{\sum_{i}^{n} Q_i e^{r_i t}}
+\]</span></p>
+<p>This is just a weighted mean of the subpopulation growth rates, with weights the initial population size of the subpopulations.</p>
+<p>How does the mean rate of increase change? Differentiate <span class="math inline">\(\tilde{r}\)</span> with respect to <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[ \frac{d\tilde{r}}{dt} = \frac{\sum_{i}^{n}
+  Q_i r^{2}_{i} e^{r_i t}}{\sum_{i}^{n} Q_i e^{r_i t}} -
+  \left(\frac{\sum_{i}^{n} Q_i r_i e^{r_i t}}{\sum_{i}^{n} Q_i e^{r_i
+  t}}\right)^2.
+\]</span> This messy looking equation actually has a pretty straightforward form, namely, <span class="math inline">\(E(X^2) - E(X)^2\)</span>, which is the definition of variance of the random variable <span class="math inline">\(X\)</span>. Thus,</p>
+<p><span class="math display">\[ \frac{d\tilde{r}}{dt} = \sigma^{2}(t) \]</span></p>
+<p>What does this mean? First, clearly since variance is, by definition, non-negative, <span class="math inline">\(\tilde{r}\)</span> increases. Can it increase without bound? No, since <span class="math inline">\(\tilde{r}\)</span> is the average of an ensemble of constituent <span class="math inline">\(r_i\)</span>, it can never be greater than the largest of its constituents. Note that this derivation is reminiscent of Fisher’s Fundamental Theorem of Natural Selection. It also means that the sum of a mixture of population projections with different growth rates will grow <em>faster than the the population projected by the mean growth rate</em>. This arises because of <em>Jensen’s Inequality</em>, which states for a convex function (i.e., one with a positive second derivative like exponential growth):</p>
+<p><span class="math display">\[ E[f(x)] \geq f(E[x]). \]</span> In words, the expected value (i.e., mean) of a convex function of some random variable <span class="math inline">\(X\)</span> is greater than or equal to the function of the expected value of <span class="math inline">\(X\)</span>.</p>
+<p>Note that the inequality is reversed for concave function, as we will see in <a href="decision.html" class="quarto-xref"><span>Chapter 5</span></a>.</p>
+</section>
+<section id="how-fast-can-human-populations-grow" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="how-fast-can-human-populations-grow"><span class="header-section-number">3.1.4</span> How Fast Can Human Populations Grow?</h3>
+<p><span class="citation" data-cites="cole1954">Cole (<a href="references.html#ref-cole1954" role="doc-biblioref">1954</a>)</span></p>
+<p>The derivation of this formula relies on assuming that age-specific demographic rates like fertility and survival are constant and then uses an identity for finite geometric sums, namely,</p>
+<p><span class="math display">\[
+\sum_{k=0}^{n} r^k = \frac{1-r^{n+1}}{1-r}.
+\]</span> We will skip the derivation here, though you can find it in my <a href="https://github.com/eehh-stanford/life_history_in_ten_papers/blob/master/Jones-Cole1954-notes.pdf">Notes on Life History Theory</a>.</p>
+<p>Cole made some pretty heroic assumptions, the most notable of which is that there is no mortality in the population. Keeping this limitation in mind, Cole’s famous formula for the maximum possible growth rate is:</p>
+<p><span class="math display">\[
+1 = e^{-r} + b e^{-r\alpha} - be^{-r(n+\alpha)},
+\]</span> where <span class="math inline">\(b\)</span> is the birth rate, <span class="math inline">\(\alpha\)</span> is age at first reproduction, and <span class="math inline">\(n\)</span> is the age of last reproduction/death.</p>
+<p>This is the equation the defines what became known as Cole’s <span class="math inline">\(r_{max}\)</span>. It represents the best-case scenario for the growth of a population (since it assumes no mortality).</p>
+<p>We can add just a bit of realism by adding mortality. As <span class="citation" data-cites="slade_etal1998">Slade, Gomulkiewicz, and Alexander (<a href="references.html#ref-slade_etal1998" role="doc-biblioref">1998</a>)</span> note, we can just as easily assume that mortality is non-trivial. Continue to assume that mortality is constant within adults. Changes in age-specific mortality for pre-reproductives do not matter—all we need is the fraction of newborn individuals who survive to breeding age, <span class="math inline">\(f\)</span>. Assume that all adults have a constant survival probability <span class="math inline">\(p\)</span>. The fraction alive at age <span class="math inline">\(x&gt;\alpha\)</span> is thus <span class="math inline">\(fp^{x-\alpha}\)</span>.</p>
+<p>The generalization of Cole’s <span class="math inline">\(r_{max}\)</span> equation that <span class="citation" data-cites="slade_etal1998">Slade, Gomulkiewicz, and Alexander (<a href="references.html#ref-slade_etal1998" role="doc-biblioref">1998</a>)</span> derive is:</p>
+<p><span class="math display">\[1 = p\; e^{-r} + f\; b\; e^{-r\alpha} - f\; b\; p^{n+1} e^{-r(n+\alpha)}.\]</span> Some calculations. Use <code>uniroot()</code> to find the value of of <span class="math inline">\(r\)</span> that solves the equation <span class="math inline">\(F(r)-1=0\)</span>, where <span class="math inline">\(F(r)\)</span> is Cole’s or Slade et al.’s equation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># L = \lambda = exp(r), multiplicative rate of increase</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a = AFR</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># w = ALR</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># R = recruitment fraction (i.e., l(\alpha))</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># b = annual fertility</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># p = annual survival probability</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="do">## the function from Cole (1954)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>cole <span class="ot">&lt;-</span> <span class="cf">function</span>(r,a,w,b) <span class="fu">exp</span>(<span class="sc">-</span>r) <span class="sc">+</span> b<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r<span class="sc">*</span>a) <span class="sc">-</span> b<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r<span class="sc">*</span>(w<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="do">## see the output of uniroot -- growth rate is "root"</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(cole, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.1</span>, <span class="at">a=</span><span class="dv">20</span>, <span class="at">b=</span><span class="fl">0.125</span>, <span class="at">w=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$root
+[1] 0.04055331
+
+$f.root
+[1] 4.635049e-06
+
+$iter
+[1] 6
+
+$init.it
+[1] NA
+
+$estim.prec
+[1] 6.103516e-05</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Compare great apes</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># chimps</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>chimp <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.1</span>, <span class="at">a=</span><span class="dv">14</span>, <span class="at">b=</span><span class="fl">0.1</span>, <span class="at">w=</span><span class="dv">40</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gorillas</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>gorilla <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.2</span>, <span class="at">a=</span><span class="dv">8</span>, <span class="at">b=</span><span class="fl">0.25</span>, <span class="at">w=</span><span class="dv">30</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># orangutans</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>orangutan <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.1</span>, <span class="at">a=</span><span class="dv">14</span>, <span class="at">b=</span><span class="fl">0.0625</span>, <span class="at">w=</span><span class="dv">40</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Hutterites</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>hutterites <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.2</span>, <span class="at">a=</span><span class="dv">20</span>, <span class="at">b=</span><span class="fl">0.3</span>, <span class="at">w=</span><span class="dv">50</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>(apes <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="at">Pan=</span>chimp<span class="sc">$</span>root, <span class="at">Gorilla=</span>gorilla<span class="sc">$</span>root, <span class="at">Orangutan=</span>orangutan<span class="sc">$</span>root, <span class="at">Human=</span>hutterites<span class="sc">$</span>root),<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Pan   Gorilla Orangutan     Human 
+    0.038     0.104     0.020     0.069 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## expanded version from Slade et al. (1998)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cole1 <span class="ot">&lt;-</span> <span class="cf">function</span>(L,a,w,R,b,p)  p<span class="sc">*</span>(L<span class="sc">^-</span><span class="dv">1</span>) <span class="sc">+</span> R<span class="sc">*</span>b<span class="sc">*</span>(L<span class="sc">^-</span>a) <span class="sc">-</span> R<span class="sc">*</span>b<span class="sc">*</span>(p<span class="sc">^</span>(w <span class="sc">-</span> a <span class="sc">+</span><span class="dv">1</span>))<span class="sc">*</span>(L<span class="sc">^-</span>(w<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(cole1, <span class="at">lower=</span><span class="dv">1</span>, <span class="at">upper=</span><span class="fl">1.2</span>, <span class="at">a=</span><span class="dv">20</span>, <span class="at">b=</span><span class="fl">0.125</span>, <span class="at">w=</span><span class="dv">45</span>, <span class="at">R=</span><span class="fl">0.8</span>, <span class="at">p=</span><span class="fl">0.98</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$root
+[1] 1.023497
+
+$f.root
+[1] 2.737548e-05
+
+$iter
+[1] 4
+
+$init.it
+[1] NA
+
+$estim.prec
+[1] 6.103516e-05</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use r instead of \lambda to make comparable with Cole</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>cole2 <span class="ot">&lt;-</span> <span class="cf">function</span>(r,a,w,R,b,p){</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  p<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r) <span class="sc">+</span> R<span class="sc">*</span>b<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r<span class="sc">*</span>a) <span class="sc">-</span> R<span class="sc">*</span>b<span class="sc">*</span>(p<span class="sc">^</span>(w <span class="sc">-</span> a <span class="sc">+</span><span class="dv">1</span>))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>r<span class="sc">*</span>(w<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">uniroot</span>(cole2, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span><span class="fl">0.05</span>, <span class="at">a=</span><span class="dv">20</span>, <span class="at">b=</span><span class="fl">0.125</span>, <span class="at">w=</span><span class="dv">45</span>, <span class="at">R=</span><span class="fl">0.8</span>, <span class="at">p=</span><span class="fl">0.98</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$root
+[1] 0.02324612
+
+$f.root
+[1] 7.988824e-07
+
+$iter
+[1] 5
+
+$init.it
+[1] NA
+
+$estim.prec
+[1] 6.103516e-05</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what's a good value of R? 75% survival to age 5 and then 2% annual mortality</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># thereafter is not unreasonable</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>(R <span class="ot">&lt;-</span> <span class="fl">0.75</span><span class="sc">*</span><span class="fl">0.98</span><span class="sc">^</span><span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5539268</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ache-like</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ache <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole2, <span class="at">lower=</span><span class="dv">0</span>, <span class="at">upper=</span><span class="fl">0.05</span>, <span class="at">a=</span><span class="dv">20</span>, <span class="at">b=</span><span class="fl">0.2</span>, <span class="at">w=</span><span class="dv">45</span>, <span class="at">R=</span><span class="fl">0.55</span>, <span class="at">p=</span><span class="fl">0.98</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## surprisingly close to Hill &amp; Hurtado's observed r for the Forest Period</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hutterites</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>hutterites2 <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(cole2, <span class="at">lower=</span><span class="fl">0.01</span>, <span class="at">upper=</span><span class="fl">0.2</span>, <span class="at">a=</span><span class="dv">22</span>, <span class="at">b=</span><span class="fl">0.3</span>, <span class="at">w=</span><span class="dv">50</span>, <span class="at">R=</span><span class="fl">0.75</span>, <span class="at">p=</span><span class="fl">0.99</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>(humans <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="at">Ache=</span>ache<span class="sc">$</span>root, <span class="at">Hutterites=</span>hutterites2<span class="sc">$</span>root), <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Ache Hutterites 
+     0.026      0.052 </code></pre>
+</div>
+</div>
+<p>The most fecund population of humans ever recorded has a maximum growth rate of 6.9% annually, assuming no mortality, and 5.2% if we assume very low mortality. Of course, fertility is hardly constant across the nearly 30-year span of human reproduction. Even among the highly fecund Hutterites, fertility declines substantially with age. This means that this value of <span class="math inline">\(r_{max} = 0.052\)</span> is much higher than what is realistically the maximum possible growth rate. This does not even account for the fact that mortality also increases with age (i.e., is not a constant 1% across adulthood) and the recruitment fraction of 75% is also high. Mortality removes newborns and pre-reproductive children from the potential breeding pool, but so do social factors such as failure to enter into a reproductive union. This value is frequently around 20%, even in conservative populations with very strong pro-natalist norms.</p>
+<p>In reality, the highest growth rate achievable by actual human populations is probably quite close to that of Venezuela in the late 1960s. At the time, life expectancy at birth in Venezuela was nearly as high as it was in the United States, at almost <span class="math inline">\(e_0=70\)</span>. Despite this relatively low mortality, Venezuela in the late sixties was also characterized by extremely high fertility with a total fertility rate of more than seven! In 1967, the intrinsic rate of increase for Venezuela was <span class="math inline">\(r=0.041\)</span>. This seems like a pretty reasonable working value for the realistic maximum growth rate achievable by a human population. This matters a great deal as we will see in <a href="decision.html" class="quarto-xref"><span>Chapter 5</span></a>, since the it means that the upside of potential fitness-related gambles is highly constrained while the downsides are not.</p>
+</section>
+</section>
+<section id="models-for-structured-populations" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="models-for-structured-populations"><span class="header-section-number">3.2</span> Models for Structured Populations</h2>
+<p>As we noted in the last section, demographic rates are not constant with age (and many other possible states). We can extend our simple models for population growth to account for age-structure. The <em>characteristic equation</em> for a population with given mortality and fertility schedules unites the important demographic concepts of mortality, fertility, age-structure, and growth into a single relationship. I will not derive the characteristic equation here, but you can check out my <a href="https://github.com/eehh-stanford/life_history_in_ten_papers/blob/master/Jones-Coale1957-notes.pdf">Notes on Life History Theory</a> for a full derivation of the equations that characterize the stable population model, including the characteristic equation.</p>
+<p>We typically assume what’s called <em>female demographic dominance</em> and analyze the female component of the population. Women give birth and the growth of populations is highly constrained by the female component.</p>
+<p>Consider a population with age-specific fertility rate <span class="math inline">\(m(a)\)</span> for women age <span class="math inline">\(a\)</span> and (cumulative) survival to age <span class="math inline">\(a\)</span> of <span class="math inline">\(l(a)\)</span>. Let age at first birth be <span class="math inline">\(\alpha\)</span> and age at last birth be <span class="math inline">\(\beta\)</span>. The characteristic equation, often called the Euler-Lotka equation, is then</p>
+<p><span class="math display">\[  
+1 = \int_{\alpha}^{\beta}  e^{-ra} l(a) m(a) da.
+\]</span> The unique solution is the value <span class="math inline">\(r\)</span> that equates the two sides of the characteristic equation.</p>
+<p>In a stationary population, where <span class="math inline">\(r=0\)</span>, <span class="math inline">\(e^{-ra}=1\)</span> for all <span class="math inline">\(a\)</span> (zero times anything is zero!), and the equation reduces to that for the net reproduction number, which is simply the sum of net fertility across all ages.</p>
+<p><span class="math display">\[  
+R_0 = \int_{\alpha}^{\beta}  l(a) m(a) da = 1.
+\]</span> In a stationary population, each woman replaces herself, on average, with a single daughter.</p>
+</section>
+<section id="matrix-population-models-for-structured-populations" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="matrix-population-models-for-structured-populations"><span class="header-section-number">3.3</span> Matrix Population Models for Structured Populations</h2>
+<p>It turns out that efforts to create a discrete-time form of the characteristic equation were often confused. The best way to represent structured populations in discrete time uses matrix algebra <span class="citation" data-cites="caswell2001">(<a href="references.html#ref-caswell2001" role="doc-biblioref">H. Caswell 2001</a>)</span>. Once again, you can find more details in my <a href="https://github.com/eehh-stanford/life_history_in_ten_papers/blob/master/Jones-fitness-sens-notes.pdf">Notes on Life History Theory</a>.</p>
+<p>The <em>Leslie matrix</em> is a special matrix for demography and population biology. A Leslie matrix is sparse with two sets of non-zero elements: (1) age-specific fertilities (<span class="math inline">\(F_j\)</span>) along the first row, and (2) age-specific survival probabilities (<span class="math inline">\(P_i\)</span>) along the subdiagonal. Here is an example of a <span class="math inline">\(5 \times 5\)</span> Leslie matrix:</p>
+<p><span class="math display">\[
+\mathbf{A} = \left[ \begin{array}{ccccc}
+0     &amp; F_{2}   &amp; F_{3} &amp; F_{4} &amp; F_{5}\\
+P_{1} &amp; 0       &amp; 0     &amp; 0     &amp; 0 \\
+0     &amp; P_2     &amp; 0     &amp; 0     &amp; 0\\
+0     &amp; 0       &amp; P_3   &amp; 0     &amp; 0 \\
+0     &amp; 0       &amp; 0     &amp; P_{4} &amp; 0
+\end{array} \right]
+\]</span></p>
+<p>A Leslie matrix is a representation of an <em>age-structured</em> population. We can also write demographic projection matrices for stage-structured populations.</p>
+<p>For matrix <span class="math inline">\(\mathbf{A}\)</span>, the entry <span class="math inline">\(a_{ij}\)</span> is the transition probability of going from stage <span class="math inline">\(j\)</span> to stage <span class="math inline">\(i\)</span>: <span class="math inline">\(a_{ij} \equiv a_{i \leftarrow j}\)</span>.</p>
+<p>A useful graphical tool to complement matrix models is the <em>life-cycle graph</em>, a directed graph that represents all the transitions in an organism’s life cycle. Like all graphs, the life-cycle graph is composed of a set of nodes and a set of edges. The nodes represent the states of the population such as the age classes, stages, subgroups, or localities (depending on the specifics of the model). The edges are directed and represent transitions between states. For the age-structured model, the only possible transitions are survival (from age-class <span class="math inline">\(i\)</span> to age-class <span class="math inline">\(i+1\)</span>) and fertility (from age-class <span class="math inline">\(i\)</span> to age-class 1).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/life-cycle.png" class="img-fluid figure-img"></p>
+<figcaption>Life-cycle graph corresponding to the <span class="math inline">\(5 \times 5\)</span> Leslie matrix</figcaption>
+</figure>
+</div>
+<p>Demographic projection matrices typically fall under the heading of non-negative negative matrices, such that when raised to sufficient powers, all matrix elements become positive. Moreover, if our projection matrix has two properties (which not all will), then the population will eventually be characterized by a stable age distribution. The requirements are the the matrix is irreducible and primitive. A matrix/life-cycle graph is irreducible if every state can be reached from every other state. In graph terminology, we say an imprimitive life-cycle graph is <em>strongly connected</em>. Primitivity simply means that the growth generated by repeated multiplication of the matrix is aperiodic. We can define a loop on a life-cycle graph as an alternating sequence of nodes and edges that starts and finishes on the same node. For example 1-2-3-1, 1-2-3-4-1, and 1-2-3-4-5-1 are the loops in our life-cycle graph above. A sufficient condition that ensures primitivity is that the greatest common divisor of the lengths of all the loops in a life-cycle graph is one.</p>
+<p>If non-negative, square matrix <span class="math inline">\(\mathbf{A}\)</span> is irreducible and primitive, it meets the criteria for the Perron-Frobenius Theorem, which states that such a matrix will have a single eigenvalue which is positive, real, and strictly greater than all the others. We call this eigenvalue of the <em>dominant eigenvalue</em> of matrix <span class="math inline">\(\mathbf{A}\)</span>. The dominant eigenvalue of the projection matrix is the asymptotic growth rate (and mean fitness) of the population described by that matrix. The corresponding right and left eigenvectors represent the stable age distribution and the reproductive values, respectively, of the population.</p>
+<p>Denote the dominant eigenvalue of matrix <span class="math inline">\(\mathbf{A}\)</span> as <span class="math inline">\(\lambda\)</span> and the corresponding right and left eigenvectors as <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>. <span class="citation" data-cites="caswell1978">Hal Caswell (<a href="references.html#ref-caswell1978" role="doc-biblioref">1978</a>)</span> showed that the sensitivity of the dominant eigenvalue to a small perturbation in matrix element <span class="math inline">\(a_{ij}\)</span> is given by the product of the reproductive value of stage <span class="math inline">\(i\)</span> (the receiving state) and the stable age value of stage <span class="math inline">\(j\)</span> (the giving state), assuming that these vectors have been normed such that <span class="math inline">\(\langle \mathbf{v},\mathbf{u} \rangle = 1\)</span>.</p>
+<p><span class="math display">\[
+s_{ij} = \frac{\partial \lambda}{\partial a_{ij}} = v_i u_j
+\]</span></p>
+<p>These sensitivities turn out to be very important in a number of applications in population biology. For example, the selection gradient in the multivariate breeder’s equation discussed in <a href="evolution.html" class="quarto-xref"><span>Chapter 2</span></a> is simply a vector of sensitivities. Sensitivities also provide important information about which demographic rates we need to measure precisely if we are to have any hope of making accurate population forecasts. In <a href="robust.html" class="quarto-xref"><span>Chapter 10</span></a>, we will discuss a fundamental trade-off between the responsiveness to selection (or optimality) and robustness that arises because of sensitivities with different signs appearing in equations relating to these qualities <span class="citation" data-cites="schmid_etal2022">(<a href="references.html#ref-schmid_etal2022" role="doc-biblioref">Schmid et al. 2022</a>)</span>.</p>
+<p>It is often useful to transform sensitivities into <em>elasticities</em> or proportional sensitivities. Note a handy fact from calculus:</p>
+<p><span class="math display">\[
+\frac{dy}{dx} \frac{1}{y} = \frac{d\log y}{dx}.
+\]</span></p>
+<p>If we multiply our sensitivity <span class="math inline">\(s_{ij}\)</span> by <span class="math inline">\(a_{ij}/\lambda\)</span>, we get</p>
+<p><span class="math display">\[
+e_{ij} = \frac{\partial \lambda}{\partial a_{ij}} \frac{a_{ij}}{\lambda} = \frac{\partial \log \lambda}{\partial \log a_{ij}}
+\]</span></p>
+<p>An elasticity tells us by what percentage <span class="math inline">\(\lambda\)</span> will change if we change <span class="math inline">\(a_{ij}\)</span> by, say, 1%.</p>
+<p>Elasticities are ubiquitous in economics. We will encounter them in both <a href="decision.html" class="quarto-xref"><span>Chapter 5</span></a> and <span class="quarto-unresolved-ref">?sec-popenv</span>.</p>
+</section>
+<section id="density-dependent-growth" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="density-dependent-growth"><span class="header-section-number">3.4</span> Density Dependent Growth</h2>
+<blockquote class="blockquote">
+<p>There is no exception to the rule that every organic being naturally increases at so high a rate, that if not destroyed, the earth would soon be covered by the progeny of a single pair. Even slow-breeding man has doubled in twenty-five years, and at this rate, in a few thousand years, there would literally not be standing room for his progeny. Linnaeus has calculated that if an annual plant produced only two seeds and there is no plant so unproductive as this and their seedlings next year produced two, and so on, then in twenty years there would be a million plants. The elephant is reckoned to be the slowest breeder of all known animals, and I have taken some pains to estimate its probable minimum rate of natural increase: it will be under the mark to assume that it breeds when thirty years old, and goes on breeding till ninety years old, bringing forth three pairs of young in this interval; if this be so, at the end of the fifth century there would be alive fifteen million elephants, descended from the first pair. <strong>Darwin, <em>The Origin of Species</em></strong></p>
+</blockquote>
+<p>To understand catastrophes, it helps to know something about stability analysis. We’ll do a quick introduction here, using the logistic population growth model as a concrete example.</p>
+<section id="logistic-growth" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="logistic-growth"><span class="header-section-number">3.4.1</span> Logistic Growth</h3>
+<p>The logistic growth model is a model of population growth where the rate of increase of the population depends on the population size. In general, density-dependent models work such that as the population size gets large, the growth rate decreases:</p>
+<p><span class="math display">\[ \frac{dN}{dt} = N f(N) \]</span></p>
+<p><span class="math inline">\(f(N)\)</span> is some function of population size <span class="math inline">\(N\)</span> that decreases in <span class="math inline">\(N\)</span>. The simplest form for this function is linear:</p>
+<p><span class="math display">\[  f(N) = r(1 - N/K), \]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the intrinsic rate of increase and <span class="math inline">\(K\)</span> is known as the carrying capacity of the population. This leads to the most commonly seen version of the logistic equation</p>
+<p><span class="math display">\[
+\frac{dN}{dt} = rN (1 - N/K)
+\]</span></p>
+<p>The logistic model is <em>sigmoidal</em>, meaning that it is S-shaped. It turns out that the logistic model is simple enough that it can be solved analytically. When we integrate it, we get the following expression for the population size at time <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[N(t) = \frac{N(0)e^{rt}}{1+N(0)(e^{rt}-1)/K} \]</span></p>
+<p>This is a <a href="https://en.wikipedia.org/wiki/Logistic_function">logistic function</a>, which gives the population model its name. We can write out an <code>R</code> expression and plot the logistic curve as a function of time.</p>
+<div class="cell" data-fig.asp="1" data-hash="populations_cache/html/unnamed-chunk-4_783ec34fef8312fe4a678fc69e2fb7b4">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>logistic.int <span class="ot">&lt;-</span> <span class="fu">expression</span>(n0<span class="sc">*</span><span class="fu">exp</span>(r<span class="sc">*</span>t)<span class="sc">/</span>((<span class="dv">1</span><span class="sc">+</span>n0<span class="sc">*</span>(<span class="fu">exp</span>(r<span class="sc">*</span>t)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span>K)))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>n0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(t,<span class="fu">eval</span>(logistic.int),<span class="at">type=</span><span class="st">"l"</span>,<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">xlab=</span><span class="st">"Time"</span>,<span class="at">ylab=</span><span class="st">"Population Size"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="populations_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-recruitment-curve" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="the-recruitment-curve"><span class="header-section-number">3.4.2</span> The Recruitment Curve</h3>
+<p>For a variety of reasons, it often turns out to be easier to work with what is known as the <em>recruitment curve</em> for the population model. Rather than the integrated model in time, this is essentially a plot of the density-dependent function <span class="math inline">\(f(N)\)</span> times the current population size <span class="math inline">\(N\)</span> as a function of the population size.</p>
+<p>We call it a recruitment curve because it plots the number of recruits we get when the population is a given population size.</p>
+<div class="cell" data-fig.asp="1" data-hash="populations_cache/html/unnamed-chunk-5_0746f18fcd06800968f7d26f93c4b9bc">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Dn <span class="ot">&lt;-</span> <span class="fu">expression</span>(r <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> N<span class="sc">/</span>K) <span class="sc">*</span> N)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1000</span>,<span class="at">by=</span><span class="dv">10</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(N,<span class="fu">eval</span>(Dn),<span class="at">type=</span><span class="st">"l"</span>,<span class="at">col=</span><span class="st">"blue"</span>,<span class="at">xlab=</span><span class="st">"Population Size"</span>, <span class="at">ylab=</span><span class="st">"Recruitment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="populations_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you were a natural resource manager like a hunter or forester, at what population size would you want to harvest your population to maximize your yield? The <em>Maximum Sustainable Yield</em> is the peak of the recruitment curve and represents the value of <span class="math inline">\(N\)</span> that maximizes production of the natural resource. For the logistic model, this curve is symmetric. In general, this is not true (and leads to interesting phenomena such as overshoot and subsequent population crashes/booms).</p>
+</section>
+</section>
+<section id="stability-analysis-of-the-logistic-model" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="stability-analysis-of-the-logistic-model"><span class="header-section-number">3.5</span> Stability Analysis of the Logistic Model</h2>
+<p>First, we solve the logistic equation for its equilibria. To do this, we set the rate of population change equal to zero and find the conditions that make this true.</p>
+<p><span class="math display">\[ \frac{dN}{dt} = rN(1-N/K) = 0 \]</span></p>
+<p>It’s not difficult to see that there are two equilibria:</p>
+<ul>
+<li><span class="math inline">\(N=0\)</span></li>
+<li><span class="math inline">\(N=K\)</span></li>
+</ul>
+<p>The first solution is when the population size is exactly zero. When there is no population, there is no chance of the population growing, so that makes sense. The second solution is when the population size equals the carrying capacity, <span class="math inline">\(K\)</span>. This also makes sense, since it’s the basic idea behind density-dependent population growth models – when the population reaches its carrying capacity, it should stop increasing. So now the question is: are these two equilibria stable?</p>
+<p>When we calculate the stability of a continuous-time models like the logistic growth model, we basically tweak a population that is at equilibrium and see what happens. At least two possibilities include:</p>
+<ul>
+<li>It will continue to move in the direction of the tweak</li>
+<li>It will move back to the equilibrium value</li>
+</ul>
+<p>To perform out stability analysis, write the production function in generic form:</p>
+<p><span class="math display">\[ \frac{dN}{dt} = F(N) \]</span></p>
+<p>For the logistic model <span class="math inline">\(F(N) = rN(1-N/K)\)</span>. We’ve already determine the equilibria (<span class="math inline">\(N=0\)</span> and <span class="math inline">\(N=K\)</span>)</p>
+<p>Define a deviation from an equilibrium point <span class="math inline">\(\hat{N}\)</span>:</p>
+<p><span class="math display">\[ n = N - \hat{N} \]</span></p>
+<p>Rearrange, putting <span class="math inline">\(N\)</span> on the left-hand side <span class="math inline">\(N = \hat{N}+n\)</span>, and substitute back into the generic equation.</p>
+<p><span class="math display">\[ \frac{d(\hat{N}+n)}{dt} = F(\hat{N}+n) \]</span></p>
+<p>Now, <span class="math inline">\(\hat{N}\)</span> is a fixed number (i.e., it’s the equilibrium), so it won’t change. All the change in this differential will therefore come from <span class="math inline">\(n\)</span> which is free to vary (its change is, in fact, what we care about here)</p>
+<p><span class="math display">\[ \frac{dn}{dt} = F(\hat{N}+n) \]</span></p>
+<p>We don’t (necessarily) know what <span class="math inline">\(F(\hat{N}+n)\)</span> will be. For many interesting models, there is no closed-form solution to this differential equation. Our strategy is therefore to approximate it with a <em>Taylor Series</em> approximation, which means that we’re assuming that <span class="math inline">\(n\)</span> is small and that we are contenting ourselves to investigating the behavior of our model near the equilibrium.</p>
+<p><span class="math display">\[ F(\hat{N}+n) \approx  F(\hat{N}) + F^{\prime}(\hat{N})n \]</span></p>
+<p><span class="math inline">\(F^{\prime}(\hat{N})\)</span> is the derivative of <span class="math inline">\(F\)</span> with respect to <span class="math inline">\(N\)</span> evaluated at <span class="math inline">\(\hat{N}\)</span>. The equation for the dynamics of our perturbation becomes:</p>
+<p><span class="math display">\[ \frac{dn}{dt} = F(\hat{N}) + F^{\prime}(\hat{N})n \]</span></p>
+<p>But, we are evaluating at an equilibrium where, by definition, <span class="math inline">\(F(\hat{N})=0\)</span>, so we are left with:</p>
+<p><span class="math display">\[ \frac{dn}{dt} = F^{\prime}(\hat{N})n \]</span></p>
+<p>Rename as follows to make notation simpler:</p>
+<p><span class="math display">\[ F^{\prime}(\hat{N}) = \lambda \]</span></p>
+<p>This gives us our final step</p>
+<p><span class="math display">\[ \frac{dn}{dt} = \lambda n \]</span></p>
+<p>This is simply the exponential growth model, the solution of which is:</p>
+<p><span class="math display">\[ n(t) = n(0)e^{\lambda t} \]</span></p>
+<p>What this tells us is that if <span class="math inline">\(\lambda &gt; 0\)</span>, the equilibrium is unstable because it will grow away from the equilibrium without bound. On the other hand, if <span class="math inline">\(\lambda &lt; 0\)</span>, the equilibrium is stable because the perturbation will decay back to zero (i.e., back to the equilibrium).</p>
+<p>This whole process is known as <em>linearizing</em> around the equilibrium or <em>local linearization</em>.</p>
+<p>Returning to the logistic model, we can calculate <span class="math inline">\(\lambda = F^{\prime}(\hat{N})\)</span>. We use the product rule for differentiation to show that for <span class="math inline">\(\hat{N}=0\)</span>, <span class="math inline">\(\lambda=r\)</span> and for <span class="math inline">\(\hat{N}=K\)</span>, <span class="math inline">\(\lambda=-r\)</span>. So what does this mean? For small deviations near the equilibrium of <span class="math inline">\(N=0\)</span>, the population will increase exponentially at rate <span class="math inline">\(r\)</span>. For small deviations near the equilibrium of <span class="math inline">\(N=K\)</span>, the population will decay back to the equilibrium exponentially at rate <span class="math inline">\(-r\)</span>.</p>
+<section id="steps-to-calculating-fprimen-for-the-logistic-model" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="steps-to-calculating-fprimen-for-the-logistic-model"><span class="header-section-number">3.5.1</span> Steps to Calculating <span class="math inline">\(F^{\prime}(N)\)</span> for the Logistic Model</h3>
+<p>Where do the values <span class="math inline">\(F^{\prime}(N) = r\)</span> and <span class="math inline">\(F^{\prime}(N) = -r\)</span> for the two equilibria of the logistic model come from? Use the Product Rule for Differentiation. If we let some function <span class="math inline">\(h(N)\)</span> be the product of two other function <span class="math inline">\(f(N)\)</span> and <span class="math inline">\(g(N)\)</span>, the product rule for differentiation specifies that:</p>
+<p><span class="math display">\[h^{\prime}(N) = f^{\prime}(N) g(N) + f(N) g^{\prime}(N) \]</span></p>
+<p>For the logistic model, <span class="math inline">\(f(N) = rN\)</span> and <span class="math inline">\(g(N) = (1-N/K)\)</span>. Therefore, <span class="math inline">\(f^{\prime}(N) = r\)</span> and <span class="math inline">\(g^{\prime}(N) = -\frac{1}{K}\)</span>. Therefore,</p>
+<p><span class="math display">\[h^{\prime}(N) = r(1-N/K) -\frac{rN}{K} \]</span></p>
+<p>Finally, substitute back in the values for the equilibria (<span class="math inline">\(N=0\)</span> and <span class="math inline">\(N=K\)</span>) and we recover our to values for <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[ N \rightarrow 0,~~~~~h^{\prime}(N) = r \]</span></p>
+<p><span class="math display">\[ N \rightarrow K,~~~~~h^{\prime}(N) = -r \]</span></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-caswell2001" class="csl-entry" role="listitem">
+Caswell, H. 2001. <em>Matrix Population Models: Construction, Analysis and Interpretation</em>. 2nd ed. Sunderland, MA: Sinauer.
+</div>
+<div id="ref-caswell1978" class="csl-entry" role="listitem">
+Caswell, Hal. 1978. <span>“A General Formula for the Sensitivity of Population Growth Rate to Changes in Life History Parameters.”</span> <em>Theoretical Population Biology</em> 14 (2): 215–30. <a href="https://doi.org/10.1016/0040-5809(78)90025-4">https://doi.org/10.1016/0040-5809(78)90025-4</a>.
+</div>
+<div id="ref-coale1974" class="csl-entry" role="listitem">
+Coale, A. 1974. <span>“The History of Human Population.”</span> <em>Scientific American</em> 231 (40-51).
+</div>
+<div id="ref-cole1954" class="csl-entry" role="listitem">
+Cole, L. C. 1954. <span>“The Population Consequences of Life History Phenomena.”</span> <em>Quarterly Review of Biology</em> 29 (2): 103–37. <a href="http://www.jstor.org/stable/2817654">http://www.jstor.org/stable/2817654</a>.
+</div>
+<div id="ref-jones2009" class="csl-entry" role="listitem">
+Jones, J. H. 2009. <span>“The Force of Selection on the Human Life Cycle.”</span> <em>Evolution and Human Behavior</em> 30 (5): 305–14. <a href="https://doi.org/10.1016/j.evolhumbehav.2009.01.005">https://doi.org/10.1016/j.evolhumbehav.2009.01.005</a>.
+</div>
+<div id="ref-schmid_etal2022" class="csl-entry" role="listitem">
+Schmid, Max, Maria Paniw, Maarten Postuma, Arpat Ozgul, and Frédéric Guillaume. 2022. <span>“A Trade-Off Between Robustness to Environmental Fluctuations and Speed of Evolution.”</span> <em>The American Naturalist</em> 200 (1): E16–35. <a href="https://doi.org/10.1086/719654">https://doi.org/10.1086/719654</a>.
+</div>
+<div id="ref-slade_etal1998" class="csl-entry" role="listitem">
+Slade, Norman A., Richard Gomulkiewicz, and Helen M. Alexander. 1998. <span>“Alternatives to <span class="nocase">Robinson and Redford’s</span> Method of Assessing Overharvest from Incomplete Demographic Data.”</span> <em>Conservation Biology</em> 12 (1): 148–55. <a href="https://doi.org/10.1111/j.1523-1739.1998.96273.x">https://doi.org/10.1111/j.1523-1739.1998.96273.x</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./evolution.html" class="pagination-link" aria-label="Evolutionary Foundations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./culture.html" class="pagination-link" aria-label="Does Culture Evolve?">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

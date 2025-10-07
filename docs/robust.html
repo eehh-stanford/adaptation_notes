@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; The Structure of Successful Problem-Solving – Adaptation Notes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./efficiency.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./robust.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Adaptation Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./populations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk, Uncertainty, and Decision-Making</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efficiency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency Is the Enemy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robust.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#subsistence-risk-management" id="toc-subsistence-risk-management" class="nav-link active" data-scroll-target="#subsistence-risk-management"><span class="header-section-number">10.1</span> Subsistence Risk Management</a>
+  <ul class="collapse">
+  <li><a href="#sharing-networks" id="toc-sharing-networks" class="nav-link" data-scroll-target="#sharing-networks"><span class="header-section-number">10.1.1</span> Sharing Networks</a></li>
+  </ul></li>
+  <li><a href="#trade-off-between-optimality-and-robustness" id="toc-trade-off-between-optimality-and-robustness" class="nav-link" data-scroll-target="#trade-off-between-optimality-and-robustness"><span class="header-section-number">10.2</span> Trade-Off Between Optimality and Robustness</a></li>
+  <li><a href="#wicked-problems" id="toc-wicked-problems" class="nav-link" data-scroll-target="#wicked-problems"><span class="header-section-number">10.3</span> Wicked Problems</a>
+  <ul class="collapse">
+  <li><a href="#ai-and-adaptation" id="toc-ai-and-adaptation" class="nav-link" data-scroll-target="#ai-and-adaptation"><span class="header-section-number">10.3.1</span> AI and Adaptation</a></li>
+  </ul></li>
+  <li><a href="#normal-accidents-theory" id="toc-normal-accidents-theory" class="nav-link" data-scroll-target="#normal-accidents-theory"><span class="header-section-number">10.4</span> Normal Accidents Theory</a></li>
+  <li><a href="#examples-of-efficiency-leading-to-brittleness" id="toc-examples-of-efficiency-leading-to-brittleness" class="nav-link" data-scroll-target="#examples-of-efficiency-leading-to-brittleness"><span class="header-section-number">10.5</span> Examples of Efficiency Leading to Brittleness</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-robust" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="subsistence-risk-management" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="subsistence-risk-management"><span class="header-section-number">10.1</span> Subsistence Risk Management</h2>
+<p>As noted by Glynn Isaac in his classic work, the hearth, with its attendant central-place foraging is a perfect way of risk-pooling.</p>
+<p>We tend to take central-place foraging for granted, but behavioral ecologists like Alistair Houston have noted the profound implications CPF has on optimal strategies.</p>
+<p>HBEs have noted that sharing the principle mechanism for managing risk in hunter-gatherers and other subsistence populations. Work by scholars such as Magdalena Hurtado, Elizabeth Cashdan, Kim Hill, Bruce Winterhalder, Hilly Kaplan, Polly Wiessner. Some development economists too. <span class="citation" data-cites="scott1977">Scott (<a href="references.html#ref-scott1977" role="doc-biblioref">1977</a>)</span>: “Safety First”; <span class="citation" data-cites="lipton1968">Lipton (<a href="references.html#ref-lipton1968" role="doc-biblioref">1968</a>)</span>: “Survival Algorithms”</p>
+<p>Sharing reduces risk. When we calculate the variance of a portfolio of items (e.g., the contributions of multiple sharing partners), the variance of the constituent contributions is scaled by the product of pairwise weights. Since these weights will always be less than one, this has the effect of reducing the overall variance (as long as the covariance between these contributions is not too high).</p>
+<p>So here, two individuals have their own means and standard deviations of their subsistence returns, but when they share, their joint mean is the weighted average of their respective production rates and the variance is typically smaller than either of their individual variances.</p>
+<p>Individual foraging returns are random variables. The distribution of returns for individual <span class="math inline">\(i\)</span> has mean <span class="math inline">\(\mu_i\)</span> and variance <span class="math inline">\(\sigma^2_i\)</span>. In sharing with another individual <span class="math inline">\(j\)</span>, <span class="math inline">\(i\)</span> contributes a fraction <span class="math inline">\(0 \leq w_i \leq 1\)</span>.</p>
+<p>Pooled mean</p>
+<p><span class="math display">\[ \mu_{(i+j)} = w_i \mu_i + (1-w_i) \mu_j \]</span> Pooled variance</p>
+<p><span class="math display">\[ s^2_{(i+j)} = w^2_i \sigma^2_i + (1-w_i)^2 \sigma^2_j + 2 w_i (1-w_i)\, \mathrm{Cov}(i,j) \]</span> ### Independence with Risk-Pooling</p>
+<p>Individuals or small groups go out and forage. There are different levels of independence to these decisions. There is commonly a sexual division of labor, with women and men targeting resources of different average trophic level or expected risk/return. Furthermore, within each sex, individuals or small groups typically go out independently. A central place — something that is taken largely for granted among human foragers <span class="citation" data-cites="kelly2013">(<a href="references.html#ref-kelly2013" role="doc-biblioref">Kelly 2013</a>)</span> — facilitates returning and broad-based sharing. This is the risk-pooling.</p>
+<p>Sharing and exchange are the lifeblood of forager societies. As noted by <span class="citation" data-cites="kaplan_etal1990">Kaplan, Hill, and Hurtado (<a href="references.html#ref-kaplan_etal1990" role="doc-biblioref">1990</a>)</span>, food-sharing is the primary mechanism for risk management among foragers.</p>
+<p>The classic portfolio formulation shows that the expected return on a portfolio is a horizontal parabola. For a given standard deviation (known as “volatility” in the finance literature) the parabola describes the maximum and minimum portfolio returns. Anything in between these extremes is also allowable. Obviously, we only care about the higher returns, so the upper branch of the parabola is the focus. This is known as the efficient frontier.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/efficient_frontier.png" class="img-fluid figure-img"></p>
+<figcaption>Portfolio efficient frontier</figcaption>
+</figure>
+</div>
+<p>There are three assets plotted here (<span class="math inline">\(r_1\)</span>, <span class="math inline">\(r_2\)</span>, <span class="math inline">\(r_3\)</span>) that define the efficient frontier. There are a number of portfolios we can calculate off of these. The minimum variance portfolio is the safest possible combination of <span class="math inline">\(r_1\)</span>, <span class="math inline">\(r_2\)</span>, and <span class="math inline">\(r_3\)</span>. Its expected return is quite low, but it has the lowest possible volatility associated with it.</p>
+<p>If there is a certain asset (i.e., one with zero volatility), there is a special solution to the portfolio problem, known as the tangent portfolio because it is tangent to the efficient frontier. This portfolio provides the highest possible expected return for <span class="math inline">\(r_1\)</span>, <span class="math inline">\(r_2\)</span>, and <span class="math inline">\(r_3\)</span> together with the certain asset.</p>
+<section id="sharing-networks" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="sharing-networks"><span class="header-section-number">10.1.1</span> Sharing Networks</h3>
+<p>When people share food, they create networks — an aggregate of social relations.</p>
+<p>When we see a sharing network, does it actually manifest the structure a risk-minimizing network would predict? We can use sociometric techniques from social network analysis to answer this question.</p>
+<p>Networks as risk-management. Dyadic exchange is a terrible way to manage risk. Traps, lack of diversification, etc.</p>
+<p>Short cyclic exchanges can be gamed</p>
+<p>Generalized exchange: “Under generalized exchange, where gifts are univocal and givers are always givers, exploitation can take place only if actors explicitly reject the guiding norm of reciprocity. In this case, individuals or subgroups contemplating the exploitation of givers find little room for subtle action and thus face sanction from the entire group whose debt they have failed to repay.” <span class="citation" data-cites="bearman1997">(<a href="references.html#ref-bearman1997" role="doc-biblioref">P. Bearman 1997</a>)</span></p>
+<p>There are good theoretical reasons to think that generalized exchange is the way to manage risk through food sharing. The key to generalized exchange actually functioning is the existence of long cycles, which, once established, make the system impossible to game strategically.</p>
+<p>Generalized exchange exists in the ethnographic record (Kula ring, hxaro exchange) <span class="citation" data-cites="wiessner1982 cashdan1985">(<a href="references.html#ref-wiessner1982" role="doc-biblioref">Wiessner 1982</a>; <a href="references.html#ref-cashdan1985" role="doc-biblioref">Cashdan 1985</a>)</span></p>
+<p>The basic building blocks of networks are triads. They are the simplest higher-order structure (e.g., subject to dyadic dependence).</p>
+<p>The mechanism identified by Bearman et al.&nbsp;(2004) — and really an abundance of cyclical structures in general — will produce long cycles. This has been the general thinking among network theorists: generalized exchange requires and abundance of 030C triads and a social mechanism that generates these such as avoiding partner choices that result in short cycles.</p>
+<p>However, while the resulting networks certainly have long cycles, they would be terrible for risk management! We don’t see the connectance that Jennifer Dunne and colleagues note is so essential. There isn’t the functional redundancy that leads to stability in mutualistic ecological networks. Furthermore, these networks are brittle. Paths between individuals are easily disrupted if even a single person fails to behave as expected.</p>
+<p>What really matters for generalized exchange to work is the presence of long paths between key actors. Another way to ensure the existence of these is to have what is known as a giant component to the graph.</p>
+<p>Sexual networks have very long chains (and occasional, improbably-large cycles) because of the simple rule that you don’t have sex with your partners’ partners’ partners (in a purely heterosexual network) or your partners’ partners more generally. Termed “chains of affection” by <span class="citation" data-cites="bearman_etal2004">P. S. Bearman, Moody, and Stovel (<a href="references.html#ref-bearman_etal2004" role="doc-biblioref">2004</a>)</span>.</p>
+<p>The thing is, when a short cycle forms among agents who are part of a longer cycle, it breaks that long cycle, whereas transitive relations among the members of a long cycle do not. In short, we conclude that subsistence risk-management networks should take a core-periphery form. The only problem with this is that there are no real off-the-shelf tests for this.</p>
+<p>There are a number of other desirable properties of transitivity, related to redundancy, giant-component formation, etc. We use Borgatti &amp; Everett’s coreness measure to evaluate the core structure of food-sharing networks. Basically, measure the distribution of k-cores in the graph (where a k-core is defined as a subcomponent of graph <span class="math inline">\(\mathcal{G}\)</span> where all vertices have degree of at least <span class="math inline">\(k\)</span>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(igraph)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## giant component</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">sample_gnp</span>(<span class="at">n=</span><span class="dv">200</span>,<span class="at">p=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">200</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gg1 <span class="ot">&lt;-</span> <span class="fu">sample_gnp</span>(<span class="at">n=</span><span class="dv">200</span>,<span class="at">p=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">100</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg,<span class="at">vertex.size=</span><span class="dv">5</span>,<span class="at">vertex.color=</span><span class="st">"cyan"</span>, <span class="at">vertex.label=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="robust_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg1,<span class="at">vertex.size=</span><span class="dv">5</span>,<span class="at">vertex.color=</span><span class="st">"cyan"</span>, <span class="at">vertex.label=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="robust_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These are homogenous Bernoulli graphs. The formation or large connected components can be helped along by the presence of certain structures/mechanisms. Two such mechanisms include degree heterogeneity and especially transitivity.</p>
+<p>The structures that emerge from this transitive assembly of network ties are generally much more robust, with plenty of redundancy</p>
+<p>Giant component formation. For a random graph, when <span class="math inline">\(p &gt; (1 + \epsilon)/n\)</span> (for any <span class="math inline">\(\epsilon &gt; 0\)</span>), there is a high probability of the formation of a giant component.</p>
+<p>In work with Elspeth Ready, following a quite extensive review of the concept of risk-management in networks, we concluded that the best form of risk-management for subsistence networks — from the several available — involves the construction of a core and the resulting periphery that comes attached to that core.</p>
+<p><strong>What is core-periphery structure?</strong></p>
+<ul>
+<li>Concentric layers of decreasing connectivity</li>
+<li>It’s an idea that is surprisingly underdeveloped, even 22 years after Borgatti &amp; Everett suggested in was a surprisingly-underdeveloped idea!</li>
+<li>Core interacts intensively; periphery can come and go</li>
+<li>The substance of the periphery may matter a lot. For example, peripheral members of a sharing/exchange network may be people with strong ties to other communities and may be extremely important for communities’ security during extensive spatially/temporally autocorrelated crises</li>
+<li>Core-periphery structure leads to localization (heterogeneity of the L/R eigenvectors), which makes it more stable to perturbations</li>
+</ul>
+</section>
+</section>
+<section id="trade-off-between-optimality-and-robustness" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="trade-off-between-optimality-and-robustness"><span class="header-section-number">10.2</span> Trade-Off Between Optimality and Robustness</h2>
+<p><span class="citation" data-cites="schmid_etal2022">Schmid et al. (<a href="references.html#ref-schmid_etal2022" role="doc-biblioref">2022</a>)</span> recently made the important observation that optimality and robustness trade-off in a formal sense.</p>
+<p>From Barfield et al.&nbsp;(2011), the speed of evolution of a quantitative trait in a stage-structured population is:</p>
+<p><span class="math display">\[
+\Delta \bar{z} = \mathbf{G} \sum_{i,j}\frac{\partial \bar{\lambda}}{\partial \bar{a}_{ij}} \nabla_{\bar{z}_{j}} \bar{a}_{ij}
+\]</span> (equation 1)</p>
+<p>where <span class="math inline">\(\nabla_{\bar{z}_j}=(\partial /\left.\partial \bar{z}_1, \partial / \partial \bar{z}_2, \ldots, \partial / \partial \bar{z}_m\right)\)</span> is the gradient operator with respect to trait means at stage <span class="math inline">\(j\)</span>.</p>
+<p>What this shows is that the rate of evolution depends linearly on the sensitivities of <span class="math inline">\(\lambda\)</span>, which the authors define as <em>the inverse of the population’s demographic robustness</em>.</p>
+<p>That is a trait with higher sensitivity is less robust.</p>
+<p>From <span class="citation" data-cites="tulja1990">Tuljapurkar (<a href="references.html#ref-tulja1990" role="doc-biblioref">1990</a>)</span>:</p>
+<p><span class="math display">\[
+a = \log(\lambda) - \frac{1}{2 \lambda^2} \left( \frac{\partial \lambda}{\partial \bar{a}_{ij}} \right)^2 \sigma^2_{ij}
+\]</span> (equation 2)</p>
+<p>“As a consequence, the demographic robustness of a species is inversely proportional to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span>, with a higher sensitivity indicating a lower demographic robustness.”</p>
+<p>So: 1. The rate of evolution is proportional to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span>, but 2. Demographic robustness is inversely related to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span></p>
+<p>Hence, a trade-off.</p>
+</section>
+<section id="wicked-problems" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="wicked-problems"><span class="header-section-number">10.3</span> Wicked Problems</h2>
+<p>In a stationary environment, where the mean and variance stay the same despite short-term variability, optimizing your decision-making based on your prior experience with the environment is a sound policy. However, in nonstationary environments, doing so can be a disaster. Nonstationary environments create what the psychologist Robin Hogarth called a wicked learning environment. In such environments, lessons that we learn from the past do not help us perform better. The economists John Kay &amp; Mervin King note that when the learning environment is wicked “the application of the mathematics of probability is questionable and the results ambiguous.” In other words, in uncertain, wicked learning environments, maximization of something like expected utility, the primary tool of decision theory, economics, and planning won’t do us much good.</p>
+<p>Need to approach learning/expertise/optimization/efficiency differently when learning environments are wicked.</p>
+<p>The collected evolutionary lessons for adaptation suggest that we should promoting diversity in our potentially adaptive solutions. Under uncertainty — such as nonstationarity — the name of the game is robustness, not optimality. We should increase our tolerance for non-optimal solutions to problems if they contribute to the diversity of approaches. We should pursue policies that promote diversity, that generate hybridity, that add innovative peripheries to cohesive cores, and that increase autonomy for hotbeds of innovation.</p>
+<p>Popular approaches to societal problem-solving like effective altruism — where charities are ranked according to some criterion of effectiveness and donors are encouraged to contribute only to those ranked highest in the resulting league table — at best are likely to miss transformative adaptive solutions and at worst will inhibit their incubation and emergence.</p>
+<p>While we can learn a lot about adaptation and sustainability from looking at adaptations of the past and from economic and engineering studies of efficiency or optimality, this isn’t where the transformative ideas that we need to achieve sustainability are going to come from.</p>
+<p>Explore/exploit strategies.</p>
+<section id="ai-and-adaptation" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="ai-and-adaptation"><span class="header-section-number">10.3.1</span> AI and Adaptation</h3>
+<p>This is clearly a way that people are going to lazily suggest we will adapt</p>
+<p>LLMs will always regress to the mean. <a href="https://youtu.be/qpE40jwMilU">Emily Bender talk</a></p>
+<p>AIs are likely to pursue narrow optimality criteria. Unclear how they will perform on either rugged fitness surfaces or on flat fitness surfaces.</p>
+</section>
+</section>
+<section id="normal-accidents-theory" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="normal-accidents-theory"><span class="header-section-number">10.4</span> Normal Accidents Theory</h2>
+<p><span class="citation" data-cites="perrow1984">Perrow (<a href="references.html#ref-perrow1984" role="doc-biblioref">1984</a>)</span> defines a “normal” accident as one that is inevitable in a high-complexity system. Three system features make a system susceptible to normal accidents:</p>
+<ol type="1">
+<li>when the system is highly complex</li>
+<li>when the system is tightly coupled</li>
+<li>when there is possibility for catastrophic</li>
+</ol>
+<p>Redundancy is a fundamental strategy for minimizing catastrophic failures.</p>
+<p><span class="citation" data-cites="sagan2004">Sagan (<a href="references.html#ref-sagan2004" role="doc-biblioref">2004</a>)</span> argues that redundancy in human systems can often backfire. There are three ways that it can do this:</p>
+<ol type="1">
+<li>by making the system more complex</li>
+<li>by leading to overcompensation on the part of the human components of the system</li>
+<li>by leading to “social shirking”</li>
+</ol>
+<p>This last problem is reminiscent of <span class="citation" data-cites="bowles2016">Bowles (<a href="references.html#ref-bowles2016" role="doc-biblioref">2016</a>)</span> and the notion of moral crowding-out in social contracts.</p>
+</section>
+<section id="examples-of-efficiency-leading-to-brittleness" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="examples-of-efficiency-leading-to-brittleness"><span class="header-section-number">10.5</span> Examples of Efficiency Leading to Brittleness</h2>
+<p>Just-In-Time Logistics (JIT) leads to tight coupling.</p>
+<p>Southwest Airlines Supply-chain problems with the pandemic</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bearman1997" class="csl-entry" role="listitem">
+Bearman, P. 1997. <span>“Generalized Exchange.”</span> <em>American Journal of Sociology</em> 102 (5): 1383–1415. <a href="https://doi.org/10.1086/231087">https://doi.org/10.1086/231087</a>.
+</div>
+<div id="ref-bearman_etal2004" class="csl-entry" role="listitem">
+Bearman, P. S., J. Moody, and K. Stovel. 2004. <span>“Chains of Affection: The Structure of Adolescent Romantic and Sexual Networks.”</span> <em>American Journal of Sociology</em> 110 (1): 44–91. <a href="https://doi.org/10.1086/386272">https://doi.org/10.1086/386272</a>.
+</div>
+<div id="ref-bowles2016" class="csl-entry" role="listitem">
+Bowles, S. 2016. <em>The Moral Economy: Why Good Incentives Are No Substitute for Good Citizens</em>. Castle Lectures Series. New Haven: Yale University Press. <a href="https://books.google.com/books?id=Q7IODAAAQBAJ">https://books.google.com/books?id=Q7IODAAAQBAJ</a>.
+</div>
+<div id="ref-cashdan1985" class="csl-entry" role="listitem">
+Cashdan, Elizabeth A. 1985. <span>“Coping with Risk: Reciprocity Among the <span>Basarwa</span> of <span>Northern Botswana</span>.”</span> <em>Man</em> 20 (3): 454–74. <a href="https://doi.org/10.2307/2802441">https://doi.org/10.2307/2802441</a>.
+</div>
+<div id="ref-kaplan_etal1990" class="csl-entry" role="listitem">
+Kaplan, H., K. Hill, and A. M. Hurtado. 1990. <span>“Risk, Foraging, and Food Sharing Among the <span>Ache</span>.”</span> In <em>Risk and Uncertainty in Tribal and Peasant Societies</em>, edited by E. Cashadan, 107–43. Coulder, CO: Westview Press.
+</div>
+<div id="ref-kelly2013" class="csl-entry" role="listitem">
+Kelly, R. L. 2013. <em>The Lifeways of Hunter-Gatherers: The Foraging Spectrum</em>. Cambridge University Press. <a href="https://books.google.com/books?id=CDAWBQAAQBAJ">https://books.google.com/books?id=CDAWBQAAQBAJ</a>.
+</div>
+<div id="ref-lipton1968" class="csl-entry" role="listitem">
+Lipton, Michael. 1968. <span>“Theory of Optimising Peasant.”</span> <em>Journal of Development Studies</em> 4 (3): 327–51. <a href="https://doi.org/10.1080/00220386808421262">https://doi.org/10.1080/00220386808421262</a>.
+</div>
+<div id="ref-perrow1984" class="csl-entry" role="listitem">
+Perrow, C. 1984. <em>Normal Accidents: Living with High Risk Technologies</em>. Princeton: Princeton University Press. <a href="https://books.google.com/books?id=g66J6Vzq6EYC">https://books.google.com/books?id=g66J6Vzq6EYC</a>.
+</div>
+<div id="ref-sagan2004" class="csl-entry" role="listitem">
+Sagan, Scott D. 2004. <span>“The Problem of Redundancy Problem: Why More Nuclear Security Forces May Produce Less Nuclear Security.”</span> <em>Risk Analysis</em> 24 (4): 935–46. <a href="https://doi.org/10.1111/j.0272-4332.2004.00495.x">https://doi.org/10.1111/j.0272-4332.2004.00495.x</a>.
+</div>
+<div id="ref-schmid_etal2022" class="csl-entry" role="listitem">
+Schmid, Max, Maria Paniw, Maarten Postuma, Arpat Ozgul, and Frédéric Guillaume. 2022. <span>“A Trade-Off Between Robustness to Environmental Fluctuations and Speed of Evolution.”</span> <em>The American Naturalist</em> 200 (1): E16–35. <a href="https://doi.org/10.1086/719654">https://doi.org/10.1086/719654</a>.
+</div>
+<div id="ref-scott1977" class="csl-entry" role="listitem">
+Scott, James C. 1977. <em><span class="nocase">The Moral Economy of the Peasant: Rebellion and Subsistence in Southeast Asia</span></em>. New Haven: Yale University Press.
+</div>
+<div id="ref-tulja1990" class="csl-entry" role="listitem">
+Tuljapurkar, S. 1990. <em>Population Dynamics in Variable Environments</em>. Vol. 85. Lecture Notes in Biomathematics. Berlin: Springer-Veralg.
+</div>
+<div id="ref-wiessner1982" class="csl-entry" role="listitem">
+Wiessner, P. 1982. <span>“Risk, Reciprocity, and Social Influences on <span>!Kung San</span> Economics.”</span> In <em>Politics and History in Band Societies</em>, edited by Eleanore Leacock and Richard B. Lee. Cambridge: Cambridge University Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./efficiency.html" class="pagination-link" aria-label="Efficiency Is the Enemy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency Is the Enemy</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

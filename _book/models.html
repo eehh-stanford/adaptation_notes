@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Adaptation Notes - 1&nbsp; Models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./evolution.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./models.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Adaptation Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./populations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk, Uncertainty, and Decision-Making</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Human Populations and the Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efficiency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency is the Enemy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-great-nothings" id="toc-the-great-nothings" class="nav-link active" data-scroll-target="#the-great-nothings"><span class="header-section-number">1.1</span> The Great Nothings</a></li>
+  <li><a href="#models-are-dumb" id="toc-models-are-dumb" class="nav-link" data-scroll-target="#models-are-dumb"><span class="header-section-number">1.2</span> Models Are Dumb</a>
+  <ul class="collapse">
+  <li><a href="#three-ambiguous-models-in-the-study-of-adaptation" id="toc-three-ambiguous-models-in-the-study-of-adaptation" class="nav-link" data-scroll-target="#three-ambiguous-models-in-the-study-of-adaptation"><span class="header-section-number">1.2.1</span> Three Ambiguous Models in the Study of Adaptation</a></li>
+  <li><a href="#types-of-models" id="toc-types-of-models" class="nav-link" data-scroll-target="#types-of-models"><span class="header-section-number">1.2.2</span> Types of Models</a></li>
+  </ul></li>
+  <li><a href="#the-power-of-false-models" id="toc-the-power-of-false-models" class="nav-link" data-scroll-target="#the-power-of-false-models"><span class="header-section-number">1.3</span> The Power of False Models</a></li>
+  <li><a href="#the-power-of-simple-models-optimality-in-human-behavioral-ecology" id="toc-the-power-of-simple-models-optimality-in-human-behavioral-ecology" class="nav-link" data-scroll-target="#the-power-of-simple-models-optimality-in-human-behavioral-ecology"><span class="header-section-number">1.4</span> The Power of Simple Models: Optimality in Human Behavioral Ecology</a>
+  <ul class="collapse">
+  <li><a href="#optimality-models" id="toc-optimality-models" class="nav-link" data-scroll-target="#optimality-models"><span class="header-section-number">1.4.1</span> Optimality Models</a></li>
+  <li><a href="#optimal-foraging-theory" id="toc-optimal-foraging-theory" class="nav-link" data-scroll-target="#optimal-foraging-theory"><span class="header-section-number">1.4.2</span> Optimal Foraging Theory</a></li>
+  </ul></li>
+  <li><a href="#whence-the-replication-crisis" id="toc-whence-the-replication-crisis" class="nav-link" data-scroll-target="#whence-the-replication-crisis"><span class="header-section-number">1.5</span> Whence the Replication Crisis?</a></li>
+  <li><a href="#weirdmyopics" id="toc-weirdmyopics" class="nav-link" data-scroll-target="#weirdmyopics"><span class="header-section-number">1.6</span> WEIRD/MYOPICS</a></li>
+  <li><a href="#do-big-data-obviate-the-need-for-theory" id="toc-do-big-data-obviate-the-need-for-theory" class="nav-link" data-scroll-target="#do-big-data-obviate-the-need-for-theory"><span class="header-section-number">1.7</span> Do Big Data Obviate the Need for Theory?</a></li>
+  <li><a href="#on-nuance-and-rigor" id="toc-on-nuance-and-rigor" class="nav-link" data-scroll-target="#on-nuance-and-rigor"><span class="header-section-number">1.8</span> On Nuance and Rigor</a></li>
+  <li><a href="#worldview-of-ecology-vs.-worldview-of-physics" id="toc-worldview-of-ecology-vs.-worldview-of-physics" class="nav-link" data-scroll-target="#worldview-of-ecology-vs.-worldview-of-physics"><span class="header-section-number">1.9</span> Worldview of Ecology vs.&nbsp;Worldview of Physics</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-models" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-great-nothings" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="the-great-nothings"><span class="header-section-number">1.1</span> The Great Nothings</h2>
+<p>Nothing in Biology Makes Sense Except in Light of Evolution (Theodosius Dobzhansky) and There is Nothing More Practical Than a Good Theory (Kurt Lewin).</p>
+<p>Scientific theory is an explanation of some aspect of the world. Good scientific theories have been tested and corroborated repeatedly by established research methods. Scientific Theory goes beyond facts or observations by providing a structure for investigation and providing answers to <em>how</em> questions. To be useful, a scientific theory must make testable predictions. These should distinguish it from competing theories. Some examples of scientific theories include the germ theory of disease, heliocentric solar system, plate tectonics, and of course, the theory of evolution by natural selection.</p>
+<p>Theory allows us to make rigorous statements about things we have not yet observed. It is therefore particularly important for a branch of science focused on the future. As noted by <span class="citation" data-cites="roughgarden_etal1989">Roughgarden, May, and Levin (<a href="references.html#ref-roughgarden_etal1989" role="doc-biblioref">1989</a>)</span>, “More importantly, perhaps, theory can imagine and explore a wider range of worlds than the unique one we inhabit, and by so doing can lead to fresh perceptions and new questions about why our actual world came to be as it is.”</p>
+<p>My colleague, the political scientist Jon Bendor, once quipped that while there is nothing more practical than a good theory, “there is nothing more impractical than a bad theory.” Obviously, we need rigorous mechanisms to adjudicate the good theory and weed out the bad.</p>
+<p>The physicist-turned-philosopher-of-science, Karl Popper, promoted a model of scientific reasoning that seems to be largely the default for many practicing scientists. Popper’s model of science is known as the Hypothetico-Deductive model. I won’t belabor it, but I will say that I am generally not big on prescriptive approaches to science — as long as the science can eventually be placed into something like a formal framework (to avoid ambiguity, etc.).</p>
+<p><span class="citation" data-cites="lehman1986">Lehman (<a href="references.html#ref-lehman1986" role="doc-biblioref">1986</a>)</span> “Those who embrace constraints crafted by others in the form of Popperian or hypothetico-deductive straight jackets may have divined a means to restrict their imagination, but there is no evidence in my view that those constraints encourage breakthroughs in the biological sciences”</p>
+</section>
+<section id="models-are-dumb" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="models-are-dumb"><span class="header-section-number">1.2</span> Models Are Dumb</h2>
+<p>With complex explanatory frameworks for complex real-world phenomena, our intuition often fails us. <span class="citation" data-cites="smaldino2017">P. E. Smaldino (<a href="references.html#ref-smaldino2017" role="doc-biblioref">2017</a>)</span> argues for the fundamental importance of formal models in science (especially in areas, such as psychology and anthropology where they are not typically employed). A formal model requires us to delineate parts of a system, and then specify the relationships between those parts. The model helps us develop intuition for problems. It allows us to examine the logical conclusions of assumptions and to examine appropriateness of assumptions. <span class="citation" data-cites="gunawardena2014">Gunawardena (<a href="references.html#ref-gunawardena2014" role="doc-biblioref">2014</a>)</span> noted that “a mathematical model is a logical machine for converting assumptions into conclusions”</p>
+<p><span class="citation" data-cites="hilborn_mangel1997">Hilborn and Mangel (<a href="references.html#ref-hilborn_mangel1997" role="doc-biblioref">1997</a>)</span> suggest that formal models serve four purposes:</p>
+<ol type="1">
+<li>They are tools for evaluating scientific hypotheses.</li>
+<li>They are a means of formalizing a verbal description.</li>
+<li>They are a means of identifying important features of a system.</li>
+<li>They are a means of refining investigation and guiding future experimental or observational work.</li>
+</ol>
+<p>In addition to these features, formalizing verbal models allows us to avoid <em>strategic ambiguity</em>, a term coined by <span class="citation" data-cites="eisenberg1984">Eisenberg (<a href="references.html#ref-eisenberg1984" role="doc-biblioref">1984</a>)</span>. He meant it in a positive sense. <span class="citation" data-cites="smaldino2017">P. E. Smaldino (<a href="references.html#ref-smaldino2017" role="doc-biblioref">2017</a>)</span> re-purposes the term with a decidedly less positive implication. From Eisenberg’s perspective of organizational communication, strategic ambiguity is a tool for organization that promotes “unified diversity”, facilitates organizational change, and preserves the power structure of institutions. From a scientific perspective, the strategic ambiguity of verbal models gives the illusion of understanding while undermining actual understanding.</p>
+<p>Related to The Motte-and-Bailey Fallacy, where a speaker initially advances an indefensible claim (“the bailey”) and, when challenged, retreats to a more modest claim (“the motte”) that shares some similarities with the indefensible claim. This is a common tactic employed by racist pseudoscientists.</p>
+<p>Two specific modes of strategic ambiguity include Theory stretching and Post-Hoc precision. Theory stretching: interpretation of an ambiguous claim more expansively to absorb data outside the scope of the original claim. Post-hoc precision: interpretation of an ambiguous theoretical claim narrowly so that it appears more precisely aligned with the data</p>
+<p>In a tweet on 8 December 2021 the psychologist Julia Rohrer suggested that “[i]t is the curse of transparency that the more you disclose about your research process, the more there is to criticize.”</p>
+<p><span class="citation" data-cites="frankenhuis_etal2022">W. Frankenhuis, Panchanathan, and Smaldino (<a href="references.html#ref-frankenhuis_etal2022" role="doc-biblioref">2022</a>)</span>: “Clarity can have the perverse effect of making it easier for evaluators to identify flaws that might have remained hidden in a more ambiguous description.”</p>
+<p>Ambiguous theories promote confirmation bias. Natural selection for bad science <span class="citation" data-cites="smaldino_mcelreath2016">(<a href="references.html#ref-smaldino_mcelreath2016" role="doc-biblioref">Paul E. Smaldino and McElreath 2016</a>)</span>. Ambiguous theories are often given a pass by reviewers, editors, and the general public, while precise theories are seen as narrow and uninteresting. In a tweet (RIP) on 30 November 2020, Paul Smaldino coined the name RAPPing (Rewarding Ambiguity and Penalizing Precision) for this phenomenon <span class="citation" data-cites="frankenhuis_etal2022">(<a href="references.html#ref-frankenhuis_etal2022" role="doc-biblioref">W. Frankenhuis, Panchanathan, and Smaldino 2022</a>)</span>.</p>
+<p><span class="citation" data-cites="frankenhuis_etal2022">W. Frankenhuis, Panchanathan, and Smaldino (<a href="references.html#ref-frankenhuis_etal2022" role="doc-biblioref">2022</a>)</span> identify six questions that you can ask to avoid RAPPing:</p>
+<ol type="1">
+<li>Is each term defined?</li>
+<li>Are all the relations between terms specified?</li>
+<li>Are all the assumptions stated explicitly?</li>
+<li>Has the theory been formalized?</li>
+<li>Is the scope of the theory well-specified?</li>
+<li>Is the theory consistent across papers?</li>
+</ol>
+<p>Models may be dumb, but they are also democratic. <span class="citation" data-cites="muthukrishna_henrich2019">Muthukrishna and Henrich (<a href="references.html#ref-muthukrishna_henrich2019" role="doc-biblioref">2019</a>)</span> note that “[b]y formally defining assumptions, logic, and predictions, anyone can challenge the theory by either testing the predictions or by challenging or modifying the assumptions or logic and showing how the predictions would change.”</p>
+<p>In the spirit of moving beyond the existing empirical evidence, “[r]igorous formal theory may also be a way to evaluate the existing literature for plausibility based on connections to well-established theories and data.”</p>
+<p>Thompson et al.&nbsp;(2022), cited in <span class="citation" data-cites="frankenhuis_etal2022">W. Frankenhuis, Panchanathan, and Smaldino (<a href="references.html#ref-frankenhuis_etal2022" role="doc-biblioref">2022</a>)</span>, used machine learning, trained on evaluations of work for the UK Research Excellence Framework, to show that harder-to-understand abstracts rated more highly than than easier-to-understand abstracts!</p>
+<p>Think about the language of the contemporary humanities, especially cultural anthropology…</p>
+<section id="three-ambiguous-models-in-the-study-of-adaptation" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="three-ambiguous-models-in-the-study-of-adaptation"><span class="header-section-number">1.2.1</span> Three Ambiguous Models in the Study of Adaptation</h3>
+<p>Resilience: started out as serious population biology, but has become overrun by woo.</p>
+<p>The Availability Heuristic. See <a href="decision.html" class="quarto-xref"><span>Chapter 5</span></a></p>
+<p>Adaptation itself!</p>
+</section>
+<section id="types-of-models" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="types-of-models"><span class="header-section-number">1.2.2</span> Types of Models</h3>
+<p><span class="citation" data-cites="holling1966">Holling (<a href="references.html#ref-holling1966" role="doc-biblioref">1966</a>)</span> made a distinction between strategic and tactical models. Strategic Models typically have a small number of parameters and are “uncluttered with extraneous details,” and are important for developing general theory. Tactical models, on the other hand, are more detailed, possibly fit to empirical data. The aim of a tactical model is making more precise predictions or to provide refinements of general theory.</p>
+<p><span class="citation" data-cites="levins1966">Levins (<a href="references.html#ref-levins1966" role="doc-biblioref">1966</a>)</span> suggested that models inherently entail trade-offs. In particular, he suggested that a model cannot simultaneously maximize generality, precision, and realism. In the framework of <span class="citation" data-cites="holling1966">Holling (<a href="references.html#ref-holling1966" role="doc-biblioref">1966</a>)</span>, we can say that strategic models are more general, while tactical models are more realistic &amp; precise.</p>
+<p><span class="citation" data-cites="orzack_sober1994">Orzack and Sober (<a href="references.html#ref-orzack_sober1994" role="doc-biblioref">1994</a>)</span> don’t like it one bit. Like I’m a little worried that Steve Orzack is going to come for me because I actually cited Levins unironically. <span class="citation" data-cites="evans_etal2013">Evans et al. (<a href="references.html#ref-evans_etal2013" role="doc-biblioref">2013</a>)</span> suggest that complex models can be general and that theoretical progress depends on combining simple and complex models. I agree with that in principle.</p>
+<p><span class="citation" data-cites="schelling1960">Schelling (<a href="references.html#ref-schelling1960" role="doc-biblioref">1960</a>)</span> similarly praises simple models. Similarly, so does <span class="citation" data-cites="western2001">Western (<a href="references.html#ref-western2001" role="doc-biblioref">2001</a>)</span>, who notes notes that they are easy to refute because their prior probability mass is more highly concentrated.</p>
+</section>
+</section>
+<section id="the-power-of-false-models" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="the-power-of-false-models"><span class="header-section-number">1.3</span> The Power of False Models</h2>
+<p><span class="citation" data-cites="wimsatt1987">Wimsatt (<a href="references.html#ref-wimsatt1987" role="doc-biblioref">1987</a>)</span> provides a comprehensive list of the benefits of</p>
+</section>
+<section id="the-power-of-simple-models-optimality-in-human-behavioral-ecology" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="the-power-of-simple-models-optimality-in-human-behavioral-ecology"><span class="header-section-number">1.4</span> The Power of Simple Models: Optimality in Human Behavioral Ecology</h2>
+<p>We can illustrate the power of simple (false) models by examining an old debate in human ecology. To do this, we first need to spend a little time introducing optimality models.</p>
+<section id="optimality-models" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="optimality-models"><span class="header-section-number">1.4.1</span> Optimality Models</h3>
+<p>Optimality models are generally relatively simple, tactical explanation for behavior. The foundational approach for human behavioral ecology (HBE) <span class="citation" data-cites="smith1992a">Eric Alden Smith (<a href="references.html#ref-smith1992b" role="doc-biblioref">1992b</a>)</span></p>
+<p>Different authors break up the requirements for optimality models in different ways. I like the approach of <span class="citation" data-cites="smith_winterhalder1992">E. A. Smith and Winterhalder (<a href="references.html#ref-smith_winterhalder1992" role="doc-biblioref">1992</a>)</span> best. In this formulation, optimality models require the specification of four things”</p>
+<ol type="1">
+<li><strong>Actor</strong>: A definition of the unit of analysis. Who or what is doing the optimizing?</li>
+<li><strong>Objective Function</strong>: What is it that people seek to optimize?</li>
+<li><strong>Strategy Set</strong>: What are the possible alternative actions from which the best choice is being made?</li>
+<li><strong>Constraints</strong> What is possible?</li>
+</ol>
+<p>The use of simple optimality models provides a coherent framework for structuring research.</p>
+<p>Optimality models tend to be simple. As such, they frequently fail to fully explain human decisions. What then is the point? As we discuss in more detail elsewhere (e.g., Chapter 5), simple models allow us to make very general qualitative statements. When people fail to conform to the predictions of optimality models, what is happening? Importantly, people may simply not be optimizing. However, we can make far more out of the result. Have we mis-specified the objective function or the currencey? Did we fail to properly enumerate the possible alternative strategies? Is there a constraint on indivudals’ choice that we failed to account for?</p>
+<p>Levins, in his classic (1966) paper, noted that models can fufill three goals: generality, realism, and precision. He further suggests that a single model can not maximize all three of these features simultaneously <span class="citation" data-cites="levins1966">(<a href="references.html#ref-levins1966" role="doc-biblioref">Levins 1966</a>)</span>. A highly realistic model will not typically apply to a broad range of cases because it will include a great deal of information specific to the situation.</p>
+<p><span class="citation" data-cites="holling1964">Holling (<a href="references.html#ref-holling1964" role="doc-biblioref">1964</a>)</span> and <span class="citation" data-cites="holling1966">Holling (<a href="references.html#ref-holling1966" role="doc-biblioref">1966</a>)</span> has proposed a similar typology of models, noting particularly the distinction between tactical and strategic models.</p>
+<p><span class="citation" data-cites="schelling1960">Schelling (<a href="references.html#ref-schelling1960" role="doc-biblioref">1960</a>)</span> similarly praises simple models.</p>
+</section>
+<section id="optimal-foraging-theory" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="optimal-foraging-theory"><span class="header-section-number">1.4.2</span> Optimal Foraging Theory</h3>
+<p>However, the optimality approach has drawn criticism from other ecological anthropologists and may continue to create a barrier to fruitful integration of different traditions of human ecology. <span class="citation" data-cites="vayda1995a">Vayda (<a href="references.html#ref-vayda1995a" role="doc-biblioref">1995a</a>)</span> and <span class="citation" data-cites="vayda1995b">Vayda (<a href="references.html#ref-vayda1995b" role="doc-biblioref">1995b</a>)</span> has been particularly critical of HBE and other functionalist approaches to human ecology. The strong criticism that comes out of Vayda’s work <span class="citation" data-cites="driscoll_stich2008">(<a href="references.html#ref-driscoll_stich2008" role="doc-biblioref">Driscoll and Stich 2008</a>)</span> is that the fit between functional predictions and observed human behavior frequently can not rule out alternative explanations. The formal methods of evaluating multiple hypotheses that I present below addresses this criticism and are consistent with Vayda’s emphasis on event-driven explanatory models <span class="citation" data-cites="vayda_walters1999">(<a href="references.html#ref-vayda_walters1999" role="doc-biblioref">Vayda and Walters 1999</a>)</span>. In general, I am sympathetic to many of Vayda’s criticisms of both behavioral and political ecology, though there are shortcomings in his criticism of HBE.</p>
+<p>Arguing from a Pragmatic perspective, Vayda criticizes both HBE and political ecology, suggesting that they are shackled in their ability to explain human action by their respective theoretical perspectives. While Vayda clearly sees both traditions as blinded by their strong theoretical perspectives, he specifically levels criticism against HBE (what he initially called “Darwinian Ecological Anthropology” or DEA (though later identified DEA as HBE) based on its nomological-deductive approach to explanation. In the place of theoretically-committed research strategies, Vayda persuasively argues for an event-based causal/explanatory (CE) style of science. He suggests that the best research strategy is Chamberlin’s “multiple working hypothesis” approach: observe an event; reason backward through potential chains of causation; evaluate the empirical support for these various candidate explanations. Supporting this idea of multiple working hypotheses is Peirce’s concept of abductive reasoning. Abduction is essentially reasoning from effect to probable cause. Your colleague is uncharacteristically short with you one morning. You reason that he must be experiencing stress at home. Or perhaps he just had a paper rejected. Or he harbors resentment at the way you treated him at last Friday’s faculty meeting. Of course, there are an infinite number of possible causes for your colleague’s grumpiness, but the universe of probable causes is greatly reduced by that person’s attributes (e.g., age, gender, profession, martial status, etc.) and contextual factors (e.g., recent history, current political climate, the weather). Abduction is the reasoning from event back to cause. However, determining the correct cause(s) requires deductive and inductive inference. Theory helps too, as it is theory that allows us to reduce the infinite universe of possible explanation to something manageable.</p>
+<p>Peirce (CP, 5:189) defined abduction as a form of inference as follows: “The surprising fact, C, is observed; But if A were true, C would be a matter of course, Hence, there is reason to suspect that A is true.” However, the definition of abduction raises the fundamental question of what exactly makes C surprising in the first place? Peirce suggests that humans possess a special capacity for reasoning about nature, an intriguing idea, consistent with some threads in evolutionary psychology [CITE?]. In the context of science, there is the issue of Peirce’s “economy of science,” which combines notions of parsimony and generativity of scientific results as a means of ordering preferences for scientific explanations. A particular scientific hypothesis is better than competitors, all else being equal, if it generates more possible empirical tests and future scientific work.</p>
+<p>Contrary to Vayda’s critique, I suggest that the logic of HBE research, and particularly the reliance of simple models based on law-like generalizations, provides a fertile environment for the generation of surprising facts, as much the raw material of abduction as mutations are the raw material for natural selection. However, just as mutations are not sufficient to explain complex adaptations, so are the violations of simple models not sufficient for explanation of complex natural phenomena. Abduction generates new ideas. However, we still need deduction to reduce the universe of possible cause and generate testable predictions from our new ideas and we still need induction to allow empirical confirmation. Indeed, this is exactly Peirce’s perspective on the practice of science.</p>
+<p>The prey-choice or diet-breadth model of which Vayda is so critical serves as an excellent starting point for understanding how positing a simple model that generally fits observations can yield new insights that allow for more complete explanation of human behavior. Assume random, sequential encounters (i.e., no clumping). Encounters are with individual prey items and chosen items and handled one at a time. Foraging is not dangerous for the forager, but it is all-encompassing, in that while foraging, an individual can not engage in any other behaviors.</p>
+<p>Let <span class="math inline">\(En\)</span> be the total net energy gain from foraging and <span class="math inline">\(T\)</span> be the total time spent foraging. Individual items <span class="math inline">\(i \in 1,2, \ldots, k\)</span> have energy <span class="math inline">\(E_i\)</span> and require handling time <span class="math inline">\(h_i\)</span>. The expected number of encounters per unit of foraging time is <span class="math inline">\(\lambda_i\)</span> and the probability of attack conditional on encounter is <span class="math inline">\(P_i\)</span>. Of these variables, the only one under the forager’s control is <span class="math inline">\(P_i\)</span>.</p>
+<p>The goal is to maximize <span class="math inline">\(En/T\)</span>:</p>
+<p><span class="math display">\[
+\frac{E n}{T}=\frac{\sum \lambda_i E_i P_i}{1+\sum \lambda_i h_i P_i}
+\]</span></p>
+<p><span class="citation" data-cites="macarthur_pianka1966">MacArthur and Pianka (<a href="references.html#ref-macarthur_pianka1966" role="doc-biblioref">1966</a>)</span> proved that the optimal diet can be found by ranking the items from most profitable to least profitable based on their measures of <span class="math inline">\(E_i/h_i\)</span>, the energy of the item per unit of handling time. The optimal diet includes all (and only) the items for which:</p>
+<p><span class="math display">\[
+\frac{E_i}{h_i} &gt; \frac{En}{T}.
+\]</span> That is, include all items whose net energy gain is greater than the average for the environment and ignore everything else. This is sometimes known as the <em>zero-one rule</em> because if an item is included in the diet, it should always be pursued when encountered and if it is not, it should never be pursued <span class="citation" data-cites="stephens_krebs1986">(<a href="references.html#ref-stephens_krebs1986" role="doc-biblioref">Stephens and Krebs 1986</a>)</span>. Research on hunter-gatherers from a variety of localities shows that the of the prey-choice model predicts foragers’ diets remarkably well in general. People preferentially target items that yield high energy returns. There are nonetheless some systematic deviations from predictions. In particular, men typically avoid items that have high values of <span class="math inline">\(E_i/h_i\)</span> but come in small packages, particularly if those things are plant-based, favoring instead large-package items like big game that carry high prestige. <span class="citation" data-cites="hawkes_etal1982">Hawkes, Hill, and O’connell (<a href="references.html#ref-hawkes_etal1982" role="doc-biblioref">1982</a>)</span>, for example, showed that Aché men regularly ignore high-return items like biaju fruit or palm fiber. When captured, big game provides large energy returns. However, its relative scarcity and the very high handling/transport costs associated with its consumption means that other, ignored items may actually be better from a strictly energetic standpoint.</p>
+<p>It is this reasoning that led researchers such as <span class="citation" data-cites="hawkes1991">Hawkes (<a href="references.html#ref-hawkes1991" role="doc-biblioref">1991</a>)</span> and <span class="citation" data-cites="bird_etal2001">R. B. Bird, Smith, and Bird (<a href="references.html#ref-bird_etal2001" role="doc-biblioref">2001</a>)</span> to suggest that men are driven by alternative motives other than simply energy maximization in pursuing high-prestige food items (and, more importantly, forgoing high-return, low-prestige items). <span class="citation" data-cites="bird1999">Rebecca Bliege Bird (<a href="references.html#ref-bird1999" role="doc-biblioref">1999</a>)</span>, in particular, argues that by widely sharing desirable food items within social groups, men gain prestige within communities, forge political alliances with other households, and potentially increase reproductive opportunities for themselves. The ensuing debate in the HBE literature over the motivations for men’s foraging decisions, while at times intense, has been extremely productive and has led to important theoretical developments in our attempts to explain observed human behavioral patterns. Chief among these are the theory of embodied capital of Kaplan and colleagues <span class="citation" data-cites="kaplan_etal2000">Gurven and Hill (<a href="references.html#ref-gurven_hill2009" role="doc-biblioref">2009</a>)</span> and theories of costly signaling as laid out by <span class="citation" data-cites="bird_smith2005">R. B. Bird and Smith (<a href="references.html#ref-bird_smith2005" role="doc-biblioref">2005</a>)</span>. Moreover, this debate has done the most valuable thing that scientific theory can do for science, namely, it has motivated the collection of more highly detailed data on foraging, food sharing, cooperation, and has generated novel theoretical linkages between different threads of human evolutionary biology (Hawkes 1991; Marlowe 2003; Alvard and Gillespie 2004; Marlowe 2004; Tucker 2004; Zeanah 2004; Wood 2006; Bird, et al.&nbsp;2009; Gurven and Hill 2009; Kramer and Ellison 2010; Marlowe 2010; Nolin 2010; Carmody, et al.&nbsp;2011; Codding, et al.&nbsp;2011; Winking and Gurven 2011; Nolin 2012; Jones, et al.&nbsp;2013; Wood and Marlowe 2013). <strong>gotta deal with these, ugh</strong></p>
+<p>This line of work and the research program it has spawned would not have been possible were it not for the simple model (i.e., the prey-choice model) that conditioned our expectations and the observed anomalies generated by attempts at empirical evaluation of the its predictions. The results score very favorably in terms of Peirce’s economy of science because of this generativity. It seems quite reasonable to posit that the best case for scientific progress is for a generally well-fitting model to generate occasional surprising exceptions. This provides a rather strong incentive for the development of general models. Of course, it also requires that researchers be open to — and willing to accept — the failure of their models in pursuit of improved scientific explanation.</p>
+<p><span class="citation" data-cites="vayda1995b">Vayda (<a href="references.html#ref-vayda1995b" role="doc-biblioref">1995b</a>)</span> dismissed cost-benefit analysis of foraging theory in <span class="citation" data-cites="kaplan_hill1992">Kaplan and Hill (<a href="references.html#ref-kaplan_hill1992" role="doc-biblioref">1992</a>)</span> and related work as mere “economizing,” suggesting that the fact that hunters forego prey that are not sufficiently profitable is a commonsense result that holds no deep insight into evolutionary process. Of course, it begs the question of why people behave in an economical manner? There are plenty of domains of human activity in which economizing is, apparently, not the rule. Indeed, demonstrating the apparent economic irrationality of the human mind is something of a cottage industry in behavioral economics <span class="citation" data-cites="ariely2008">Thaler (<a href="references.html#ref-thaler2015" role="doc-biblioref">2015</a>)</span>. Why should economizing be commonsense in the realm of foraging decisions? The answer, of course, comes from the biologically integrated theory of preferences that lies at the heart of HBE. Foraging, and subsistence behavior more generally, fall into the category of human actions that are economized because success in these domains actually matters for survival, reproduction, political success, and offspring recruitment. This explanation is consistent with the exciting counter-narrative to the irrationality of behavioral economics that comes from examining the savvy economic decision-making of the very poor, for whom the stakes of “economizing” presumably matter most <span class="citation" data-cites="mullainathan_shafir2013">W. E. Frankenhuis and Nettle (<a href="references.html#ref-frankenhuis_nettle2020" role="doc-biblioref">2020</a>)</span>.</p>
+<p>The causal-mechanistic explanation that is advocated by Vayda can produce rich narratives to account for events. It can also lead to highly convoluted explanations when an event’s causes are complex. While description is seen as the epistemic ideal in some schools of anthropological investigation <span class="citation" data-cites="geertz1973">(<a href="references.html#ref-geertz1973" role="doc-biblioref">Geertz 1973</a>)</span>, scientific approaches generally favor explanation, which necessarily involves simplification and generalization. Models – particularly strategic models — simplify, facilitating general explanation <span class="citation" data-cites="levins1966">Schelling (<a href="references.html#ref-schelling1978" role="doc-biblioref">1978</a>)</span>. Thus, the simple models favored by HBE, and of which Vayda is so critical, can actually work in a complementary manner to mechanistic accounts, serving as an important check to potential runaway complexity of mechanistic accounts. This strategy is supported in the masterful statements on the philosophy of model-building by <span class="citation" data-cites="levins1966">Levins (<a href="references.html#ref-levins1966" role="doc-biblioref">1966</a>)</span> in the biological sciences and by <span class="citation" data-cites="schelling1978">Schelling (<a href="references.html#ref-schelling1978" role="doc-biblioref">1978</a>)</span> in the social sciences.</p>
+</section>
+</section>
+<section id="whence-the-replication-crisis" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="whence-the-replication-crisis"><span class="header-section-number">1.5</span> Whence the Replication Crisis?</h2>
+<p><span class="citation" data-cites="muthukrishna_henrich2019">Muthukrishna and Henrich (<a href="references.html#ref-muthukrishna_henrich2019" role="doc-biblioref">2019</a>)</span>: “without a unifying theoretical framework, we don’t know whether we should expect the results to replicate with older individuals, poorer individuals, or individuals in other societies. And without such a framework, even after the onerous replication effort, doubt remains as to whether one of the infinite space of moderators explains the lack of replication. To understand the importance of theory to data and data to theory, it’s worth remembering the abductive challenge.”</p>
+<p>The limited imaginations of homogeneous researchers:</p>
+<p>“Many creative hypotheses have been drawn from the imaginations of researchers from societies that are WEIRD, but there is a certain circularity to testing these WEIRD intuitions on WEIRD participants that can mislead us into believing we are drawing closer to a deeper and more general understanding of human behaviour.”</p>
+</section>
+<section id="weirdmyopics" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="weirdmyopics"><span class="header-section-number">1.6</span> WEIRD/MYOPICS</h2>
+<p><span class="citation" data-cites="henrich_etal2010">Henrich, Heine, and Norenzayan (<a href="references.html#ref-henrich_etal2010" role="doc-biblioref">2010</a>)</span></p>
+<p>In a <a href="https://neuroanthropology.net/2010/07/10/we-agree-its-weird-but-is-it-weird-enough/">blog post</a> reviewing <span class="citation" data-cites="henrich_etal2010">Henrich, Heine, and Norenzayan (<a href="references.html#ref-henrich_etal2010" role="doc-biblioref">2010</a>)</span>, the cultural anthropologist Greg Downey suggested that WEIRD, while a great advance, is a wee bit self-congratulatory: “rich,” “educated,” “democratic,” and all that. Somewhat jokingly, he presented an alternative typology that is a bit more mechanistic, namely, MYOPICS:</p>
+<ul>
+<li>Materialist</li>
+<li>Young</li>
+<li>self-Obsessed</li>
+<li>Pleasure-seeking</li>
+<li>Isolated</li>
+<li>Consumerist</li>
+<li>Sedentary</li>
+</ul>
+</section>
+<section id="do-big-data-obviate-the-need-for-theory" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="do-big-data-obviate-the-need-for-theory"><span class="header-section-number">1.7</span> Do Big Data Obviate the Need for Theory?</h2>
+<p>No.</p>
+<p>Proponents of “Big Data” argue that we are moving beyond the need for theory. For example, in probably the strongest early articulation of this idea, WIRED Magazine’s editor, Chris Anderson <a href="https://www.wired.com/2008/06/pb-theory/">suggested</a> that “with enough data, the numbers speak for themselves” In a brief note for the annual big-question solicitation by the Edge, mathematician Steven Strogratz (2007) suggested that we are approaching “the end of insight.”</p>
+<p>However, Big Data is no panacea and actually creates its own problems. Meng’s Paradox is a notable example. Sampling theory is central to modern statistical practice. There is a general impression that with large enough collections of data, we don’t need to woryy about sampling designs, etc.</p>
+<p><span class="citation" data-cites="meng2018">Meng (<a href="references.html#ref-meng2018" role="doc-biblioref">2018</a>)</span> described his “Law of Large Populations” (LLP), which shows that the estimation error, relative to the benchmarking rate from normal theory, <span class="math inline">\(1/\sqrt{n}\)</span>, increases with <span class="math inline">\(\sqrt{N}\)</span>, where <span class="math inline">\(n\)</span> is the sample size and <span class="math inline">\(N\)</span> is the census size of the population from which the sample of size <span class="math inline">\(n\)</span> is drawn. Using polling data for the 2016 US presidential election, he shows that because of LLP, the simple sample proportion of the self-reported voting preference for Trump from 1% of the US eligible voters (<span class="math inline">\(n \approx 2,300,000\)</span>) had the same MSE as the corresponding sample proportion from a genuine simple random sample of size <span class="math inline">\(n \approx 400\)</span>. This represents a 99.98% reduction of sample size (and hence confidence) and helps explain why so many media outlets were blindsided by the Trump electoral victory. <span class="citation" data-cites="bradley_etal2021">Bradley et al. (<a href="references.html#ref-bradley_etal2021" role="doc-biblioref">2021</a>)</span> showed that the same phenomenon led to massive over-estimation of COVID-19 vaccination uptake in the US.</p>
+<p>Meng shows that the relative error of an outcome of interest, <span class="math inline">\(\bar{G}\)</span> is given by</p>
+<p><span class="math display">\[ Z_{n,N} =  \rho_{R,G} \sqrt{N-1},\]</span> where <span class="math inline">\(N\)</span> is the total population size, <span class="math inline">\(n\)</span> is the sample size, and <span class="math inline">\(\rho_{R,G}\)</span> is the correlation between the response rate and the outcome.</p>
+<p>Obviously, if the correlation between response and outcome is zero, then the relative error is zero. This is the case of a probability sample, which eliminates the correlation by design. However, even a minuscule correlation can blow up the relative error when the study population is large. The larger the underlying population, the larger the error.</p>
+<p>Meng concludes, “population inferences with Big Data are subject to a Big Data Paradox: the more the data, the surer we fool ourselves.” <span class="citation" data-cites="meng2018">(<a href="references.html#ref-meng2018" role="doc-biblioref">Meng 2018</a>)</span></p>
+<p>“Although we often hear that data speak for themselves, their voices can be soft and sly.” (Mosteller 1983: 234) We might add that the data also generally speak a foreign language and their soft voices typically require the expertise of a translator. That translator, of course, is theory.</p>
+<p><span class="citation" data-cites="succi_coveney2019">Succi and Coveney (<a href="references.html#ref-succi_coveney2019" role="doc-biblioref">2019</a>)</span> note that complex systems are strongly correlated, hence they do not (generally) obey Gaussian statistics. No data are big enough for systems with strong sensitivity to data inaccuracies. Moreover, correlation does not imply causation, the link between the two becoming exponentially fainter at increasing data size. In a finite-capacity world, too much data is just as bad as no data.</p>
+<p>It seems that theory might actually be more important than ever.</p>
+<p>This has proved to be the case in genetics. The surfeit of genomic data means that theoretical population geneticists are required now more than ever to help formulate scientifically-interesting questions.</p>
+</section>
+<section id="on-nuance-and-rigor" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="on-nuance-and-rigor"><span class="header-section-number">1.8</span> On Nuance and Rigor</h2>
+<p>Do formal models capture every last detail of the human experience? No, of course not. They’re not meant to do that. In fact, the simplification of a model is very much a feature and not a bug. Nuance turns out not to be a desirable feature in theory <span class="citation" data-cites="healy2017">(<a href="references.html#ref-healy2017" role="doc-biblioref">Healy 2017</a>)</span>.</p>
+</section>
+<section id="worldview-of-ecology-vs.-worldview-of-physics" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="worldview-of-ecology-vs.-worldview-of-physics"><span class="header-section-number">1.9</span> Worldview of Ecology vs.&nbsp;Worldview of Physics</h2>
+<p>The mechanistic model of the world does not work</p>
+<p>Economics, social behavior, society, politics are not physical systems</p>
+<p>This should be foregrounded. Maybe read Brian Arthur’s article:</p>
+<p><span class="citation" data-cites="arthur2021">Arthur (<a href="references.html#ref-arthur2021" role="doc-biblioref">2021</a>)</span>: “The economy becomes something not given and existing but constantly forming from a developing set of actions, strategies and beliefs — something not mechanistic, static, timeless and perfect but organic, always creating itself, alive and full of messy vitality.”</p>
+<p>Also seen in the work of, e.g., <span class="citation" data-cites="may_etal2008">May, Levin, and Sugihara (<a href="references.html#ref-may_etal2008" role="doc-biblioref">2008</a>)</span>, <span class="citation" data-cites="may_pathy2010">May and Arinaminpathy (<a href="references.html#ref-may_pathy2010" role="doc-biblioref">2010</a>)</span></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ariely2008" class="csl-entry" role="listitem">
+Ariely, D. 2008. <em>Predictably Irrational: The Hidden Forces That Shape Our Decisions</em>. New York: HarperCollins.
+</div>
+<div id="ref-arthur2021" class="csl-entry" role="listitem">
+Arthur, W. Brian. 2021. <span>“Foundations of Complexity Economics.”</span> <em>Nature Reviews Physics</em> 3 (2): 136–45. <a href="https://doi.org/10.1038/s42254-020-00273-3">https://doi.org/10.1038/s42254-020-00273-3</a>.
+</div>
+<div id="ref-bird_smith2005" class="csl-entry" role="listitem">
+Bird, R. B., and E. A. Smith. 2005. <span>“Signaling Theory, Strategic Interaction, and Symbolic Capital.”</span> <em>Current Anthropology</em> 46 (2): 221–48. <a href="https://doi.org/10.1086/427115">https://doi.org/10.1086/427115</a>.
+</div>
+<div id="ref-bird_etal2001" class="csl-entry" role="listitem">
+Bird, R. B., E. A. Smith, and D. W. Bird. 2001. <span>“The Hunting Handicap: Costly Signaling in Human Foraging Strategies.”</span> <em>Behavioral Ecology and Sociobiology</em> 50 (1): 9–19. <a href="https://doi.org/10.1007/s002650100338">https://doi.org/10.1007/s002650100338</a>.
+</div>
+<div id="ref-bird1999" class="csl-entry" role="listitem">
+Bird, Rebecca Bliege. 1999. <span>“Cooperation and Conflict: The Behavioral Ecology of the Sexual Division of Labor.”</span> <em>Evolutionary Anthropology</em> 8 (2): 65–75. <a href="https://doi.org/10.1002/(SICI)1520-6505(1999)8:2<65::AID-EVAN5>3.0.CO;2-3">https://doi.org/10.1002/(SICI)1520-6505(1999)8:2&lt;65::AID-EVAN5&gt;3.0.CO;2-3</a>.
+</div>
+<div id="ref-bradley_etal2021" class="csl-entry" role="listitem">
+Bradley, Valerie C., Shiro Kuriwaki, Michael Isakov, Dino Sejdinovic, Xiao-Li Meng, and Seth Flaxman. 2021. <span>“Unrepresentative Big Surveys Significantly Overestimated <span>US</span> Vaccine Uptake.”</span> <em>Nature</em> 600 (7890): 695–700. <a href="https://doi.org/10.1038/s41586-021-04198-4">https://doi.org/10.1038/s41586-021-04198-4</a>.
+</div>
+<div id="ref-collins_etal2010" class="csl-entry" role="listitem">
+Collins, D., J. Morduch, S. Rutherford, and O. Ruthven. 2010. <em>Portfolios of the Poor: How the World’s Poor Live on $2 a Day</em>. Princeton: Princeton University Press. <a href="https://books.google.com/books?id=esDhcbEHOfkC">https://books.google.com/books?id=esDhcbEHOfkC</a>.
+</div>
+<div id="ref-driscoll_stich2008" class="csl-entry" role="listitem">
+Driscoll, C., and S. Stich. 2008. <span>“Vayda Blues: Explanation in Darwinian Ecological Anthropology.”</span> In <em>Against the Grain: The Vayda Tradition in Human Ecology and Ecological Anthropology</em>, edited by B. Walters, B. McCay, P. West, and S. Lees, 175–91. Lanham, MD: AltaMira Press.
+</div>
+<div id="ref-eisenberg1984" class="csl-entry" role="listitem">
+Eisenberg, Eric M. 1984. <span>“Ambiguity as Strategy in Organizational Communication.”</span> <em>Communication Monographs</em> 51 (3): 227–42. <a href="https://doi.org/10.1080/03637758409390197">https://doi.org/10.1080/03637758409390197</a>.
+</div>
+<div id="ref-evans_etal2013" class="csl-entry" role="listitem">
+Evans, Matthew R., Volker Grimm, Karin Johst, Tarja Knuuttila, Rogier de Langhe, Catherine M. Lessells, Martina Merz, et al. 2013. <span>“Do Simple Models Lead to Generality in Ecology?”</span> <em>Trends in Ecology &amp; Evolution</em> 28 (10): 578–83. <a href="https://doi.org/10.1016/j.tree.2013.05.022">https://doi.org/10.1016/j.tree.2013.05.022</a>.
+</div>
+<div id="ref-frankenhuis_nettle2020" class="csl-entry" role="listitem">
+Frankenhuis, Willem E., and Daniel Nettle. 2020. <span>“The Strengths of People in Poverty.”</span> <em>Current Directions in Psychological Science</em> 29 (1): 16–21. <a href="https://doi.org/10.1177/0963721419881154">https://doi.org/10.1177/0963721419881154</a>.
+</div>
+<div id="ref-frankenhuis_etal2022" class="csl-entry" role="listitem">
+Frankenhuis, Willem, Karthik Panchanathan, and Paul E Smaldino. 2022. <span>“Strategic Ambiguity in the Social Sciences.”</span> MetaArXiv. <a href="https://doi.org/10.31222/osf.io/kep5b">https://doi.org/10.31222/osf.io/kep5b</a>.
+</div>
+<div id="ref-geertz1973" class="csl-entry" role="listitem">
+Geertz, Clifford. 1973. <em>The Interpretation of Cultures</em>. New York: Basic Books.
+</div>
+<div id="ref-gunawardena2014" class="csl-entry" role="listitem">
+Gunawardena, Jeremy. 2014. <span>“Models in Biology: <span>‘Accurate Descriptions of Our Pathetic Thinking’</span>.”</span> <em>BMC Biology</em> 12 (1): 29. <a href="https://doi.org/10.1186/1741-7007-12-29">https://doi.org/10.1186/1741-7007-12-29</a>.
+</div>
+<div id="ref-gurven_hill2009" class="csl-entry" role="listitem">
+Gurven, Michael, and Kim Hill. 2009. <span>“Why Do Men Hunt? A Reevaluation of <span>‘Man the Hunter’</span> and the Sexual Division of Labor.”</span> <em>Current Anthropology</em> 50 (1): 51–74. <a href="https://doi.org/10.1086/595620">https://doi.org/10.1086/595620</a>.
+</div>
+<div id="ref-hawkes1991" class="csl-entry" role="listitem">
+Hawkes, Kristen. 1991. <span>“Showing Off: Tests of an Hypothesis about Men’s Foraging Goals.”</span> <em>Ethology and Sociobiology</em> 12 (1): 29–54. <a href="https://doi.org/10.1016/0162-3095(91)90011-E">https://doi.org/10.1016/0162-3095(91)90011-E</a>.
+</div>
+<div id="ref-hawkes_etal1982" class="csl-entry" role="listitem">
+Hawkes, Kristen, Kim Hill, and James F. O’connell. 1982. <span>“Why Hunters Gather: Optimal Foraging and the Aché of Eastern <span>Paraguay</span>.”</span> <em>American Ethnologist</em> 9 (2): 379–98. <a href="https://doi.org/10.1525/ae.1982.9.2.02a00100">https://doi.org/10.1525/ae.1982.9.2.02a00100</a>.
+</div>
+<div id="ref-healy2017" class="csl-entry" role="listitem">
+Healy, Kieran. 2017. <span>“Fuck Nuance.”</span> <em>Sociological Theory</em> 35 (2): 118–27. <a href="https://doi.org/10.1177/0735275117709046">https://doi.org/10.1177/0735275117709046</a>.
+</div>
+<div id="ref-henrich_etal2010" class="csl-entry" role="listitem">
+Henrich, Joseph, Steven J. Heine, and Ara Norenzayan. 2010. <span>“The Weirdest People in the World?”</span> <em>Behavioral and Brain Sciences</em> 33 (2-3): 61–135. <a href="https://doi.org/10.1017/s0140525x0999152x">https://doi.org/10.1017/s0140525x0999152x</a>.
+</div>
+<div id="ref-hilborn_mangel1997" class="csl-entry" role="listitem">
+Hilborn, R., and M. Mangel. 1997. <em>The Ecological Detective: Confronting Models with Data</em>. Princeton: Princeton University Press.
+</div>
+<div id="ref-holling1964" class="csl-entry" role="listitem">
+Holling, C. S. 1964. <span>“The Analysis of Complex Population Processes.”</span> <em>The Canadian Entomologist</em> 96 (1-2): 335–47. <a href="https://doi.org/10.4039/Ent96335-1">https://doi.org/10.4039/Ent96335-1</a>.
+</div>
+<div id="ref-holling1966" class="csl-entry" role="listitem">
+———. 1966. <span>“The Strategy of Building Models of Complex Ecological Systems.”</span> In <em>Systems Analysis in Ecology</em>, edited by Kenneth E. F. Watt, 195–214. Academic Press. <a href="https://doi.org/10.1016/B978-1-4832-3283-6.50014-5">https://doi.org/10.1016/B978-1-4832-3283-6.50014-5</a>.
+</div>
+<div id="ref-kahneman2011" class="csl-entry" role="listitem">
+Kahneman, D. 2011. <em>Thinking, Fast and Slow</em>. New York: Farrar, Straus; Giroux.
+</div>
+<div id="ref-kaplan_hill1992" class="csl-entry" role="listitem">
+Kaplan, H., and K. Hill. 1992. <span>“The Evolutionary Ecology of Food Acquisition.”</span> In <em>Evolutionary Ecology and Human Behavior</em>, edited by E. A. Smith and B. Winterhalder, 167–201. Hawthorne, NY: Aldine de Gruyter.
+</div>
+<div id="ref-kaplan_etal2000" class="csl-entry" role="listitem">
+Kaplan, H., K. Hill, J. Lancaster, and A. M. Hurtado. 2000. <span>“A Theory of Human Life History Evolution: Diet, Intelligence, and Longevity.”</span> <em>Evolutionary Anthropology</em> 9 (4): 156–85. <a href="https://doi.org/10.1002/1520-6505(2000)9:4<156::AID-EVAN5>3.0.CO;2-7">https://doi.org/10.1002/1520-6505(2000)9:4&lt;156::AID-EVAN5&gt;3.0.CO;2-7</a>.
+</div>
+<div id="ref-lehman1986" class="csl-entry" role="listitem">
+Lehman, John T. 1986. <span>“The Goal of Understanding in Limnology.”</span> <em>Limnology and Oceanography</em> 31 (5): 1160–66. <a href="https://doi.org/10.4319/lo.1986.31.5.1160">https://doi.org/10.4319/lo.1986.31.5.1160</a>.
+</div>
+<div id="ref-levins1966" class="csl-entry" role="listitem">
+Levins, Richard. 1966. <span>“The Strategy of Model Building in Population Biology.”</span> <em>American Scientist</em> 54 (4): 421–31. <a href="http://www.jstor.org/stable/27836590">http://www.jstor.org/stable/27836590</a>.
+</div>
+<div id="ref-macarthur_pianka1966" class="csl-entry" role="listitem">
+MacArthur, Robert H., and Eric R. Pianka. 1966. <span>“On Optimal Use of a Patchy Environment.”</span> <em>The American Naturalist</em> 100 (916): 603–9. <a href="http://www.jstor.org/stable/2459298">http://www.jstor.org/stable/2459298</a>.
+</div>
+<div id="ref-may_pathy2010" class="csl-entry" role="listitem">
+May, R. M., and N. Arinaminpathy. 2010. <span>“Systemic Risk: The Dynamics of Model Banking Systems.”</span> <em>Journal of The Royal Society Interface</em> 7 (46): 823–38. <a href="https://doi.org/10.1098/rsif.2009.0359">https://doi.org/10.1098/rsif.2009.0359</a>.
+</div>
+<div id="ref-may_etal2008" class="csl-entry" role="listitem">
+May, R. M., S. A. Levin, and G. Sugihara. 2008. <span>“Complex Systems: Ecology for Bankers.”</span> <em>Nature</em> 451 (7181): 893–95. <a href="https://doi.org/10.1038/451893a">https://doi.org/10.1038/451893a</a>.
+</div>
+<div id="ref-meng2018" class="csl-entry" role="listitem">
+Meng, Xiao-Li. 2018. <span>“Statistical Paradises and Paradoxes in Big Data (<span>I</span>): Law of Large Populations, Big Data Paradox, and the 2016 <span>US</span> Presidential Election.”</span> <em>Annals of Applied Statistics</em> 12 (2): 685–726. <a href="https://doi.org/10.1214/18-AOAS1161SF">https://doi.org/10.1214/18-AOAS1161SF</a>.
+</div>
+<div id="ref-mullainathan_shafir2013" class="csl-entry" role="listitem">
+Mullainathan, S., and E. Shafir. 2013. <em>Scarcity: Why Having Too Little Means so Much</em>. New York: Henry Holt; Company. <a href="https://books.google.com/books?id=NTnjsTHrfj8C">https://books.google.com/books?id=NTnjsTHrfj8C</a>.
+</div>
+<div id="ref-muthukrishna_henrich2019" class="csl-entry" role="listitem">
+Muthukrishna, Michael, and Joseph Henrich. 2019. <span>“A Problem in Theory.”</span> <em>Nature Human Behaviour</em> 3 (3): 221–29. <a href="https://doi.org/10.1038/s41562-018-0522-1">https://doi.org/10.1038/s41562-018-0522-1</a>.
+</div>
+<div id="ref-orzack_sober1994" class="csl-entry" role="listitem">
+Orzack, Steven Hecht, and Elliott Sober. 1994. <span>“Optimality Models and the Test of Adaptationism.”</span> <em>The American Naturalist</em> 143 (3): 361–80. <a href="http://www.jstor.org/stable/2462735">http://www.jstor.org/stable/2462735</a>.
+</div>
+<div id="ref-roughgarden_etal1989" class="csl-entry" role="listitem">
+Roughgarden, J., R. M. May, and S. A. Levin. 1989. <em>Perspectives in Ecological Theory</em>. Princeton: Princeton University Press.
+</div>
+<div id="ref-schelling1960" class="csl-entry" role="listitem">
+Schelling, T. C. 1960. <em>Strategy of Conflict</em>. Cambridge: Harvard University Press.
+</div>
+<div id="ref-schelling1978" class="csl-entry" role="listitem">
+———. 1978. <em>Micromotives and Macrobehavior</em>. New York: Norton.
+</div>
+<div id="ref-smaldino2017" class="csl-entry" role="listitem">
+Smaldino, P. E. 2017. <span>“Models Are Stupid, and We Need More of Them.”</span> In <em>Computational Social Psychology</em>, edited by R. R. Vallacher, A . Nowak, and S. J. Read, 311–31. New York: Routledge.
+</div>
+<div id="ref-smaldino_mcelreath2016" class="csl-entry" role="listitem">
+Smaldino, Paul E., and Richard McElreath. 2016. <span>“The Natural Selection of Bad Science.”</span> <em>Royal Society Open Science</em> 3 (9): 160384. <a href="https://doi.org/10.1098/rsos.160384">https://doi.org/10.1098/rsos.160384</a>.
+</div>
+<div id="ref-smith_winterhalder1992" class="csl-entry" role="listitem">
+Smith, E. A., and B. Winterhalder. 1992. <span>“Natural Selection and Decision Making: Some Fundamental Principles.”</span> Book Section. In <em>Evolutionary Ecology and Human Behavior</em>, edited by E. A. Smith and B. Winterhalder, 25–60. New York: Aldine de Gruyter.
+</div>
+<div id="ref-smith1992a" class="csl-entry" role="listitem">
+Smith, Eric Alden. 1992a. <span>“Human Behavioral Ecology: <span>I</span>.”</span> <em>Evolutionary Anthropology</em> 1 (1): 20–25. <a href="https://doi.org/10.1002/evan.1360010107">https://doi.org/10.1002/evan.1360010107</a>.
+</div>
+<div id="ref-smith1992b" class="csl-entry" role="listitem">
+———. 1992b. <span>“Human Behavioral Ecology: <span>II</span>.”</span> <em>Evolutionary Anthropology</em> 1 (2): 50–55. <a href="https://doi.org/10.1002/evan.1360010205">https://doi.org/10.1002/evan.1360010205</a>.
+</div>
+<div id="ref-stephens_krebs1986" class="csl-entry" role="listitem">
+Stephens, David W., and John R. Krebs. 1986. <em>Foraging Theory</em>. Princeton: Princeton University Press.
+</div>
+<div id="ref-succi_coveney2019" class="csl-entry" role="listitem">
+Succi, Sauro, and Peter V. Coveney. 2019. <span>“Big Data: The End of the Scientific Method?”</span> <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 377 (2142): 20180145. <a href="https://doi.org/10.1098/rsta.2018.0145">https://doi.org/10.1098/rsta.2018.0145</a>.
+</div>
+<div id="ref-thaler2015" class="csl-entry" role="listitem">
+Thaler, R. H. 2015. <em>Misbehaving: The Making of Behavioral Economics</em>. New York: W. W. Norton.
+</div>
+<div id="ref-vayda1995a" class="csl-entry" role="listitem">
+Vayda, Andrew P. 1995a. <span>“Failures of Explanation in <span>Darwinian</span> Ecological Anthropology: Part <span>I</span>.”</span> <em>Philosophy of the Social Sciences</em> 25 (2): 219–49. <a href="https://doi.org/10.1177/004839319502500205">https://doi.org/10.1177/004839319502500205</a>.
+</div>
+<div id="ref-vayda1995b" class="csl-entry" role="listitem">
+———. 1995b. <span>“Failures of Explanation in <span>Darwinian</span> Ecological Anthropology: Part <span>II</span>.”</span> <em>Philosophy of the Social Sciences</em> 25 (3): 360–75. <a href="https://doi.org/10.1177/004839319502500305">https://doi.org/10.1177/004839319502500305</a>.
+</div>
+<div id="ref-vayda_walters1999" class="csl-entry" role="listitem">
+Vayda, Andrew P., and Bradley B. Walters. 1999. <span>“Against Political Ecology.”</span> <em>Human Ecology</em> 27 (1): 167–79. <a href="https://doi.org/10.1023/A:1018713502547">https://doi.org/10.1023/A:1018713502547</a>.
+</div>
+<div id="ref-western2001" class="csl-entry" role="listitem">
+Western, B. 2001. <span>“Bayesian Thinking about Macrosociology.”</span> <em>American Journal of Sociology</em> 107 (2): 353–78. <a href="https://doi.org/10.1086/323639">https://doi.org/10.1086/323639</a>.
+</div>
+<div id="ref-wimsatt1987" class="csl-entry" role="listitem">
+Wimsatt, William C. 1987. <span>“False Models as Means to Truer Theories.”</span> In <em>Neutral Models in Biology</em>, edited by M. H. Nitecki and A. Hoffman, 23–55. New York: Oxford University Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./evolution.html" class="pagination-link" aria-label="Evolutionary Foundations">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

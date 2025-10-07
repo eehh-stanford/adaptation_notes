@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Emergence and Governing the Commons – Adaptation Notes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./dynamic.html" rel="next">
+<link href="./complex.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./commons.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Adaptation Notes</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evolution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Evolutionary Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./populations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Population Ecology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Does Culture Evolve?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk, Uncertainty, and Decision-Making</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commons.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dynamic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./efficiency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Efficiency Is the Enemy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./robust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Structure of Successful Problem-Solving</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#malthus-vs.-boserup" id="toc-malthus-vs.-boserup" class="nav-link active" data-scroll-target="#malthus-vs.-boserup"><span class="header-section-number">7.1</span> Malthus vs.&nbsp;Boserup</a></li>
+  <li><a href="#mechanistic-models-of-population-regulation" id="toc-mechanistic-models-of-population-regulation" class="nav-link" data-scroll-target="#mechanistic-models-of-population-regulation"><span class="header-section-number">7.2</span> Mechanistic Models of Population Regulation</a>
+  <ul class="collapse">
+  <li><a href="#the-basic-model" id="toc-the-basic-model" class="nav-link" data-scroll-target="#the-basic-model"><span class="header-section-number">7.2.1</span> The Basic Model</a></li>
+  </ul></li>
+  <li><a href="#commons-and-governance" id="toc-commons-and-governance" class="nav-link" data-scroll-target="#commons-and-governance"><span class="header-section-number">7.3</span> Commons and Governance</a></li>
+  <li><a href="#ostrom" id="toc-ostrom" class="nav-link" data-scroll-target="#ostrom"><span class="header-section-number">7.4</span> Ostrom</a>
+  <ul class="collapse">
+  <li><a href="#managing-the-commons" id="toc-managing-the-commons" class="nav-link" data-scroll-target="#managing-the-commons"><span class="header-section-number">7.4.1</span> Managing the Commons</a></li>
+  </ul></li>
+  <li><a href="#how-many-people-can-the-earth-support" id="toc-how-many-people-can-the-earth-support" class="nav-link" data-scroll-target="#how-many-people-can-the-earth-support"><span class="header-section-number">7.5</span> How Many People Can the Earth Support?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-efficiency" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Emergence and Governing the Commons</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="malthus-vs.-boserup" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="malthus-vs.-boserup"><span class="header-section-number">7.1</span> Malthus vs.&nbsp;Boserup</h2>
+<p>Malthus was central to the development of Darwin’s thinking. Darwin wrote in his (1876) autobiography: “In October 1838, that is, fifteen months after I had begun my systematic inquiry, I happened to read for amusement Malthus on Population, and being well prepared to appreciate the struggle for existence which everywhere goes on from long-continued observation of the habits of animals and plants, it at once struck me that under these circumstances favourable variations would tend to be preserved, and unfavourable ones to be destroyed. The results of this would be the formation of a new species. Here, then I had at last got a theory by which to work.”</p>
+<p>A central tenet of the Malthusian thesis is that agricultural production increases linearly, while human populations increase geometrically (i.e., exponentially in continuous time). At some point, the geometric increase wins and immiseration ensues.</p>
+<p>There is a determinism and passivity in the Malthusian account. The Danish economist Esther Boserup provided a more dynamic and adptationist account of the relationship between population and agricultural productivity. Population pressure induces innovation, which increases productivity, which induces greater innovation in a positive feedback system. Innovation in intensification by smallholders can be fantastically productive as noted by human ecologists such as Robert Netting <span class="citation" data-cites="netting1993">(e.g., <a href="references.html#ref-netting1993" role="doc-biblioref">Netting 1993</a>)</span>.</p>
+<p>Boesrup suggests three main points:</p>
+<ol type="1">
+<li>Environmental limits on type of agriculture are relatively “elastic”</li>
+<li>Increased production/area usually leads to decreased yield/labor</li>
+<li>Labor minimization governs decision to intensify</li>
+</ol>
+<p>You get more production, but you have work much harder to produce it. People only intensify when they must.</p>
+<p><span class="citation" data-cites="lee1986">R. D. Lee (<a href="references.html#ref-lee1986" role="doc-biblioref">1986</a>)</span> and <span class="citation" data-cites="wood1998">Wood (<a href="references.html#ref-wood1998" role="doc-biblioref">1998</a>)</span> have both noted that population can behave in both Malthusian and Boserupian manners. Wood refers to the “MaB Ratchet” (MaB=Malthus and Boserup). Malthusian pressure incites Boserupian innovation, relaxing negative feedback and allowing further population growth. While a population is undergoing a Boserupian expansion, quality of life improves. Alas, given enough time, the population will always return to “the same level of marginal immiseration.” <span class="citation" data-cites="wood1998">(<a href="references.html#ref-wood1998" role="doc-biblioref">Wood 1998</a>: 114)</span></p>
+<p><span class="citation" data-cites="wood1998">Wood (<a href="references.html#ref-wood1998" role="doc-biblioref">1998</a>)</span> summarized the important issues in population regulation for anthropological applications. He asks five questions:</p>
+<ol type="1">
+<li>Is the growth of preindustrial populations “regulated” in any meaningful sense of the word?</li>
+<li>Is there an optimal population size, and do preindustrial populations tend to equilibrate at the optimum?</li>
+<li>What is the relationship between population growth and economic change?</li>
+<li>What are the implications of population growth and economic change for individual health and well being?</li>
+<li>What is the role of crisis mortality in preindustrial population dynamics?</li>
+</ol>
+<p><span class="citation" data-cites="cohen_armelagos1984">M. N. Cohen, Armelagos, and Larsen (<a href="references.html#ref-cohen_armelagos1984" role="doc-biblioref">1984</a>)</span> and <span class="citation" data-cites="cohen1989">M. N. Cohen (<a href="references.html#ref-cohen1989" role="doc-biblioref">1989</a>)</span> have argued that health declined precipitously with the emergence of agriculture. They coin the term <em>Neolithic Paradox</em> which is characterized by several features:</p>
+<ol type="1">
+<li>deterioration in nutrition</li>
+<li>deterioration in general health</li>
+<li>increase in infectious disease</li>
+<li>exponential population growth</li>
+</ol>
+<p><span class="citation" data-cites="wood_etal1992">Wood et al. (<a href="references.html#ref-wood_etal1992" role="doc-biblioref">1992</a>)</span> and <span class="citation" data-cites="wood1998">Wood (<a href="references.html#ref-wood1998" role="doc-biblioref">1998</a>)</span> suggest that the evidentiary basis for the Neolithic Paradox is lacking. It is rather immediately clear from the figures of long-term human population dynamics that point 4 is simply not true. The left tail of apparently stalled population growth extends well beyond the Neolithic. It is also interesting to compare this to the sometimes rapid growth of modern hunter-gatherers who nonetheless lack healthcare, etc., a point noted by <span class="citation" data-cites="hill_hurtado1996">Hill and Hurtado (<a href="references.html#ref-hill_hurtado1996" role="doc-biblioref">1996</a>)</span> in their masterful book on hunter-gatherer demography.</p>
+<p>Boserup: “The power of ingenuity would always outmatch that of demand.” This is a very adaptationist sentiment!</p>
+</section>
+<section id="mechanistic-models-of-population-regulation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="mechanistic-models-of-population-regulation"><span class="header-section-number">7.2</span> Mechanistic Models of Population Regulation</h2>
+<p>In a series of papers, Shripad Tuljapurkar and his students have developed a mechanistic model of resource-restricted human population dynamics that links agricultural inputs such as the amount of arable land and the productivity of the land, human nutritional requirements (and the resiliency of people when they find themselves living (chronically or acutely) below their requirements, age-specific mortality and fertility rates. The models are extremely technically demanding but the insights that they yield warrant our exploring them, at least in a broad overview.</p>
+<p>Their models were developed to understand the peopling of Oceania, Hawai’i in particular. The model accounts for the amount of available food energy as a function of (1) available land, (2) rainfall, (3) the age-structure of the human workforce, (4) the amount of time spent in productive agricultural labor.</p>
+<p>The model includes realistic demography. Mortality and fertility are age-specific and both depend upon the energy intake. If the available energy is less than required at baseline, then survival and fertility are lower than their baseline values. This is measured by the food ratio (<span class="math inline">\(\hat{E}\)</span>), which is simply “the number of calories available to consume in a given year relative to the number of calories needed to maximize survival and fertility.” (Lee &amp; Tulja 2009:179). The shape of the decline in fertility and survival as the food ratio declines is estimated from demographic studies of populations at or near starvation.</p>
+<p>This model has an equilibrium, like the logistic model. However, note the fundamental difference between the equilibrium of this model and that of the logistic. In the Tuljapurkar model, the carrying capacity is an emergent property of the model. It depends on the various inputs and it will be different depending upon choices that are made that correspond to real choices that human populations make. The equilibrium of the logistic model is imposed; it does not arise through the mechanisms of mortality and fertility.</p>
+<p>One of the key findings of this model is that hunger emerges in the equilibrium. This is a fairly Malthusian result. There is less food than required for people to not go hungry, but there is still enough to sustain an equilibrium population.</p>
+<p>Changing input parameters of the model has different effects on the equilibrium. Increasing agricultural productivity or the amount of time spent working on agricultural production increases the food ratio, while keeping the population growth rate largely unchanged. Increasing baseline survival increases the food ratio but decreases the population growth rate. Decreasing fertility only decreases the growth rate – the food ratio remains unchanged.</p>
+<p>This is somewhat surprising, because one might imagine that all three inputs would work through common chains of causality in producing the equilibrium population size and food ratio. The differences arise because the slopes of the functions relating food availability and survival/fertility/productivity differ. Population growth – and thus population size – is more sensitive to some inputs than others, making the equilibria different depending upon which input is affected.</p>
+<p><span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> find that in expanding populations (e.g., colonists to islands), crop yield is the most important factor for determining both population growth and well-being. Increasing the mean (and decreasing the variance) of crop yield has the paradoxical effect of improving overall well-being but in driving the population to a state of limitation and scarcity more rapidly.</p>
+<p>While agricultural productivity affects the food ratio, the shape of the vital rates’ response to food availability dominates the dynamics of the food ratio.</p>
+<p>Variance in production can actually improve overall well-being but the cost of this improvement is episodic, widespread starvation.</p>
+<p>Lee and Tuljapurkar conclude: “An important conclusion from our work is that human choices and the environment interact to shape the state of populations. The environment can have distinct effects depending on the specific variables upon which it acts. A population may respond to a harsh environment by increasing yield via improved agricultural methods or crops, or by increasing labor, or by controlling fertility. These choices are not equivalent, and their consequences depend on an intricate interplay between population age structure, food production, and hunger.”</p>
+<p>Regarding Wood’s fourth question, <span class="citation" data-cites="puleston_tulja2008">C. O. Puleston and Tuljapurkar (<a href="references.html#ref-puleston_tulja2008" role="doc-biblioref">2008</a>)</span> conclude: “In terms of well being, a population’s hunger level will decrease as its numbers increase towards an equilibrium level. Economic growth that alters the productivity of land (or otherwise increases the caloric returns to labor via other forms of economic activity) will result in an increase in equilibrium population size. Economic growth that alters demographic conditions will affect the equilibrium level of hunger. The tradeoff between population size and individual well being at equilibrium is sensitive to changes in technology.”</p>
+<p>A troubling finding of <span class="citation" data-cites="puleston_etal2014">C. Puleston, Tuljapurkar, and Winterhalder (<a href="references.html#ref-puleston_etal2014" role="doc-biblioref">2014</a>)</span> is their finding that a small population can grow at a relatively constant rate for hundreds of years before making a very rapid transition to the equilibrium. Growing populations experience higher levels of well-being. The approach to the equilibrium can be very abrupt, suggesting that people experiencing the transition may not notice the approach of the equilibrium.</p>
+<section id="the-basic-model" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="the-basic-model"><span class="header-section-number">7.2.1</span> The Basic Model</h3>
+<p>The food-limited demographic model of <span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> turns on a key quantity known as the food ratio (<span class="math inline">\(E\)</span>), which represents the ratio of food-energy availability to population need. When the availability of food meets or exceeds the population requirements, <span class="math inline">\(E \geq 1\)</span> and vital rates will be maximal. When <span class="math inline">\(E &lt; 1\)</span>, people are hungry and the population is food-limited. Demographic rates such as age-specific survival probabilities and fertility rates are a function of the average value of the food ratio, <span class="math inline">\(\hat{E}\)</span> or, more parsimoniously, average hunger.</p>
+<p>The total energetic consumption necessary for maximal vital rates, what <span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> call “ideal consumption,” is given by the summed product of the age-specific relative needs and the age-structure of the population:</p>
+<p><span class="math display">\[
+J( \langle \mathbf{\rho}, \mathbf{n}(t) \rangle = J \sum_x \rho_x n_x(t)
+\]</span></p>
+<p>Parameters: <span class="math inline">\(Y\)</span> is yield/area, <span class="math inline">\(H\)</span> is the maximum number of hours of production, <span class="math inline">\(k\)</span> is the area worked per hour, <span class="math inline">\(\phi_x\)</span> is the proportion of <span class="math inline">\(H\)</span> at age <span class="math inline">\(x\)</span>, <span class="math inline">\(m_x(0)\)</span> is maximum fertility (the zero indicates that this is the fertility of women age <span class="math inline">\(x\)</span> when <span class="math inline">\(\log(E)=0\)</span>, i.e., when there is no hunger), <span class="math inline">\(p_x(0)\)</span> is maximum survival, <span class="math inline">\(\alpha_x = dp_x/d \log(E)\)</span> is the elasticity of survival at age <span class="math inline">\(x\)</span>, <span class="math inline">\(\gamma_x = dm_x/d \log(E)\)</span> is the fertility elasticity at age <span class="math inline">\(x\)</span>. Throughout, parameters evaluated at their food-limited equilibria will be marked with hats (e.g., equilibrium food ratio is <span class="math inline">\(\hat{E}\)</span>).</p>
+<p>The food-limited characteristic equation:</p>
+<p><span class="math display">\[
+1 = \sum_x l_x(\hat{E}) m_x(\hat{E}) \hat{\lambda}_1^{-x}
+\]</span></p>
+<p>Here <span class="math inline">\(l_x\)</span> is the survival to age <span class="math inline">\(x\)</span>, <span class="math inline">\(m_x\)</span> is the age-specific fertility rate for age <span class="math inline">\(x\)</span> and <span class="math inline">\(\lambda_1\)</span> is the asymptotic multiplicative rate of increase of the population. Both survival and fertility are functions of average hunger, <span class="math inline">\(\hat{E}\)</span>.</p>
+<p>As in classic stable population theory, the equilibrium age structure for age <span class="math inline">\(x\)</span> is proportional to the survival to age <span class="math inline">\(x\)</span> and discounted by the growth rate:</p>
+<p><span class="math display">\[
+\hat{u}_1(x) = c\, l_x(\hat{E}) \hat{\lambda}_1^{(-x+1)},
+\]</span></p>
+<p>where <span class="math inline">\(c\)</span> is a constant chosen so that the sum of the equilibrium vector of age classes <span class="math inline">\(\mathbf{u_1}\)</span> is unity.</p>
+<p>As in the classic theory, if the population is stationary (i.e., <span class="math inline">\(\lambda_1=1\)</span>), the age structure is simply equal to the survivorship curve, though in this case it is the hunger-dependent survivorship. The dependence on hunger might change the age structure substantially if certain age classes (e.g., young children) are more vulnerable to the effects of hunger.</p>
+<section id="age-specific-schedules-of-production-and-needs" class="level4" data-number="7.2.1.1">
+<h4 data-number="7.2.1.1" class="anchored" data-anchor-id="age-specific-schedules-of-production-and-needs"><span class="header-section-number">7.2.1.1</span> Age-Specific Schedules of Production and Needs</h4>
+<p>The total workforce is the inner-product of the age-schedule labor, <span class="math inline">\(\mathbf{\phi}\)</span> and the age-structure of the population, <span class="math inline">\(\mathbf{n(t)}\)</span>. <span class="math inline">\(\phi_x \leq 1\)</span> gives the proportion of <span class="math inline">\(H\)</span> (maximum number of hours in production) contributed by an individual age <span class="math inline">\(x\)</span>. In a similar way, the total need is the inner product of the age-schedule of physiological need <span class="math inline">\(\mathbf{\rho}\)</span> and the age-structure, <span class="math inline">\(\mathbf{n(t)}\)</span>. <span class="math inline">\(\rho_x \leq 1\)</span> gives the proportion of the population that consume the largest nutritional need, <span class="math inline">\(J\)</span>.</p>
+<p>The food ratio at time <span class="math inline">\(t\)</span> is found by dividing the product of yield (<span class="math inline">\(Y\)</span>), time worked (<span class="math inline">\(H\)</span>), and efficiency (<span class="math inline">\(k\)</span>) by the largest age-specific nutritional need (<span class="math inline">\(J\)</span>). This ratio is scaled by the size of the workforce divided by the food need of the workforce:</p>
+<p><span class="math display">\[
+E(t)=\frac{Y H k}{J} \frac{\langle\boldsymbol{\phi}, \mathbf{n}(t)\rangle}{\langle\boldsymbol{\rho}, \mathbf{n}(t)\rangle}=\frac{Y H k}{J} \frac{N\langle\boldsymbol{\phi}, \mathbf{u}(t)\rangle}{N\langle\boldsymbol{\rho}, \mathbf{u}(t)\rangle}=\frac{Y H k}{J} \frac{\langle\boldsymbol{\phi}, \mathbf{u}(t)\rangle}{\langle\boldsymbol{\rho}, \mathbf{u}(t)\rangle}
+\]</span></p>
+<p><span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> note that these equations simultaneously determine the equilibrium values of the growth rate, <span class="math inline">\(\hat{\lambda_1}\)</span>, and food ratio, <span class="math inline">\(\hat{E}\)</span>.</p>
+<p>Some of the formal results of <span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span>:</p>
+<p>The yield that is needed to achieve a food ratio of <span class="math inline">\(E=1\)</span> is</p>
+<p><span class="math display">\[
+Y = Y(0) = \frac{J}{Hk} \frac{\langle \mathbf{\rho, u_i(0)} \rangle}{\langle \mathbf{\phi, u_i(0)} \rangle}.
+\]</span></p>
+<p>At the equilibrium, where the population size is smaller than the size under the no-hunger model (i.e., <span class="math inline">\(Y &lt; Y(0)\)</span>), a growth rate less than the maximal (<span class="math inline">\(\hat{\lambda}_1 &lt; \lambda_1(0)\)</span>), and equilibrium hunger (<span class="math inline">\(\log(E) &lt; 0\)</span>), the food ratio is related to the scaled yield as:</p>
+<p><span class="math display">\[
+\hat{E} \approx \left( \frac{Y}{Y(0)} \right)^{K_1}
+\]</span></p>
+<p><span class="math inline">\(K_1\)</span> is a function of many parameters, but <span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> find that under a wide range of realistic parameter combinations, <span class="math inline">\(K_1 \approx 1\)</span>. This means that equilibrium hunger is approximately equal to the scaled yield. The common-sense interpretation of this is that if yield is cut from half of its ideal level, half the people would be hungry.</p>
+<p>The scaled growth rate is related to <span class="math inline">\(\hat{E}\)</span> as:</p>
+<p><span class="math display">\[
+\frac{ \hat{\lambda}_1}{ \lambda_1(0)} \approx \hat{E}^{K_2}
+\]</span></p>
+<p><span class="math inline">\(K_2 = \nu_G/T_G\)</span>, where <span class="math inline">\(\nu_G\)</span> is a weighted average of the survival and fertility elasticities at <span class="math inline">\(\log(E) = 0\)</span>, <span class="math inline">\(T_G\)</span> is the generation time (i.e., mean age of childbearing) at maximum fertility and survival. <span class="math inline">\(K_2\)</span> is always positive, meaning that <span class="math inline">\(\hat{lambda}_1/ \lambda_1(0)\)</span> is an increasing, concave function of <span class="math inline">\(\hat{E}\)</span>.</p>
+<p>Equilibrium food ratio:</p>
+<p><span class="math display">\[
+\hat{E} \approx \frac{YHk}{J} \frac{\langle \mathbf{\phi, u_i(0)} \rangle}{\langle \mathbf{\rho, u_i(0)} \rangle}
+\]</span></p>
+<p><span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> derive a food-dependent counterpart to the classic demographic result of <span class="citation" data-cites="keyfitz1977">Keyfitz (<a href="references.html#ref-keyfitz1977" role="doc-biblioref">1977</a>)</span> who showed that the population growth rate scales with the net reproductive rate (NRR) raised to the inverse of the generation time. The food-dependent counterpart is:</p>
+<p><span class="math display">\[
+\hat{\lambda}_1 \approx \lambda_1(0) \left[ \hat{E}^{\nu_G} \right]^{1/T_G}
+\]</span></p>
+<p>where <span class="math inline">\(\lambda_1(0)\)</span> is the maximum growth rate evaluated where <span class="math inline">\(E=0\)</span> (i.e., everyone eats as much as they need – there is no hunger). In equation~<span class="math inline">\(\ref{eq:food-keyfitz}\)</span>, NRR scales as <span class="math inline">\(\hat{E}^{\nu_G}\)</span>. We would expect food-limited demographic rates, which determine NRR, to increase with increasing food availability with diminishing marginal gains. The curvature of this function is determined by the elasticities of the vital rates with respect to food availability <span class="citation" data-cites="lee_tulja2008">(<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">C. T. Lee and Tuljapurkar 2008</a>)</span>.</p>
+</section>
+<section id="biological-consequences-of-deprivation" class="level4" data-number="7.2.1.2">
+<h4 data-number="7.2.1.2" class="anchored" data-anchor-id="biological-consequences-of-deprivation"><span class="header-section-number">7.2.1.2</span> Biological Consequences of Deprivation</h4>
+<p>First, perform a Taylor series expansion of life expectancy at birth around life expectancy at birth for the unlimited population:</p>
+<p><span class="math display">\[
+\hat{e}_0 = \sum_x \hat{l}_x \approx e_0(0) + \log \hat{E}^{\langle \mathbf{\beta(0),l(0)} \rangle}
+\]</span></p>
+<p>where <span class="math inline">\(\mathbf{\beta(0)}\)</span> is a vector of the survival elasticities evaluated at <span class="math inline">\(\log{E}=0\)</span>, and <span class="math inline">\(\mathbf{l(0)}\)</span> is a vector of maximum survival.</p>
+<p>Next, expand TFR around the non-limited TFR:</p>
+<p><span class="math display">\[
+\widehat{TFR} = \sum_x \hat{m}_x \approx TFR(0) + \log \hat{E}^{\langle \mathbf{\gamma(0),m(0)} \rangle}
+\]</span></p>
+<p>Stylized assumptions: see their appendix A and put in details…</p>
+<p>The age pattern for survival elasticities, <span class="math inline">\(\alpha_x\)</span>, is approximated as a constant value <span class="math inline">\(\alpha\)</span> and for fertility elasticities, <span class="math inline">\(\gamma_x\)</span>, by a constant <span class="math inline">\(\gamma\)</span>.</p>
+<p><span class="math display">\[
+\hat{e}_0 \approx e_0(0) + \frac{\alpha (e^2_0 + s^2_0)}{2} \log(\hat{E})
+\]</span></p>
+<p>where <span class="math inline">\(s^2_0\)</span> is the variance in age at death.</p>
+<p>This shows the very interesting result that the decline in life expectancy as scarcity increases (note that <span class="math inline">\(\log(\hat{E}) &lt; 0\)</span> when the population is food-limited) is larger for both high-life-expectancy populations and for populations where the variance in age at death is large. <span class="citation" data-cites="lee_tulja2008">C. T. Lee and Tuljapurkar (<a href="references.html#ref-lee_tulja2008" role="doc-biblioref">2008</a>)</span> note that this latter condition applies to populations with high infant and child mortality and relatively even adult mortality <span class="citation" data-cites="edwards_tulja2005">Edwards and Tuljapurkar (<a href="references.html#ref-edwards_tulja2005" role="doc-biblioref">2005</a>)</span>.</p>
+<p><span class="math display">\[
+\widehat{TFR} \approx TFR(0) \left( 1 + \gamma \log(\hat{E}) \right)
+\]</span></p>
+<p>This shows that the elasticity of TFR to a change in <span class="math inline">\(\hat{E}\)</span> is simply <span class="math inline">\(\gamma\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="commons-and-governance" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="commons-and-governance"><span class="header-section-number">7.3</span> Commons and Governance</h2>
+<p>“Fifty years on, let’s stop the mindless invocation of Hardin” (<a href="https://blogs.scientificamerican.com/voices/the-tragedy-of-the-tragedy-of-the-commons/">Matto Mildenberger</a>)</p>
+<p>In his (1833) <em>Two Lectures on the Checks to Population</em>, William Forster Lloyd argued that on a “common”, costs are collective, while benefits are private. Pursuit of individual interest leads to over-exploitation. It is inevitable. These ideas circulated, particularly in economics (e.g., Scott Gordon, Mancur Olsen, Harold Demsetz). Then in 1968, a Stanford-trained ecologist wrote a highly-influential paper in the flagship journal <em>Science</em>. This paper contained not a single datum, nor was the argument especially original, as it was simply a re-telling of Forster Lloyd. <span class="citation" data-cites="banner2018">Banner (<a href="references.html#ref-banner2018" role="doc-biblioref">2018</a>)</span> suggests the only thing that Hardin did was provide a catchy name for a phenomenon known for centuries.</p>
+<p>The most obvious error that Hardin makes is that he assumes that access to the commons is completely open. As <span class="citation" data-cites="kollock1998">Kollock (<a href="references.html#ref-kollock1998" role="doc-biblioref">1998</a>)</span> notes, this assumption is “neither necessary nor historically accurate”. Commons are frequently governed by very strict norms and customary laws.</p>
+<p><span class="citation" data-cites="dasgupta2001">Dasgupta (<a href="references.html#ref-dasgupta2001" role="doc-biblioref">2001</a>)</span> also notes that Hardin gets his history (to the extent that the paper actually contains any) wrong, suggesting, “it is difficult to locate a passage of comparable length and fame that contains as many errors as the one above.”</p>
+<p>Hardin was a xenophobe, nativist, and white nationalist. He was a major intellectual for the white-nationalist right. His notion of “passive genocide” is an idea that has transformed into the current notion of “Great Replacement.” In a 1991 essay, he wrote:</p>
+<blockquote class="blockquote">
+<p>there are two forms [of genocide]. Active genocide is the sort one first thinks of — Hitler killing six million Jews. But there is another form — more subtle, less obvious, but potentially equally effective — that we may call passive genocide. The way this works was recently revealed in … remarks by Ali Akbar Hashemi Rafsanjani, the speaker of the Iranian parliament… Translated bluntly, ‘We Muslims are going to outbreed you.’ … If two cultures compete for the same bit of ‘turf’ (environment), and if one of the populations increases faster than the other, then year by year, the population that is reproducing faster will increasingly outnumber the slower one …This is passive genocide.</p>
+</blockquote>
+<p>Near the end of his life, he wrote in a 1999 essay:</p>
+<blockquote class="blockquote">
+<p>The Ford Foundation (and other organizations financed by American money) have allotted many millions of dollars to nondemocratic Latino organizations that are determined to revise the political structure of the United States… We have no reason to suppose that suicidal political organizations will never succeed in creating a chaotic NorteAmericano Central. The human species may not self-destruct; but what we like to call ‘human civilization’ may.</p>
+</blockquote>
+<p>Note that the current Vice President of the United States has recently attacked the Ford Foundation in particular for its allegedly “Far Leftist” ideology as part of his pledge to “work to dismantle the institutions that promote violence and terrorism in our own country.” Hardin’s prejudices cast long shadows.</p>
+</section>
+<section id="ostrom" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="ostrom"><span class="header-section-number">7.4</span> Ostrom</h2>
+<p>Commons are not free-for-alls, as demonstrated by the work of Lin Ostrom and her collaborators.</p>
+<p>Ostrom’s Typology of Goods:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 40%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Subtractable</strong></th>
+<th style="text-align: center;"><strong>Non-Subtractable</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Excludable</strong></td>
+<td style="text-align: center;">Private Goods</td>
+<td style="text-align: center;">Club Goods</td>
+</tr>
+<tr class="even">
+<td><strong>Non-Excludable</strong></td>
+<td style="text-align: center;">Common-Pool Resources</td>
+<td style="text-align: center;">Public Goods</td>
+</tr>
+</tbody>
+</table>
+<p>Common-Pool Resources: stocks of natural resources, grazing land, fisheries, forests, etc. Public Goods: Peace, security, knowledge, weather forecasts Private Goods: stuff you own Club Goods: theaters, daycares</p>
+<p>In his important work on the economics of collective action, <span class="citation" data-cites="olson1965">Olson (<a href="references.html#ref-olson1965" role="doc-biblioref">1965</a>)</span> made a number of generalizations about collective action. Olson’s conclusion about the viability of collective action, that has come to be known as the <em>zero-contribution thesis</em>, is that “unless the number of individuals in a group is quite small, or unless there is coercion or some other special device to make individuals act in their common interest, rational, self-interested individuals will not act to achieve their common or group interests.”</p>
+<p><span class="citation" data-cites="ostrom2000">Ostrom (<a href="references.html#ref-ostrom2000" role="doc-biblioref">2000, 140</a>)</span> notes that the zero-contribution thesis is contradicted by empirical reality, writing “By now seven general findings have been replicated so frequently that these can be considered the core facts that theory needs to explain.” These include:</p>
+<ol type="1">
+<li>Subjects contribute 40-60% of their endowments in one-shot/first-round games</li>
+<li>Contributions decay after first round but remain nonzero</li>
+<li>Believers in others’ cooperative intentions contribute more</li>
+<li>Learning the game better leads to more cooperation, not less</li>
+<li>Face-to-face communication increases cooperation</li>
+<li>Players pay to punish cheaters</li>
+<li>Context (like framing) matters</li>
+</ol>
+<section id="managing-the-commons" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="managing-the-commons"><span class="header-section-number">7.4.1</span> Managing the Commons</h3>
+<p>Ostrom’s Design Principles of successful commons management are bottom-up, emerging from the people engaged in using the resources <span class="citation" data-cites="ostrom1990">(<a href="references.html#ref-ostrom1990" role="doc-biblioref">Ostrom 2015</a>)</span>.</p>
+<p>Ostrom’s Design Principles:</p>
+<ol type="1">
+<li>Define clear group boundaries</li>
+<li>Match rules governing use of common goods to local needs and conditions</li>
+<li>Ensure that those affected by the rules can participate in modifying the rules</li>
+<li>Make sure the rule-making rights of community members are respected by outside authorities</li>
+<li>Develop a system, carried out by community members, for monitoring members’ behavior</li>
+<li>Use graduated sanctions for rule violators</li>
+<li>Provide accessible, low-cost means for dispute resolution</li>
+<li>Build responsibility for governing the common resource in nested tiers from the lowest level up to the entire interconnected system</li>
+</ol>
+<p>A thing that we learn from subsistence populations is that open access does not necessarily lead to depression. Property rights generally thought of as key to avoiding tragedies of the commons. This includes <span class="citation" data-cites="ostrom1990">Ostrom (<a href="references.html#ref-ostrom1990" role="doc-biblioref">2015</a>)</span>. It’s her first design principle! However, pastoralists, artisanal fishermen, hunter-gatherers all require more territory than can be defended economically, so the idea of property rights does not make sense in many traditional subsistence economies.</p>
+<p>Pastoralists often blamed for land degradation. However, they are pretty much never to blame. More the type of agricultural over-exploitation discussed by Lansing in Bali <span class="citation" data-cites="lansing1991">(e.g., <a href="references.html#ref-lansing1991" role="doc-biblioref">Lansing 1991</a>)</span>. Pastoralist land increasingly circumscribed. Migration from agricultural areas and cities. Extensive observations suggest that pastoralists often manage their common resources very effectively <span class="citation" data-cites="johnson1993">(<a href="references.html#ref-johnson1993" role="doc-biblioref">Johnson 1993</a>)</span>.</p>
+<p><span class="citation" data-cites="moritz_etal2018">Moritz et al. (<a href="references.html#ref-moritz_etal2018" role="doc-biblioref">2018</a>)</span> note that, in fact, many of these open-access subsistence systems remain resilient without access restrictions. They present a theoretical model that specifies when open access does not lead to resource over-exploitation.</p>
+<p>Mortiz et al.’s model suggests the following features which allow open-access systems to not become depleted:</p>
+<ul>
+<li>Benefits of defense outweighed by costs</li>
+<li>Ideal Free Distribution (IFD)</li>
+<li>High resource renewal rate</li>
+<li>Information freely shared</li>
+<li>Niche construction of more favorable resource regimes</li>
+<li>Nonlinear feedback (i.e., coupling)</li>
+<li>Development of shared norms</li>
+</ul>
+<p>The Ideal Free Distribution (IDF) is essentially a formalization of the common-sense rule that organisms should settle a heterogeneous landscape in proportion to the resource availability.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Ideal Free Distribution</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>),<span class="at">length=</span><span class="dv">200</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">-</span>(<span class="dv">5</span><span class="sc">*</span>g<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>hf <span class="ot">&lt;-</span> <span class="cf">function</span>(g,<span class="at">a=</span><span class="dv">1</span>) <span class="fu">sqrt</span>(a<span class="sc">-</span>(<span class="dv">5</span><span class="sc">*</span>g<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## derivative</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fp <span class="ot">&lt;-</span> <span class="cf">function</span>(g) <span class="sc">-</span><span class="dv">5</span><span class="sc">*</span>g<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">1-5</span><span class="sc">*</span>g<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## will give warnings; doesn't matter</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g,<span class="fu">hf</span>(g), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">axes=</span><span class="cn">FALSE</span>, <span class="at">frame=</span><span class="cn">TRUE</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">yaxs=</span><span class="st">"i"</span>, <span class="at">xaxs=</span><span class="st">"i"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim=</span><span class="fu">c</span>(<span class="fl">0.1</span>,<span class="fl">1.1</span>), <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>), </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Number of Competitors"</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"Rewards per Individual"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(g,<span class="fu">hf</span>(g,<span class="at">a=</span><span class="fl">0.5</span>), <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># used locator() to find tangents</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="dv">0</span>,<span class="fu">hf</span>(<span class="fl">0.1</span>,<span class="at">a=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>),<span class="fl">0.3319867</span>,<span class="fu">hf</span>(<span class="fl">0.1</span>,<span class="at">a=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>), <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="fl">0.3319867</span>,<span class="dv">0</span>,<span class="fl">0.3319867</span>,<span class="fl">0.6714605</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="fl">0.1</span>,<span class="dv">0</span>,<span class="fl">0.1</span>,<span class="fu">hf</span>(<span class="fl">0.1</span>,<span class="at">a=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>),<span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="commons_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Another important idea from Ostrom: Commons problems arise in part because of a failure to recognize larger systems in which they are embedded <span class="citation" data-cites="ostrom2009">(<a href="references.html#ref-ostrom2009" role="doc-biblioref">Ostrom 2009</a>)</span>.</p>
+</section>
+</section>
+<section id="how-many-people-can-the-earth-support" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="how-many-people-can-the-earth-support"><span class="header-section-number">7.5</span> How Many People Can the Earth Support?</h2>
+<p>Where does the Carrying Capacity come from? Presumably, <span class="math inline">\(K\)</span> ultimately arises from resource limitation. The most likely form of resource limitation, particularly for humans, is food. We see that people live at very different densities depending upon their subsistence economy. This is indirect evidence that food limitation at least plays a substantial role in determining human population size. Joel Cohen explored this idea extensively in his masterful (1995) book, <em>How Many People Can the Earth Support?</em> <span class="citation" data-cites="cohen1996">(<a href="references.html#ref-cohen1996" role="doc-biblioref">J. E. Cohen 1996</a>)</span>.</p>
+<p>One of the key debates that Cohen describes in his book relates to the response of human populations to increased population density. Cohen concludes that the answer to the question that defines his book, <em>How Many People Can the Earth Support?</em>, depends on several things. Fundamentally, the answer depends upon individual and collective human decisions. There is no simple answer. Cohen suggests a dinner table metaphor to understand how we might increase the carrying capacity of Earth. Three things to consider for how to increase the total carrying capacity of Earth are:</p>
+<ol type="1">
+<li><strong>Make a bigger pie</strong>: Increase human productive capacities through technology and innovation.</li>
+<li><strong>Put fewer forks on the table</strong>: Reduce numbers and expectations of people through such means as family planning and vegetarian diets.</li>
+<li><strong>Teach better manners</strong>: Change the terms of people’s interactions through improved planning and government to enhance social justice.</li>
+</ol>
+<p>Some of these are rather more difficult to achieve than others.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-banner2018" class="csl-entry" role="listitem">
+Banner, Stuart. 2018. <span>“The Banality of the Commons: Efficiency Arguments Against Common Ownership Before <span>Hardin</span>.”</span> <em>Theoretical Inquiries in Law</em> 19 (2): 395–407. <a href="https://doi.org/10.1515/til-2018-0021">https://doi.org/10.1515/til-2018-0021</a>.
+</div>
+<div id="ref-cohen1996" class="csl-entry" role="listitem">
+Cohen, J. E. 1996. <em>How Many People Can the Earth Support?</em> New York: Norton.
+</div>
+<div id="ref-cohen1989" class="csl-entry" role="listitem">
+Cohen, M. N. 1989. <em>Health and the Rise of Civilization</em>. New Haven: Yale University Press.
+</div>
+<div id="ref-cohen_armelagos1984" class="csl-entry" role="listitem">
+Cohen, M. N., G. J. Armelagos, and C. S. Larsen. 1984. <em>Paleopathology at the Origins of Agriculture</em>. Orlando, FL: Academic Press.
+</div>
+<div id="ref-dasgupta2001" class="csl-entry" role="listitem">
+Dasgupta, Partha S. 2001. <em>Human Well-Being and the Natural Environment</em>. Oxford: Oxford University Press. <a href="https://books.google.com/books?id=5Je4AAAAIAAJ">https://books.google.com/books?id=5Je4AAAAIAAJ</a>.
+</div>
+<div id="ref-edwards_tulja2005" class="csl-entry" role="listitem">
+Edwards, R. D., and S. Tuljapurkar. 2005. <span>“Inequality in Life Spans and a New Perspective on Mortality Convergence Across Industrialized Countries.”</span> <em>Population and Development Review</em> 31 (4): 645–74. <a href="https://www.jstor.org/stable/3401520">https://www.jstor.org/stable/3401520</a>.
+</div>
+<div id="ref-hill_hurtado1996" class="csl-entry" role="listitem">
+Hill, K., and A. M. Hurtado. 1996. <em>Ache Life History</em>. New York: Aldine de Gruyter.
+</div>
+<div id="ref-johnson1993" class="csl-entry" role="listitem">
+Johnson, Douglas L. 1993. <span>“Nomadism and Desertification in Africa and the Middle East.”</span> <em>GeoJournal</em> 31 (1): 51–66. <a href="https://doi.org/10.1007/BF00815903">https://doi.org/10.1007/BF00815903</a>.
+</div>
+<div id="ref-keyfitz1977" class="csl-entry" role="listitem">
+Keyfitz, N. 1977. <em>Introduction to the Mathematics of Populations</em>. 2nd ed. Menlo Park: Addison-Wesley.
+</div>
+<div id="ref-kollock1998" class="csl-entry" role="listitem">
+Kollock, Peter. 1998. <span>“Social Dilemmas: The Anatomy of Cooperation.”</span> <em>Annual Review of Sociology</em> 24 (1): 183–214. <a href="https://doi.org/10.1146/annurev.soc.24.1.183">https://doi.org/10.1146/annurev.soc.24.1.183</a>.
+</div>
+<div id="ref-lansing1991" class="csl-entry" role="listitem">
+Lansing, John Stephen. 1991. <em>Priests and Programmers : Technologies of Power in the Engineered Landscape of <span>Bali</span></em>. Princeton, NJ: Princeton University Press.
+</div>
+<div id="ref-lee_tulja2008" class="csl-entry" role="listitem">
+Lee, Charlotte T., and Shripad Tuljapurkar. 2008. <span>“Population and Prehistory <span>I</span>: Food-Dependent Population Growth in Constant Environments.”</span> <em>Theoretical Population Biology</em> 73 (4): 473–82. <a href="https://doi.org/10.1016/j.tpb.2008.03.001">https://doi.org/10.1016/j.tpb.2008.03.001</a>.
+</div>
+<div id="ref-lee1986" class="csl-entry" role="listitem">
+Lee, Ronald D. 1986. <span>“<span class="nocase">Malthus and Boserup</span>: A Dynamic Synthesis.”</span> In <em>The State of Population Theory</em>, edited by D. Coleman and R. Schofield, 96–130. New York: Blackwell.
+</div>
+<div id="ref-moritz_etal2018" class="csl-entry" role="listitem">
+Moritz, Mark, Roy Behnke, Christine M. Beitl, Rebecca Bliege Bird, Rafael Morais Chiaravalloti, Julia K. Clark, Stefani A. Crabtree, et al. 2018. <span>“Emergent Sustainability in Open Property Regimes.”</span> <em>Proceedings of the National Academy of Sciences</em> 115 (51): 12859–67. <a href="https://doi.org/10.1073/pnas.1812028115">https://doi.org/10.1073/pnas.1812028115</a>.
+</div>
+<div id="ref-netting1993" class="csl-entry" role="listitem">
+Netting, R. M. 1993. <em>Smallholders, Householders: Farm Families and the Ecology of Intensive, Sustainable Agriculture</em>. Stanford: Stanford University Press.
+</div>
+<div id="ref-olson1965" class="csl-entry" role="listitem">
+Olson, M. 1965. <em>The Logic of Collective Action: Public Goods and the Theory of Groups</em>. Cambridge: Harvard University Press.
+</div>
+<div id="ref-ostrom2000" class="csl-entry" role="listitem">
+Ostrom, Elinor. 2000. <span>“Collective Action and the Evolution of Social Norms.”</span> <em>The Journal of Economic Perspectives</em> 14 (3): 137–58. <a href="http://www.jstor.org/stable/2646923">http://www.jstor.org/stable/2646923</a>.
+</div>
+<div id="ref-ostrom2009" class="csl-entry" role="listitem">
+———. 2009. <span>“A General Framework for Analyzing Sustainability of Social-Ecological Systems.”</span> <em>Science</em> 325 (5939): 419–22. <a href="https://doi.org/10.1126/science.1172133">https://doi.org/10.1126/science.1172133</a>.
+</div>
+<div id="ref-ostrom1990" class="csl-entry" role="listitem">
+———. 2015. <em>Governing the Commons: The Evolution of Institutions for Collective Action</em>. Canto Classics. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781316423936">https://doi.org/10.1017/CBO9781316423936</a>.
+</div>
+<div id="ref-puleston_tulja2008" class="csl-entry" role="listitem">
+Puleston, C. O, and S. Tuljapurkar. 2008. <span>“Population and Prehistory <span>II</span>: Space-Limited Human Populations in Constant Environments.”</span> <em>Theoretical Population Biology</em> 74 (2): 147–60. <a href="https://doi.org/10.1016/j.tpb.2008.05.007">https://doi.org/10.1016/j.tpb.2008.05.007</a>.
+</div>
+<div id="ref-puleston_etal2014" class="csl-entry" role="listitem">
+Puleston, C., S. Tuljapurkar, and B. Winterhalder. 2014. <span>“The Invisible Cliff: Abrupt Imposition of Malthusian Equilibrium in a Natural-Fertility, Agrarian Society.”</span> <em>PloS ONE</em> 9 (1): 13. <a href="https://doi.org/10.1371/journal.pone.0087541">https://doi.org/10.1371/journal.pone.0087541</a>.
+</div>
+<div id="ref-wood1998" class="csl-entry" role="listitem">
+Wood, J. W. 1998. <span>“A Theory of Preindustrial Population Dynamics: Demography, Economy, and Well-Being in <span>Malthusian</span> Systems.”</span> <em>Current Anthropology</em> 39 (1): 99–135. <a href="https://doi.org/10.1086/204700">https://doi.org/10.1086/204700</a>.
+</div>
+<div id="ref-wood_etal1992" class="csl-entry" role="listitem">
+Wood, J. W., G. R. Milner, H. C. Harpending, and K. M. Weiss. 1992. <span>“The Osteological Paradox: Problems of Inferring Prehistoric Health from Skeletal Samples.”</span> <em>Current Anthropology</em> 33 (4): 343–70. <a href="http://www.jstor.org/stable/2743861">http://www.jstor.org/stable/2743861</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./complex.html" class="pagination-link" aria-label="Complexity">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Complexity</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./dynamic.html" class="pagination-link" aria-label="Dynamic Optimization and Adaptive Management">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Dynamic Optimization and Adaptive Management</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

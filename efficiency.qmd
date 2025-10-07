@@ -1,0 +1,146 @@
+# Efficiency Is the Enemy {#sec-efficiency}
+
+I come not to praise optimization but to bury it.
+
+We live in a time of nonstationary change. When we optimize, *we are adapting to the past*.
+
+## Optimality Models
+
+Optimality models are important.
+
+There are different definitions of the structure/requirements for optimization models. I like the definition provided by @smith1992a, who provides a bit more structure than, say, @parker_maynardsmith1990.
+
+Smith's Structure of an optimization model requires that we specify four things:
+
+1.  **Actor:** Define the unit of analysis
+2.  **Objective Function:** What is it that people seek to optimize?
+3.  **Strategy Set:** What is the space of possible action?
+4.  **Constraints:** Define what is actually achievable rather than the best of all possible worlds
+
+Many would-be optimizers fail to identify any of these criteria.
+
+## The Trouble with Optimality
+
+Small worlds.
+
+Uncertainty makes cost-benefit analysis impossible
+
+Heavy-tailed probability distributions have infinite moment-generating functions
+
+Unknown unknowns.
+
+"The hegemony of optimisation as the goal of decision-making is made possible by ignoring radical uncertainty." [@kay_king2020]
+
+"That makes it odd that economics should have put so much emphasis on optimising" (loc 5767)
+
+Keynes: the spirit of enterprise dies when mathematical expectation takes over (cited in @kay_king2020).
+
+"Thus if the animal spirits are dimmed and the spontaneous optimism falters, leaving us to depend on nothing but a mathematical expectation, enterprise will fade and die; ---though fears of loss may have a basis no more reasonable than hopes of profit had before." [@keynes1936]
+
+## The Trouble with Optimization
+
+Bro, what's is your objective function? Better yet, what is your objective? Are you optimizing the thing you really care about or something you can measure easily? Is efficiency really all it's cracked up to be? Do trade-offs actually trade off? Or are they actually constraints (i.e., non-fungible). Trade-offs only make sense if you've accounted for all the sinks.
+
+When your optimization problem is ill-posed, you will get a garbage answer.
+
+Brian Arthur: "Where a problem is ill-defined, optimizing behavior is also ill-defined; and so 'acting less than optimally' is not defined." [@arthur2021: 6]
+
+### Optimization Culture
+
+(Clearly need to greatly expand this section.)
+
+Silicon Valley Tech Bros are really into "optimization." Their practices raise serious questions about whether they actually understand what it means to optimize.
+
+Relevance of work of Elizabeth Popp Berman (2022), *Thinking Like an Economist*, in which she shows that the discipline of economics transitioned from a focus equity to a focus on efficiency [@berman2022].
+
+Wajcman: Technological change is frequently couched in terms of time-saving, but just as frequently leads to more work! American workers work longer hours than ever, despite (or maybe because of) the innovations of the internet, remote work, etc.
+
+@keynes1936 "Practical men, who believe themselves quite exempt from any intellectual influence, are usually the slaves of some defunct economist."
+
+### "Efficiency" Über Alles
+
+Perhaps the most famous example of this is Facebook founder and Meta CEO Mark Zuckerberg, who famously wore the same t-shirt every day. Why did Mark Zuckerberg wear the exact same t-shirt every day (until he had to start testifying before Congress)? He was quoted in [*The Independent*](https://www.independent.co.uk/news/people/why-mark-zuckerberg-wears-the-same-clothes-to-work-everyday-a6834161.html) as saying, "I really want to clear my life to make it so that I have to make as few decisions as possible about anything except how to best serve this community...I feel like I'm not doing my job if I spend any of my energy on things that are silly or frivolous about my life."
+
+In a post on the blog LessWrong, OpenAI CEO Sam Altman wrote on artificial general intelligence (AGI), "We want AGI to empower humanity to maximally flourish in the universe. We don't expect the future to be an unqualified utopia, but we want to maximize the good and minimize the bad, and for AGI to be an amplifier of humanity."
+
+Empower humanity to maximally flourish in the universe, eh? What's the objective function?
+
+What is "an amplifier of humanity"? Which part, exactly, are we amplifying?
+
+### Biohacking Tech Bros
+
+In 2006, The [*New York Times*](https://www.proquest.com/blogs-podcasts-websites/one-ages-prescription-that-may-extend-life/docview/2225424318/se-2?accountid=14026) profiled tech figure Mike Linksvayer, who consumed less than 1000 kcal/day to promote longevity, based on a belief that caloric restriction would lead to slowed aging. The accompanying photo shows the man looking dead-eyed and skeletal as he poses with his daily salad.
+
+Rob Rhinehart, inventor of Soylent, a nutritional supplement (?) that "frees" coders from the need to get up from their desks to feed themselves---truly the embodiment of Silicon Valley optimization culture---noted that flush toilets use enormous quantities of water. [He decided](https://web.archive.org/web/20150108045417/http://robrhinehart.com/?p=1152) that he needed a way to make it unnecessary. He wrote "Feces are almost entirely deceased gut bacteria and water. I massacred my gut bacteria the day before by consuming a DIY Soylent version with no fiber and taking 500mg of Rifaximin, an antibiotic with poor bioavailability, meaning it stays in your gut and kills bacteria. Soylent's microbiome consultant advised that this is a terrible idea so I do not recommend it. However, it worked. Throughout the challenge I did not defecate."
+
+### Ego Depletion
+
+Ego depletion became a super-popular idea among a certain class of Americans.
+
+However, it seems like it is yet another non-replicable fad, possibly the flagship for this phenomenon!
+
+Carol Dweck and her colleagues [@job_etal2013] showed that the physiologically-measurable ego depletion an individual experiences is a function of their beliefs about ego depletion!
+
+Is the capacity for decision-making a pie or is it a muscle? This appears to be particularly the case with ethical decision-making. The more you do it, the better you get at it [@friese_etal2019].
+
+Term coined by John Tierney
+
+Classic low-power/high-catchiness bit of pop psychology
+
+Seems to result from p-hacking.
+
+Contrast to perspective of virtue ethics. Aristotle suggested that morality was like a muscle that needs to be exercised (apparently).
+
+Is ego depletion actually just transient cognitive fatigue? (Hurley ???? -- homie should really put a date on his preprint!)
+
+@hagger_etal2016: "Meta-analysis of the studies revealed that the size of the ego-depletion effect was small with 95% confidence intervals (CIs) that encompassed zero" In contrast, @dang_etal2021 do find a small but statistically significant ego-depletion effect in the Stroop effect.
+
+@koppel_etal2019: "None of the studies revealed a significant effect of ego depletion on risk taking. Our findings cast further doubts about the ability of ego-depletion manipulations to affect actual behavior in experimental settings."
+
+### Priming
+
+Priming! So much hyperbole over ultimately weak science.
+
+### Implicit Bias
+
+Implicit bias, an easy out for institutions. Why worry about instituting structural change when you can implement implicit-bias training for cheap?!
+
+### Psychological Distance
+
+No Evidence for Psychological Distance
+
+@vanlange_etal2021 suggest "To combat climate change, individuals, communities, and governments must work together to reduce the psychological distance of climate change and designate the future of the planet as the prime concern."
+
+But is that even true? Evidence suggest no.
+
+"Opinion polls show that most people actually perceive climate change as occurring now and close by. Seeing climate change as more distant does not necessarily result in less climate action, and reducing PD does not reliably increase climate action. Policymakers may develop ineffective climate action campaigns because of incorrect assumptions about PD." [@vanvalkengoed_etal2023]
+
+## The Ubiquity of Confirmation Bias in Optimization Culture
+
+A commonality of both the biohacking and the social-psychology instantiations of optimization culture is the extreme credulousness of would-be optimizers toward very weak science.
+
+What these examples are illustrating is really just elaborate confirmation bias.
+
+Another element of the culture is a rather vague application of Bayesian logic. If you hear someone talk about their "Bayesian Priors," you are probably safe in assuming that they're talking out their ass. The irony, of course, is that the same guys who promote ubiquitous optimization and claim to use Bayesian updating of their beliefs have incredibly informative priors that are largely insensitive to the actual information available.
+
+If you have a reasonable prior for some phenomenon, weak evidence should not move it much.
+
+This is related to the discussion of RAPPing in @sec-models.
+
+This, of course, raises the reasonable question: do people really have priors for these types of phenomena? Or is this just so much more bullshit?
+
+### The Costs of Optimality
+
+Being "optimal" sucks. Suppose your objective is to become maximally shredded. A person is shredded if they are first *jacked*, meaning have substantial muscle mass achieved through extensive resistance exercise, and then they reduce their body fat to the point that they reduce subcutaneous fat. This gives their body a highly-defined and vascular look that is sought out by bodybuilders.
+
+It's broadly understood that women have to do terrible things for the health/welfare to maintain socially-determined ideals. Turns out it's pretty horrible to achieve (let alone maintain) what seems like an ostensibly healthier male masculine form. [Listen, for example, to actors](https://youtu.be/rF3ixuORPaw) who have to get shredded for a role like a superhero. Literally, all these guys say something like "First, I called my friend Dwayne Johnson."
+
+They all talk about chicken, broccoli, and rice too. This is the classic body-builder meal. Doesn't look so bad, but would you want to eat that seven times a day for weeks on end?
+
+## Regression to the Mean
+
+Is this where this belongs?
+
+## Objectives, Not Objective Functions
+
+Optimization (strictly) requires an objective function, in addition to a choice set and constraints. From a technical standpoint, objective functions require completeness and strict transitivity (Debreu). Often what we want is not actually an objective function but simply, *an objective*. This objective should be well-defined and measurable. We should not default to things we don't care about but can measure. Brings us back to Adaptive Management

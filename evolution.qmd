@@ -1,0 +1,368 @@
+# Evolutionary Foundations {#sec-evolution}
+
+## Nothing In Biology Makes Sense
+
+Except in light of evolution.
+
+Evolution is defined as change over time in inherited characteristics [@futuyma2013]. @mayr1982 defined organic evolution as the change in allele frequencies over time. This is a bit old-fashioned because it doesn't count certain important forms of evolutionary change.
+
+It's important to remember that not all change is evolutionary. For example, developmental change over the course of a single lifespan or the change in species composition over short time period (i.e., hundreds of years) are not evolutionary because they are not changes in inherited characteristics.
+
+### Mechanisms of Evolution
+
+Mutation
+: Changes to the underlying genetic sequence. By itself, mutation doesn't have a big effect on changing allele frequencies, but it is the raw material of (organic) evolution. 
+
+Drift
+: Random change in allele frequencies (or other heritable characteristics) due to sampling effects of finite populations. 
+
+Migration
+: Movement can change the frequencies of heritable characteristics across a landscape 
+
+Natural Selection
+: Natural selection is the only mechanism that can produce adaptation
+
+There are three necessary and sufficient conditions for natural selection (3NS4NS) 
+
+ 1. Variation in a phenotype
+ 2. Heritability of those phenotypes
+ 3. Differential fitness based on this variation
+ 
+Note that natural selection is not equivalent to evolution. Natural Selection is just one mechanism by which organisms evolve. Now, it happens to be the most important mechanism from the standpoint of adaptation since adaptations can only arise from the action of natural selection. 
+
+Drift is a mechanism that is systematically ignored by many evolution popularizers. The interactions of drift and natural selection can be powerful. 
+
+What does natural selection explain? Two main phenomena: *Diversity* and *Fitness*. There have probably been more than 2 billion species (including extinct ones). where did they come from and why? The Darwinian solution is that "small heritable variations among individuals within a species become the basis of large differences between species" [@lewontin1978]. Second, as noted by @lewontin1978, "Organisms fit remarkably well into the external world in which they live."
+
+
+### Modes of Selection
+
+```{r}
+#| fig-asp: 1
+x <- seq(-3,3,length=1000)
+x0 <- x[x>1.5]
+x0 <- c(x0[1], x0)
+dn <- dnorm(x)
+dn1 <- dn[x>1.5]
+length(dn1)
+#[1] 250
+dn1 <- c(dn1[250],dn1)
+plot(x,dnorm(x), type="l", lwd=2, axes=FALSE, frame=TRUE, xlab="Phenotype",
+     ylab="Probability Density")
+polygon(x0,dn1,col=grey(0.65))
+```
+
+```{r}
+#| fig-asp: 1
+x1 <- x[x< -1.5]
+x1 <- c(x1[1], x1)
+dn2 <- dn[x< -1.5]
+length(dn2)
+#[1] 250
+dn2 <- c(dn2,dn2[1])
+plot(x,dnorm(x), type="l", lwd=2, axes=FALSE, frame=TRUE, xlab="Phenotype",
+     ylab="Probability Density")
+polygon(x0,dn1,col=grey(0.65))
+polygon(x1,dn2,col=grey(0.65))
+```
+
+```{r}
+#| fig-asp: 1
+x2 <- x[x> -1 & x<1]
+x2 <- c(x2[1],x2)
+dn3 <- dn[x> -1 & x<1]
+length(dn3)
+#[1] 332
+dn3 <- dn3[-1]
+dn3 <- c(0,dn3,0)
+plot(x,dnorm(x), type="l", lwd=2, axes=FALSE, frame=TRUE, xlab="Phenotype",
+     ylab="Probability Density")
+polygon(x2,dn3,col=grey(0.65))
+```
+
+### Fitness
+
+What is fitness? Fitness is a demographic measure of proportional representation in a population @futuyma2013: "average per capita rate of increase in numbers" (individual) "average per capita lifetime contribution of individuals of that genotype to the population after one or more generations" (genotype) Fitness combines survival and reproduction
+
+Steve Stearns has characterized fitness as a property "everyone understands; no one can define."
+
+Critics of NS theory claim that fitness is tautological Dennett: "x is fitter than y if and only if x's traits enable it to solve the"design problems" set by the environment more fully than y's traits do." Problem is that there are many design problems What counts as a 'design problem'? A bit vague and metaphorical
+
+Propensity theory of fitness.
+
+@rosenberg_bouchard2015 "there has been a wide consensus that the solution to problem of defining individual"fitness" is given by treating it as a probabilistic disposition." propensity means that the fitter individual will not always succeed, therefore, "putting aside the tautology issue, there is also a scientific reason for favoring propensity approaches: since the theory of natural selection allows for drift, this qualification on its claims will be a welcome one."
+
+### What is Adaptation?
+
+Adaptation is a process by which organisms become better suited to their environments. @lasker1969 [p. 1481] provides a grand view of adaptation: "Adaptation is the change by which organisms surmount the challenges to life. In the broadest sense biological adaptation encompasses every necessary biological process." Biological adaptation can only be achieved through natural selection We will refer to the adaptation that is produced by natural selection as "big-A Adaptation." 
+
+Writers within the human evolutionary sciences, such as @alland1975, @bennett1976, and @lasker1969 noted that adaptation can be biological in the sense of the transgenerational change of phenotypes in response to regularities in the environment (what we would call "Big-A Adaptation"), but can also be *physiological* [@alland1975], meaning a systemic adjustment to local conditions aimed at ensuring homeostasis within an individual's lifetime. This is one variety of "Little-a adaptation." The third variety noted by these authors is cultural adaptation that was the preoccupation of cultural ecologists. @bennett1976 suggests that adaptation is one of the three primary subjects of study in cultural anthropology, along with thought and "interhuman activity." Bennett (1976: 269) defines this form of adaptation as "The patterns and rules of social adjustment and change in behavior by individuals and groups in the course of realizing goals or simply maintaining the staus quo, and called by such terms as coping, adjustment, adaptation, adaptive dynamics, adaptive strategies, achievement, compromise, fulfillment."
+
+@goodman1963 noted that in adapting, biological systems simultaneous face in two directions: they must respond to the external environment such that they improve their chances of survival and reproduction. However, they must also adapt to the internal environment, which favors "the coherence and parsimony of the system as a system." This idea that adaptation is simultaneously internal and external was also discussed by Godelier and other structural Marxists in the late 1960s and 1970s [@alland1975]. 
+
+Physiological constancy is called *homeostasis* and the desirability of homeostasis in physiological systems became a popular metaphor for adaptation more generally. For example, @rappaport1971 [p. 60] wrote "Adaptation here refers to the processes by which organisms or groups of organisms, through responsive changes in their own states, structures, or compositions, maintain homeostasis in and among themselves in the face of both short term environment fluctuations and long term changes in the composition or structure of their environments."
+
+@vayda_mccay1975 likened adaptation to risk management, echoing the sentiments of pioneering development thinkers when talking about the economic preferences of the peasantry like @lipton1968 ("Survival Algorithms") and @scott1977 ("Safety First").
+
+
+
+
+
+The modern view of adaptation is articulated by @lewontin1978, namely, that the external world sets certain "problems" that organisms need to "solve": "Adaptation is the process of evolutionary change by which the organism provides a better and better 'solution' to the 'problem' and the end result is the state of being adapted." Naturally, we need to be careful with our intentional language. Intentional language in evolutionary biology is a shorthand for this more correct but cumbersome phrasing and its existence should necessarily not imply conscious choices, reasoning, or agency. Of course, things get complicated when talking about humans since these qualities often (though not always!) apply to human decision-making, as we will see in @sec-culture.
+
+Of course, engineering analysis has its own problems. Two sets of a priori decisions required: (1) Appropriate way to divide the organism, and (2) Describe what problem each part solves.
+
+This amounts to creating descriptions of the organism and of the environment and then relating the descriptions by functional statements.
+
+There are two ways to do this. First, start with the problems and try to infer which aspect of the organism is the solution, and second, start with the organism and then ascribe adaptive functions to each part. A basic assumption of all engineering analyses is *ceteris paribus*, that is all things being equal. How often do you think everything else is actually equal?
+
+Strongly adaptationist accounts focus on the engineering aspects of "organismal design" and tend to short-change the diversity that underlies all adaptation. Indeed, most contemporary approaches to to evolution and human behavior employ some element of what's known as the *phenotypic gambit*. The basic idea of the phenotypic gambit is that we can ignore the genetic (and developmental) architecture of adaptation and focus simply on selection with the assumption that if selection is strong enough, phenotypes will respond. The problem is that selection is, in fact, constrained. It is constrained by the variability available for selection to work on. Moreover, it is constrained by correlations with other traits, as we will see in @sec-response. 
+
+When we actually manage to test it, the phenotypic gambit often fails [@hadfield_etal2007].
+
+
+### The Misunderstanding of Spencer, Morgan
+
+"This survival of the fittest, which I have here sought to express in mechanical terms, is that which Mr. Darwin has called 'natural selection', or the preservation of favoured races in the struggle for life." (Spencer 1864: 444)
+
+Spencer and his followers clearly muddle the colloquial and technical meanings of "fitness" when they evoke this famous collocation. Fitness is a complex measure which, at the bare minimum, involves the product of survival and fertility. "Survival of the fittest," therefore, is both tautological and incomplete. Those with higher fitness survive. What defines fitness? Survival. But, of course, it's more than survival since fitness also depends on fertility. Individuals need to survive *in order to reproduce*.
+
+Alas this 19th century neckbeard is making a real resurgence in American culture.
+
+Lewis Henry Morgan suggested that all societies passed through three stages of development. *Savagery* is characterized by acephalous social organization of bands of foragers. *Barbarism* is characterized by authoritarian leadership ("big man"), largely tribal social organization, food production and surpluses. *Civilization* is characterized by complex social organization and role differentiation.
+
+Unfortunately for the theories of Morgan and other unilineal social evolutionists, there is very little evidence for the type of lockstep, unilineal transformation envisioned by the Victorian cultural evolutionists. Ethnographically and archaeologically, we see frequent shifts from "more complex" to "simple" social organization, modes of production, and technology. A canonical example of this phenomenon of moving in and out of complex societies is the Kachin of Burma as described by Leach in his *The Political Systems of Highland Burma*.
+
+The Kachin (Jingpo/Singpo) are native to Burma's Kachin state and neighboring Dehong Dai and Jingpo Autonomous Prefecture in China, as well as Northeastern India's Arunachal Pradesh and Assam. "Kachin" is probably British colonial name: Jinghpaw in their own (eponymous) language. Name derives from Kachin Hills of far-northern Burma/Myanmar. They were characterized as "barbarous" hill people, practicing animist religion (now mostly Christian). Kachin livelihoods are derived primarily from yam and upland-rice cultivation. Society was organized around clans with shifting alliances. Live in Lived in long houses. 
+
+In contrast, the Shan, native to Shan province immediately to the Southeast of Kachin province, were Theravāda Buddhists, occupying river valleys, who practiced lowland, wet-rice agriculture and had the associated "complex," hierarchical social organization. They are the second largest ethnic group in Burma.
+
+As documented by Leach, it turns out, they're the same people! Leach writes that, rather than talking about different political systems in the north of Burma as independent entities, "they should clearly be thought of as part of a total system."
+
+Scott, *Art of Not Being Governed*, argues that the sort of social fluidity that Leach observed in the Burmese Highlands has actually been the rule for states historically. Indeed, Scott goes so far as to suggest that that the "barbarism" characteristic of the highland cultures of the Asian Massif are adaptations to prevent their societies from being incorporated into neighboring state actors! He doesn't specifically use adaptationist language, but this is clearly the spirit of his argument.
+
+Historian Richard Hofstader first coined the term Social Darwinism in 1944. In reference to philosophy of Progressive Era reformers that included Laissez-Faire capitalism, Eugenics, Imperialism. It relies on Spencer's misunderstanding of "survival of the fittest". So it's not Darwinism at all, but Spencerism. Social Darwinsim has come to be associated with racist, nationalist philosophy of fascism and it is making a resurgence in the US among so-called "race scientists" and other self-appointed "rationalists."
+
+Typological thinking is not how it works. Mayr: population thinking.
+
+Adaptation is the foil to typology and progressivism. Adaptation is local, environmentally specific and historically situated It is nonsensical to say that one species or population is 'more evolved' or 'more advanced' Statements about advancement are normative and should be understood as such
+
+Adaptation is dynamic and specific to local (and historically situated) environmental conditions Adaptations arise because certain phenotype variants have higher fitness in a particular environment Organisms do not necessarily become progressively more complex or better morphological complexity seems to be hard to lose once gained social complexity appears to move easily in either direction
+
+### On Race 
+
+"People are people so why should it be, you and I should get along so awfully?" Depeche Mode
+
+In a pioneering study in 1972, Richard Lewontin capitalized on the explosion in molecular data on protein polymorphism to characterize the nature of human genetic diversity. Using standard statistical tools, he apportioned the total variation into three levels: individual, race, and subgroup within race. Lewontin used the standard five-race classification. He found that the great majority of the total genetic variation in the human species is contained at the level of the individual (87%). Race accounted for only 6% of the variation, with the rest held in subpopulations within race [@lewontin1972]. 
+
+This result has been replicated repeatedly. For example, @brown_armelagos2001 review studies in the approximately 30 years following Lewontin's study. Every study showed the same qualitative pattern.
+
+But what about the principal components plots that show clustering of human racial groups? @lewis_etal2022 note that sampling of human populations for studies of diversity is circular. When samples are designed to maximize differences, it should not be surprising when differences (however small) appear.
+
+Lewontin: "Human racial classification is of no social value and is positively destructive of social and human relations. Since such racial classification is now seen to be of virtually no genetic or taxonomic significance either, no justification can be offered for its continuance."
+
+Humans are not very genetically diverse. Phylogenetic studies regularly show that the distances separating the most divergent humans from each other are much shorter than those separating the most-divergent apes [e.g., @gagneux_etal1999]. Overall, the much smaller popualtions of the other great apes have much more genetic diversity than the global human populations [@ruvolo1997].
+
+For example, chimpanzee populations on either bank of the Sanga River in Cameroon are about as different from each other as are different continental human populations [@bowden_etal2012]. As the Oxford geneticist [Peter Donnelly noted](https://www.ox.ac.uk/news/2012-03-02-chimps-show-much-greater-genetic-diversity-humans ), "that chimpanzees from habitats in the same country, separated only by a river, are more distinct than humans from different continents is really interesting. It speaks to the great genetic similarities between human populations, and to much more stability and less interbreeding over hundreds of thousands of years in the chimpanzee groups."
+
+
+You might hear the term "Lewontin’s Paradox" or "Lewontin's Fallacy" thrown around by so-called "race scientists." The paradox turns out not to be paradoxical at all, as shown by @roseman2021, but arises from a misunderstanding of genetic diversity, phylogeny, and evolutionary process more generally. In brief, it is possible to assign people to ancestry groups based on shared derived genetic markers even when the great majority of overall genetic variation is contained at the individual level. 
+
+The biological insignificance of race is a highly unusual instance where the views of the population geneticsists like Lewontin and the evolutionary psychologists like John Tooby coincide. This is remarkable, as Tooby once commented to me that taking Dick Lewontin's graduate seminar on population genetics was the biggest waste of time he had ever experienced! EPs maintain that psychological adaptations are complex and require a complex genetic (and ontogenetic) architecture to support. Complex adaptations tend to have low heritability, in the strict sense of the fraction of total phenotypic variance that is attributable to additive genetic variance. For EPs, psychological adaptations are like head number in humans: genetically controlled but essentially zero additive genetic variation underlying them. 
+
+
+## Response to Selection {#sec-response}
+
+Most of our understanding of the response of traits to selection comes from animal and plant breeding. Indeed, it was the artificial selection of breeders that inspired Darwin's theory of natural selection.
+
+When selection acts on a trait, how will it respond? For a single trait, the *response to selection* depends on two things: (1) the strength of selection, and (2) the amount of variation in the trait. 
+
+The so-called *Breeders' Equation* combines these elements. Consider the change in some phenotypic trait $z$ under a single generation of selection. The predicted change is simply the product of the variability and the intensity of selection:
+
+$$
+\Delta z = h^2 S,
+$$
+where $S$ is the selection coefficient and $h^2$ is a very particular measure of trait variability, called (narrow-sense) *heritability*. While the term "heritability" means colloquially how under genetic control a trait is, it means something quite specific in the breeders' equation. In particular, heritability is the fraction of the total phenotypic variance that is attributable to additive genetic variance. Additive genetic variance is the variability contributed by independently-assorting loci and is the part of genetic variability that allows us to make predictions. There are other forms of genetic variability that are not accounted for by the breeders' equation. For example, there is variability contributed by non-additive genetic effects like dominance. There is epistatic variance that arises from gene-gene interactions. There are non-genetic sources of total variance as well.
+
+Note that heritability is not squared. It’s just called $h^2$ by convention to remind us that it's a variance, which is conventionally $s^2$.
+
+The greater the variance, the greater the response. The greater the selection, the greater the response. 
+
+When we consider more than one trait, we need to account for the possibility that different traits may covary. @lande1979 generalized the breeders' equation to multiple traits, known as the *multivariate breeders' equation*. Rather than a single heritability value, the multivariate breeders' equation uses a matrix which contains the additive genetic variances and covariances. Consider a simple $2 \times 2$ covariance matrix:
+
+$$
+\mathbf{G} = \left( \begin{array}{cc} V_1 & C_{12} \\ C_{21} & V_2 \end{array} \right)
+$$
+On the diagonal of the matrix are the variances of the two traits ($V_1$ and $V_2$). On the off-diagonals are the covariances *between* the traits. A covariance is essentially an unnormalized correlation. More technically, it is the expected value (average) of the product of the deviations of the two variables from their means:
+
+$$
+\operatorname{Cov}(X,Y) = E \left[ (X-\bar{X}) (Y - \bar{Y}) \right].
+$$
+Because we work with the additive-genetic covariance matrix, rather than heritabilties, we change the selection coeficients somewhat to account for this. Rather than straight selection coefficients, the multivariate breeders' equation typically uses a vector of selection coefficients divided by the phenotypic variance in each trait. 
+
+Putting this all together, we get the change in the mean of a vector of $k$ traits $\mathbf{z} = (z_1,z_2, \ldots, z_k)$ as:
+
+$$ \Delta \mathbf{\bar{z}} = \mathbf{G \beta}, $$
+
+where $\Delta \mathbf{\bar{z}}$ is the change in the mean fitness of a multivariate trait, $\mathbf{G}$ is the additive genetic variance-covariance matrix, and $\beta$ is the normalized selection gradient on $\mathbf{\bar{z}}$.
+
+In effect, $\beta$ is a vector pointing in the direction of the optimal change in the phenotype. The matrix $\mathbf{G}$ does two things to this gradient pushing $\mathbf{\bar{z}}$ toward its optimum: (1) it scales the response depending on how much additive variance there is in each trait and (2) it rotates it as a function of the covariances between traits. I won't get too much into matrix multiplication here (this is a very nice reference too). The key point is that $\mathbf{G}$ is a square $k \times k$ matrix (where $k$ is the number of traits we're looking at) the diagonal elements of which are variances and the off-diagonal elements of which, $g_{ij}$ represent the covariances between traits $i$ and $j$. Selection requires variance. Without sufficient variance, even strong selection won't change the phenotype much between generations. But variance isn't all there is to it. When the covariances are positive, there will be substantial indirect selection, and when they are negative, you have genetic constraints at work. Selection may be pointing in a particular direction, but the structure of the trade-offs could very easily mean that you can't actually get there.
+
+Let's consider three quick (toy) examples. Say we have two traits, maybe "length" and "width" (this could be something less vague and insipid: Lande (1979) looks at brain mass and body mass in a serious two-trait example). We will assume that the selection gradient is $\mathbf{\beta} = \{0.5, 0.25\}'$. That is, the force of selection is twice as high on length as it is on width, but it is pretty strong and positive on both. We'll demonstrate the effect of variance and constraint in three ways: (1) more variance in the trait under weaker selection ($\mathbf{G_1}$), (2) positive covariance between the two traits ($\mathbf{G_2}$), and (3) negative covariance between the two traits ($\mathbf{G_3}$).
+
+$$ \mathbf{G_1} = \left( \begin{array}{cc} 0.33 & 0.00 \\ 0.00 & 0.67 \end{array} \right) $$
+
+$$ \mathbf{G_2} = \left( \begin{array}{cc} 0.33 & 0.33 \\ 0.33 & 0.67 \end{array} \right) $$
+
+$$ \mathbf{G_3} = \left( \begin{array}{cc} 0.33 & -0.33 \\ -0.33 & 0.67 \end{array} \right) $$
+
+The figure below plots the response to selection in the three different types of genetic architecture. The direction of selection is indicated in the grey arrow. If the variances of the two traits were equal to 1 and there were zero covariances, this is where selection would move the phenotype pair (try it). We can see that the response to selection moves toward width (the trait under weaker selection) even when covariances are zero (black arrow). Why? Because there is more variance for width than there is for length ($0.67 \times 0.25 > 0.33 \times 0.5$). This effect becomes more pronounced when there is positive covariance between the traits (blue arrow) -- the selection toward width is $0.33 \times 0.5 +0.67 \times 0.25 = 0.3325$. When the covariances are negative, we see something cool (red arrow). The response to selection is small and moves (almost) entirely in the direction of length. This is because the negative covariance between length and width, when acted on by the strong selection on length, all but cancels out the positive response to selection ($-0.33 \times 0.5 + 0.67 \times 0.25 = 0.0025$).
+
+```{r}
+#| fig-asp: 1
+s <- c(0.5,0.25)
+G <- matrix(0.5*c(1,0,0,1), nr=2,byrow=TRUE)
+G1 <- matrix(c(0.33,0,0,0.67), nr=2,byrow=TRUE)
+G2 <- matrix(c(0.33,0.33,0.33,0.67), nr=2,byrow=TRUE)
+G3 <- matrix(c(0.33,-0.33,-0.33,0.67), nr=2,byrow=TRUE)
+#
+(Dw1 <- G1%*%s)
+(Dw2 <- G2%*%s)
+(Dw3 <- G3%*%s)
+
+## simple plotting function to demonstrate stretching and rotation of
+## the G matrix on the seleciton gradient G in two dimensions
+plot.vector <- function(s,G=NULL,plot.both=TRUE,color="black"){
+  x <- seq(0,1,length=100)
+  plot(x,x, type="n", xlab="Length", ylab="Width")
+  arrows(0,0,s[1],s[2], lwd=3, col=grey(0.85))
+  if(plot.both){
+    Dw <- G%*%s
+    arrows(0,0,Dw[1],Dw[2], lwd=3, lty=1, col=color)
+  }
+}
+# independent
+plot.vector(s,G1)
+title("Independent")
+# positive covariance
+plot.vector(s,G2, color="blue")
+title("Positive Covariance")
+# negative covariance
+plot.vector(s,G3, color="red")
+title("Negative Covariance")
+```
+
+This simple demonstration shows that the response to selection can be complex. Making an argument that some trait would be under selection is not sufficient to say that it actually evolved (or will evolve) that way. Entirely plausible arguments for the direction of selection are made all the time in evolutionary anthropology. Here is one from a very important paper in paleoanthropology [@lovejoy1981: 344]:
+
+> Any behavioral change that increases reproductive rate, survivorship, or both, is under selection of maximum intensity. Higher primates rely on social behavioral mechanisms to promote survivorship during all phases of the life cycle, and one could cite numerous methods by which it theoretically could be increased. Avoidance of dietary toxins, use of more reliable food sources, and increased competence in arboreal locomotion are obvious examples. Yet these are among the many that have remained under stading selection throughout much of the course of primate evolution, and therefore unlikely that early hominid adaptation was a product of intensified selection for adaptations almost universal to anthropoid primates.
+
+Arguing for selection without considering trade-offs can get you into trouble. Selection in the presence of quantitative genetic constraints (or even differential variance in the traits) can produce counter-intuitive results. In the case of Lovejoy's argument, there are good reasons to think that survivorship and reproductive rate are, indeed, strongly negatively correlated. Moreover, Lovejoy's quote seems to imply that behavioral changes that increase either reproductive rate (i.e., fertility) or survivorship are under equal selection (namely, maximum). Is this true? In general, the selection intensity tends to change quite systematically across different demographic traits (i.e., survival, fertility). For humans (or hominins more generally), which traits are under under stronger selection, fertility or survival? Which have more additive variance? How strong are the negative covariances?
+
+When we make selectionist or adaptationist arguments, we should always keep in the back of our minds the three questions:
+
+1.  How strong is the force of selection?
+2.  How much variance is there on which selection can act?
+3.  How is the trait constrained through negative correlations with other traits?
+
+## Approaches to Human Evolutionary Ecology and Behavior
+
+Evolutionary concepts have been systematically applied to the study of human behavior. Different schools of thought have emerged. Overall, there are three broadly recognized approaches: (1) evolutionary psychology, (2) human behavioral ecology, and (2) cultural evolution. These approaches certainly suffer from the narcissism of small differences, but there are also some important substantive differences
+
+Evolutionary psychology (EP) is an approach to studying human behavioral biology that largely developed out of the sociobiology tradition in the late 1980s and 1990s. Central to EP is the logic of natural selection leading to extensive adaptation, particularly in psychological mechanisms. As the name implies, the clear analytical focus of EP is psychological mechanisms. The ubiquity of adaptation in psychological mechanisms is related to the concept of modularity. The idea of cognitive modules is attributable to the work of Fodor (1983). According to Fodor, modules are reflex-like encapsulations of critical functions that are anatomically localized within the brain. The encapsulation of function suggests that modules are domain specific.
+
+Because of the complexity of adaptive psychological mechanisms, there is also a very strong emphasis on human universality. For EP, complexity of design implies uniformity across individuals, as seen, for instance, in the argument of @tooby_cosmides1990b [p. 17], "complex adaptations necessarily require many genes to regulate their development, and (b) sexual recombination makes it improbable that all the necessary genes for a complex adaptation would be together at once in the same individual, if genes coding for complex adaptations varied substantially between individuals."
+
+The scientific process of EP is largely inductive. Relying heavily on the ubiquity of adaptation, regularities in human behavior are "reverse-engineered" to determine what adaptive problem they solve. Historically, there is less emphasis in understanding the building blocks of evolution. EP tends to focus on universals in human behavior with little interest in understanding the variability the underlies evolution by natural selection.
+
+A feature of EP that is particularly noteworthy in the context of human decision-making and ultimately understanding human health in the contemporary world is the emphasis on adaptive lag. This logic can be seen in a paraphrase of the title of Tooby & Cosmides's foundational paper [@tooby_cosmides1990a], the past explains the present. Adaptations arise as solutions to problems in particular environments. When the specific environmental, physiological, social, or information-processing problems remain relatively stable for long periods of time, we expect to see extensive, frequently complex, adaptations to these problems. When selective milieux change relatively abruptly, there is no expectation that adaptations will track these changes. The putative existence of such adaptive lags have proven central to the emerging field of Darwinian Medicine as we will see in several later chapters.
+
+For much of its history, EP has been largely laboratory-based and experimental in its approach to hypothesis-testing. Increasingly, EP-associated anthropologists (and other scientists) have taken ideas from EP to the field in more traditional ethnographic contexts.
+
+In the context of human decision-making, Evolutionary psychologists have shown that the framing of decision problems matters enormously. For example, Cosmides has shown that people are generally much better at the Wason Selection Test, a test of logical reasoning, when the test is framed as a social contract than when the test is presented as an abstract problem (as is more typical in psychological research).
+
+A research tradition at the intersection of Psychology and Economics, which @todd_gigerenzer2012 have called the *Biases and Heuristics* tradition (discussed further in section @sec-decision), has repeatedly demonstrated that people are not particularly good probabilists. For example, in probably the canonical paper on the subject, @kahneman_tversky1973 [p. 237] write, "In making predictions and judgments under uncertainty, people do not appear to follow the calculus of chance or the statistical theory of prediction. Instead, they rely on a limited number of heuristics which sometimes yield reasonable judgments and sometimes lead to severe and systematic errors." @gigerenzer1991 and @cosmides_tooby1996 have shown that people are generally much better at reasoning about probabilities when they are presented as frequencies than as abstract probabilities. When presented with probabilistic reasoning tasks similar to those employed by Kahneman & Tvesrsky, these authors find that subjects' decision-making under uncertainty improves substantially, coming much closer to the normative utilitarian predictions of classical decision theory. These authors argue that reasoning about frequencies is a much more ecological and evolutionarily salient activity than reasoning about one-off probabilities.
+
+### Which humans behave adaptively and why does it matter?
+
+There is a fundamental tension in the way that evolutionary anthropologists think about natural selection and adaptation of human populations. On the one hand, evolutionary psychologists emphasize environmental inertia and adaptive disequilibrium. This contrasts with the approach of human behavioral ecologists, who generally favor adaptation in the present, largely by means of behavioral plasticity. We first see these issues brought to the fore in the late 1980s and early 1990s, starting with a couple provocative papers by Donald Symons, an anthropologist at UCSB.
+
+@symons1989 writes "adaptive design is usually manifested at the psychological rather than at the behavioral level, that measuring reproductive differentials is at best an inefficient and ambiguous way to illuminate adaptation, and that Darwin's theory of natural selection sheds light on human affairs only insofar as it promotes understanding of the psychology that underpins these affairs." In a classic study of Tibetan polyandry (an extremely rare marriage form in humans), @crook_crook1988 argue that the adoption of polyandry is, in fact, functional in an adaptive sense. Symons criticizes this position by suggesting that it could only be an adaptation if humans possessed a "polyandry gene." @irons1990 defends Crook and Crook, noting "in criticizing Crook and Crook (1988) for arguing that Tibetan polyandry is an expression of evolved mechanisms without postulating specific genes for polyandry. If human beings evolved to track a wide variety of different mating opportunities and arrangements, their psychological mechanisms might well lead some of them to form polyandrous unions not because of genes for polyandry but because of genes for tracking many possibilities."
+
+A foundational work in the development of contemporary evolutionary psychology was written by John Tooby and Leda Cosmides in 1990 in part of the exchange surrounding the publication of Symons's provocative paper. In it, they write: "an evolutionary functionalism that leapfrogs the characterization of adaptations and in its place simply catalogues correspondences between present behavior and present fitness is incomplete and is often guided by serious misinterpretations of Darwinism" [@tooby_cosmides1990a: 377].
+
+Central to the argument of Tooby, Cosmides, and other evolutionary psychologists is the idea of the Environment of Evolutionary Adaptedness (EEA). This idea was borrowed by Tooby from the developmental psychologist, John Bowlby, the father of attachment theory. Bowlby saw the environment of evolutionary adaptedness as the environment in which a behavior is adaptive. Tooby & Cosmides write that the second goal of EP analysis is: "An analysis of how these principles were manifested as a species-specific array of selection pressures, refracted through the specific ecological, social, genetic, phylogenetic, and informational circumstances experienced along a given species' evolutionary history." Together, these characterize the "ancestral conditions," or "the environment of evolutionary adaptedness." For Tooby & Cosmides, the task of evolutionary psychology is the "task analyses of what information processing problems an adaptation must solve."
+
+There is, unfortunately, a tendency for this interesting idea of an EEA to devolve into a caricature of the human hunter-gatherer Pleistocene. Anatomically modern *Homo sapiens sapiens* appears just over 50,000 years ago, with substantial discontinuities in behavior as indicated by the archaeological record (art, ritual, distinct local cultural variation). @foley1995 [p.195-196] noted, "New chronologies for the evolution of *Homo sapiens*, which stress a break between archaic and modern humans and involve recent colonization ($<60$ Kyr) of most parts of the world, have removed the notion of 'two million years of hunter-gathering,' reduced the chronological disparity between agriculture and hunting and gathering, and highlighted major differences between continents."
+
+Is 400 generations really such a short time? Particularly if selection is very strong?
+
+Irons, citing the work of Richard Alexander, suggests that most human psychological adaptations are to dealing with other human beings and that there is continuity in this over the Holocene. The Pleistocene was hardly constant.
+
+Always ask yourself what are the testable, unique hypotheses being posited by a particular approach to human behavior? If there is no empirical jeopardy of the adaptive predictions, is it science?
+
+To what extent do contemporary humans need to be in a state of adaptive disequilibrium for the past-explains-the-present type reasoning to still apply? Does evidence of extensive recent adaptation jeopardize the EP position?
+
+Life is full of trade-offs. If all cognitive mechanisms are specific to the particular domain, i.e., if they "carve the psyche more nearly to its joints" [@daly_wilson1999: 510], how does behavior arise when a decision affects two (or more) distinct domains? What mechanism adjudicates the trade-off between the two domain-specific information processing mechanisms? Presumably, this will be some general-purpose executive function. If such trade-offs are common, then does it not make more sense to focus on this executive function and the conditions in which one decision is favored over another?
+
+As noted by @smith_etal2001 [p. 131], "two decades of research on the psychological adaptations underlying mating preferences has generated a list of the sexual and parental cues men and women look for in mates, but almost no information on how these cues are contextually weighted, how they interact with one another, and how they are used in the real world of mating markets and biological clocks."
+
+On the EP emphasis on adaptive lag, Laland & Brown (2002: 144) write, "since no one really knows to what extent the past and present selective environments differe from that trait, itis entirely possible that most human adaptations could produce adaptive behaviour in the modern environment, and it would be premature to assume that most would not."
+
+We certainly need *an* evolutionary psychology. I'm not sure we need *the* evolutionary psychology as currently practiced. This said, there has been a great deal of scientific progress in the field by the best practitioners (and a great deal of regression toward some social bads such as race science and social Darwinism more generally) by the worst practitioners. 
+
+I am hopeful for a better EP in the future that incorporates more insights from developmental and cognitive psychology in particular. 
+
+### Human Behavioral Ecology
+
+There are a couple of common uses of the term *adaptation* in the literature on human ecology and behavior [@jones_etal2020]. Acclimatization refers to the modulation of physiological parameters to adjust to local environmental changes such as temperature, altitude (i.e., pressure), drought or other physiological stresses. An "adaptation" in the physiological sense refers to an acclimatization that essentially becomes permanent within an individual's lifetime. If the environmental changes that led to acclimatization and eventually adaptation become regular, then the organism might specifically change its phenotype in response to selection. There are efficiency gains to having the adapted phenotype more "hard-wired." However, there is a potential cost in terms of reduced capacity to respond to further environmental change.
+
+Adaptive plasticity is clearly a major part of the human adaptive suite. This of course raises questions about what types of environments favor extensive adaptive plasticity?
+
+The HBE approach to understanding human behavior relies heavily on the idea of adaptive plasticity. It assumes that people are generally able to make sensible decisions over important matters of evolutionary significance (e.g., food acquisition, reproductive decisions). It favors the specification of optimality solutions to problems, placing a premium on measuring costs and benefits associated with particular behavioral decisions.
+
+Davies & Krebs (1977) define behavioral ecology, noting principally its comparative approach to studying adaptation, which dates to the work of Crook and Lack (e.g., Crook 1964, Crook & Garland 1966; Lack 1948). The then-coalescing field of behavioral ecology combined this comparative approach to understanding adaptation with ethological work testing hypotheses about the "survival value" of behavior that emerged from Tinbergen's work (Tinbergen et al. 1967) and the formal approach to ecology championed by Robert MacArthur.
+
+In many respects Human Behavioral Ecology is a distinct field but with obvious linkages. HBE comes as much out of the cultural ecology of Julian Stewart as the behavioral ecology that that synthesized the approaches of Lack, Crook, Tinbergen, and MacArthur.
+
+The key features of HBE include: (1) the underlying logic of natural selection, (2) a hypothetico-deductive approach, and (3) an emphasis on behavioral strategies, flexibility, and decision-rules, (4) a piecemeal approach.
+
+The logic of natural selection drives behavioral ecology generally and HBE in particular. On the whole, actual fitness is rarely measured. As noted by Davies & Krebs (1977: 1) "although pure population genetics and ecology only rarely appear in explicit form they obviously lurk just beneath the surface." HBE uses an approach to studying adaptation identified by Grafen (1984) as the phenotypic gambit. In practice, taking the phenotypic gambit means that the researcher believes that the details of mechanism (both cognitive and genetic) and phylogeny do not matter, at least to a first approximation, for understanding adaptive behavior. More technically, it means assuming that there is sufficient additive genetic variation and a permissive covariance structure to this variation and that cognitive or other proximate mechanisms exist for making appropriately adaptive decisions in the ecological context.
+
+The logic of natural selection allows HBE to overcome some of the shortcomings of functionalism by greatly limiting the domains of functional response and the currencies with which we measure this response [@winterhalder_smith2000]. Many applications of HBE focus on behavior that is proximate to fitness. In particular, two of the most popular domains include foraging and life history. Efficiency is emphasized in foraging since energy saved in foraging can be reinvested in other fitness-promoting activities (e.g., having more children, generating new immune cells, spending more time socializing with potential political allies), though as we will see in section @sec-efficiency, there are substantial limits to the utility of efficiency as a behavioral or evolutionary objective.
+
+In contrast to much of the classical work in cultural ecology, HBE is largely guided by a principle of methodological indvidualism. The primary locus of adaptive response is the individual and not the community or culture. Adaptive response of culture are seen as emergent phenomena of individual adaptations. Once again, this has some weaknesses.
+
+The hypothetico-deductive approach of HBE essentially boils down to a simple, idealized recipe for the practice of science. First, the researcher formulates a simple model. Second, using some formal mechanism (e.g., logic, mathematics, computation), she generates hypotheses that can be tested using empirically gathered data. Third, gather data relevant to test the hypothesis. Fourth, confront the model predictions with the empirical data. Fifth, modify the original model as a result of this confrontation and start the cycle all over again. This is obviously an idealized rendition of the way that research is actually performed and says little about why a researcher might formulate a particular model in the first place.
+
+Behavioral flexibility is essential to the approach of HBE. An emphasis is generally placed on decision-making and the use of conditional strategies. A conditional strategy takes the form "If condition $X_1$, perform action $Y_1$, else $Y_2$." For example, a forager encountering prey type $i$ will choose to pursue that prey if the expected rate of energy return for that type exceeds the overall average for the environment (Kaplan & Hill 1992).
+
+HBE shares a strong committment with anthropology more generally of ethnography. This is the extended *in situ* observation, measurement, and recording of behavior as performed in its immediate social, cultural, and ecological context.
+
+Classical behavioral ecology is actually a heavily experimental discipline (e.g., see Krebs & Davies 1977, 1984, 1991, 1998). This is generally not true of HBE. One exception to this lies in the articulation between HBE and ethno-archaeology. Archaeological evidence indicated the Great Basin foragers in the early Holocene largely ignored grass seed but later foragers relied on it heavily. Simms (1984) experimentally measured return rates for edible seeds and found that the processing costs were generally prohbitive. He was then able to calculate the threshold prey density at which seed-processing would become economically viable.
+
+More observational approaches to to HBE also abound in ethnoarchaeological research @bird_etal2002 show that the general lack of key species (e.g., large tridacnid clams) in Holocene shell middens in the Torres Straits does not mean that Holocene foragers did not take these prey. They show that the lack of these species' remains in middens is consistent with contemporary foraging behavior on Mer where ethnographic evidence shows they are heavily exploited but nonetheless do not leave residues in contemporary middens. This puzzle is solved by understanding the nature of foraging trade-offs, noting that simple models of central-place foraging predict that such resources should be field-processed because of the burden of transporting the heavy shells of these large mollusks.
+
+The most commonly voiced criticism of HBE comes primarily from EP. In particular, fitness maximization is taken to be naïve in confusing proximate motivation and ultimate mechanism. @daly_wilson1999 [p. 512], while complaining that the views of EP were being caricatured by human behavioral ecologists, reduce the optimality approach favored by HBE as "imagining that evolution imparts a magic ability to find the course of action that maximizes inclusive fitness even in the face of evolutionarily unforeseen challenges." @daly_wilson1999 [p. 513] incorrectly attribute the preponderance of studies in HBE happening in small-scale societies as the desire by behavioral ecologists to study populations similar to the EEA: "An irony is that those who deride the EEA concept include researchers who have taken the trouble to study people in nonstate, face-to-face societies, presumably believing that such studies can afford important insights into human nature that could not be attained by studying the citizens of modern mass society." Indeed, human behavioral ecologists tend to focus on small-scale societies because these are where functional hypotheses about subsistence and reproduction are most salient. Real people making real decisions with regard to real-world trade-offs, uncluttered (at least conditionally) by the complexities of the state. Furthermore, the importance of the comparative approch for behavioral ecology and HBE in particular places a premium on studies of face-to-face societies since the vast majority of behavioral and social research is performed on people living in (and fully integrated with) modern nation-states and market economies. This said, human behavioral ecologists have increasingly made forays into the behavior of people integrated with states and market economies [@gibson_lawson2014]
+
+@symons1989 and @tooby_cosmides1990a dismiss the measurement of present-day fitness consequences of behavior altogether. @laland_brown2002 importantly note that measuring fitness consequences in the present, while no panacea, is certainly an important part of the evolutionary biologist's toolkit (e.g., @endler1986).
+
+@turke1990 notes that observing the contexts in which a particular behavior is adaptive -- and importantly those in which it is not -- provides important information about the selective background of the trait.
+
+Perhaps the best scientific rejoinder to the criticisms leveled by EP is simply the ability of a particular approach to make empirically supported predictions about behavior. Optimality models that use some form of fitness maximization as an objective function have fared well when applied to both human and nonhuman animal decisions [e.g., @real1991].
+
+Beyond the criticisms of EP, there are other more general criticisms of HBE. One criticism of hypothetico-deductive approach is the ease with which it can be divorced from actual problems in the world. However, the analyses of HBE do, in fact, stem from observations of the world and regularities therein. For example, anthropologists of the functionalist tradition have long noted the remarkable fit between many human behaviors and the environments in which they are embedded. For example, the small size and flexibility of social organization of dry country hunter-gatherers such as the Western Shoshone or Ju/'hoansi.
+
+Optimality models have been more broadly criticized for assuming that observed phenotypes are, in fact, optimal. In their famous critique of adaptationist perspectives in biology, @gould_lewontin1979 deride the assumption of optimality as being "Panglossian," alluding to the character of Dr. Pangloss in Voltaire's *Candide*, who suggested that all was for the best in every situation.
+
+@maynard-smith1978 and @parker_maynardsmith1990 note that the purpose of optimality models is not to show that the behavior is optimal. Rather, they are tools for understanding the behavior. @oster_wilson1978 [p. 311-12] write, "Rather than a grande scheme for predicting the course of natural selection, optimization theory provides a tactical tool for making educated guesses about evolutionary trends." @oster_wilson1978 go on to note that when predictions of a particular optimality model prove inadequate, the investigator knows precisely how to revise it since the assumptions that went into the model were explicitly and precisely made at the outset.
+
+All the main evolutionary approaches to understanding human behavior take as their foundation such observations of fit between environment and behavior. It uses *a priori* reasoning about the action of natural selection (e.g., maximizing the long-run rate of energy gain in foraging or reproductive value in life history decision-making) to posit models for decisions.
+
+As a distinct subset of the human evolutionary sciences, HBE is fading. We have largely failed to culturally reproduce. This said, the ideas of HBE permeate the human evolutionary sciences and human ecology more generally. Many of the latest generation of students trained by human behavioral ecologists have moved into more applied work in health, demography, conservation, development, and adaptation!
+
+### Cultural Evolution
+
+Humans are cultural animals. Much of human adaptability is mediated by culture [@alvard2003]. 
+
+The perspective that I ultimately take on human adaptability melds these different approaches.
+We will discuss this topic at length in @sec-culture.

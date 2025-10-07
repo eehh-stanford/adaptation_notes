@@ -1,0 +1,168 @@
+# The Structure of Successful Problem-Solving {#sec-robust}
+
+## Subsistence Risk Management 
+
+As noted by Glynn Isaac in his classic work, the hearth, with its attendant central-place foraging is a perfect way of risk-pooling. 
+
+We tend to take central-place foraging for granted, but behavioral ecologists like Alistair Houston have noted the profound implications CPF has on optimal strategies.
+
+HBEs have noted that sharing the principle mechanism for managing risk in hunter-gatherers and other subsistence populations. Work by scholars such as Magdalena Hurtado, Elizabeth Cashdan, Kim Hill, Bruce Winterhalder, Hilly Kaplan, Polly Wiessner. Some development economists too. @scott1977: "Safety First"; @lipton1968: "Survival Algorithms"
+
+Sharing reduces risk. When we calculate the variance of a portfolio of items (e.g., the contributions of multiple sharing partners), the variance of the constituent contributions is scaled by the product of pairwise weights. Since these weights will always be less than one, this has the effect of reducing the overall variance (as long as the covariance between these contributions is not too high).
+
+So here, two individuals have their own means and standard deviations of their subsistence returns, but when they share, their joint mean is the weighted average of their respective production rates and the variance is typically smaller than either of their individual variances.
+
+Individual foraging returns are random variables. The distribution of returns for individual $i$ has mean $\mu_i$ and variance $\sigma^2_i$. In sharing with another individual $j$, $i$ contributes a fraction $0 \leq w_i \leq 1$.
+
+Pooled mean
+
+$$ \mu_{(i+j)} = w_i \mu_i + (1-w_i) \mu_j $$
+Pooled variance
+
+$$ s^2_{(i+j)} = w^2_i \sigma^2_i + (1-w_i)^2 \sigma^2_j + 2 w_i (1-w_i)\, \mathrm{Cov}(i,j) $$
+### Independence with Risk-Pooling
+
+Individuals or small groups go out and forage. There are different levels of independence to these decisions. There is commonly a sexual division of labor, with women and men targeting resources of different average trophic level or expected risk/return. Furthermore, within each sex, individuals or small groups typically go out independently. A central place — something that is taken largely for granted among human foragers [@kelly2013] — facilitates returning and broad-based sharing. This is the risk-pooling. 
+
+Sharing and exchange are the lifeblood of forager societies. As noted by @kaplan_etal1990, food-sharing is the primary mechanism for risk management among foragers. 
+
+The classic portfolio formulation shows that the expected return on a portfolio is a horizontal parabola. For a given standard deviation (known as "volatility" in the finance literature) the parabola describes the maximum and minimum portfolio returns. Anything in between these extremes is also allowable. Obviously, we only care about the higher returns, so the upper branch of the parabola is the focus. This is known as the efficient frontier.
+
+![Portfolio efficient frontier](figs/efficient_frontier.png)
+
+There are three assets plotted here ($r_1$, $r_2$, $r_3$) that define the efficient frontier. There are a number of portfolios we can calculate off of these. The minimum variance portfolio is the safest possible combination of $r_1$, $r_2$, and $r_3$. Its expected return is quite low, but it has the lowest possible volatility associated with it.
+
+If there is a certain asset (i.e., one with zero volatility), there is a special solution to the portfolio problem, known as the tangent portfolio because it is tangent to the efficient frontier. This portfolio provides the highest possible expected return for $r_1$, $r_2$, and $r_3$ together with the certain asset. 
+
+### Sharing Networks
+
+When people share food, they create networks — an aggregate of social relations.
+
+When we see a sharing network, does it actually manifest the structure a risk-minimizing network would predict? We can use sociometric techniques from social network analysis to answer this question. 
+
+Networks as risk-management. Dyadic exchange is a terrible way to manage risk. Traps, lack of diversification, etc.
+
+Short cyclic exchanges can be gamed
+
+Generalized exchange: "Under generalized exchange, where gifts are univocal and givers are always givers, exploitation can take place only if actors explicitly reject the guiding norm of reciprocity. In this case, individuals or subgroups contemplating the exploitation of givers find little room for subtle action and thus face sanction from the entire group whose debt they have failed to repay." [@bearman1997]
+
+There are good theoretical reasons to think that generalized exchange is the way to manage risk through food sharing. The key to generalized exchange actually functioning is the existence of long cycles, which, once established, make the system impossible to game strategically. 
+
+Generalized exchange exists in the ethnographic record (Kula ring, hxaro exchange) [@wiessner1982; @cashdan1985]
+
+The basic building blocks of networks are triads. They are the simplest higher-order structure (e.g., subject to dyadic dependence).
+
+The mechanism identified by Bearman et al. (2004) — and really an abundance of cyclical structures in general — will produce long cycles. This has been the general thinking among network theorists: generalized exchange requires and abundance of 030C triads and a social mechanism that generates these such as avoiding partner choices that result in short cycles.
+
+However, while the resulting networks certainly have long cycles, they would be terrible for risk management! We don’t see the connectance that Jennifer Dunne and colleagues note is so essential. There isn’t the functional redundancy that leads to stability in mutualistic ecological networks. Furthermore, these networks are brittle. Paths between individuals are easily disrupted if even a single person fails to behave as expected.
+
+What really matters for generalized exchange to work is the presence of long paths between key actors. Another way to ensure the existence of these is to have what is known as a giant component to the graph.
+
+Sexual networks have very long chains (and occasional, improbably-large cycles) because of the simple rule that you don’t have sex with your partners' partners' partners (in a purely heterosexual network) or your partners’ partners more generally. Termed “chains of affection" by @bearman_etal2004.
+
+The thing is, when a short cycle forms among agents who are part of a longer cycle, it breaks that long cycle, whereas transitive relations among the members of a long cycle do not. In short, we conclude that subsistence risk-management networks should take a core-periphery form. The only problem with this is that there are no real off-the-shelf tests for this.
+
+There are a number of other desirable properties of transitivity, related to redundancy, giant-component formation, etc. We use Borgatti & Everett’s coreness measure to evaluate the core structure of food-sharing networks. Basically, measure the distribution of k-cores in the graph (where a k-core is defined as  a subcomponent of graph $\mathcal{G}$ where all vertices have degree of at least $k$). 
+
+```{r}
+#| message: false
+require(igraph)
+## giant component
+gg <- sample_gnp(n=200,p=1/200)
+gg1 <- sample_gnp(n=200,p=1/100)
+
+plot(gg,vertex.size=5,vertex.color="cyan", vertex.label=NA)
+plot(gg1,vertex.size=5,vertex.color="cyan", vertex.label=NA)
+```
+
+These are homogenous Bernoulli graphs. The formation or large connected components can be helped along by the presence of certain structures/mechanisms. Two such mechanisms include degree heterogeneity and especially transitivity. 
+
+The structures that emerge from this transitive assembly of network ties are generally much more robust, with plenty of redundancy
+
+Giant component formation. For a random graph, when $p > (1 + \epsilon)/n$ (for any $\epsilon > 0$), there is a high probability of the formation of a giant component.
+
+In work with Elspeth Ready, following a quite extensive review of the concept of risk-management in networks, we concluded that the best form of risk-management for subsistence networks — from the several available — involves the construction of a core and the resulting periphery that comes attached to that core. 
+
+**What is core-periphery structure?**
+
+- Concentric layers of decreasing connectivity
+- It's an idea that is surprisingly underdeveloped, even 22 years after Borgatti & Everett suggested in was a surprisingly-underdeveloped idea!
+- Core interacts intensively; periphery can come and go
+- The substance of the periphery may matter a lot. For example, peripheral members of a sharing/exchange network may be people with strong ties to other communities and may be extremely important for communities' security during extensive spatially/temporally autocorrelated crises
+- Core-periphery structure leads to localization (heterogeneity of the L/R eigenvectors), which makes it more stable to perturbations
+
+
+
+## Trade-Off Between Optimality and Robustness
+
+@schmid_etal2022 recently made the important observation that optimality and robustness trade-off in a formal sense.
+
+From Barfield et al. (2011), the speed of evolution of a quantitative trait in a stage-structured population is:
+
+$$
+\Delta \bar{z} = \mathbf{G} \sum_{i,j}\frac{\partial \bar{\lambda}}{\partial \bar{a}_{ij}} \nabla_{\bar{z}_{j}} \bar{a}_{ij}
+$$ (equation 1)
+
+where $\nabla_{\bar{z}_j}=(\partial /\left.\partial \bar{z}_1, \partial / \partial \bar{z}_2, \ldots, \partial / \partial \bar{z}_m\right)$ is the gradient operator with respect to trait means at stage $j$.
+
+What this shows is that the rate of evolution depends linearly on the sensitivities of $\lambda$, which the authors define as *the inverse of the population's demographic robustness*.
+
+That is a trait with higher sensitivity is less robust.
+
+From @tulja1990:
+
+$$
+a = \log(\lambda) - \frac{1}{2 \lambda^2} \left( \frac{\partial \lambda}{\partial \bar{a}_{ij}} \right)^2 \sigma^2_{ij}
+$$ (equation 2)
+
+"As a consequence, the demographic robustness of a species is inversely proportional to $\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}$, with a higher sensitivity indicating a lower demographic robustness."
+
+So: 1. The rate of evolution is proportional to $\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}$, but 2. Demographic robustness is inversely related to $\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}$
+
+Hence, a trade-off.
+
+## Wicked Problems
+
+In a stationary environment, where the mean and variance stay the same despite short-term variability, optimizing your decision-making based on your prior experience with the environment is a sound policy. However, in nonstationary environments, doing so can be a disaster. Nonstationary environments create what the psychologist Robin Hogarth called a wicked learning environment. In such environments, lessons that we learn from the past do not help us perform better. The economists John Kay & Mervin King note that when the learning environment is wicked "the application of the mathematics of probability is questionable and the results ambiguous." In other words, in uncertain, wicked learning environments, maximization of something like expected utility, the primary tool of decision theory, economics, and planning won't do us much good.
+
+Need to approach learning/expertise/optimization/efficiency differently when learning environments are wicked.
+
+The collected evolutionary lessons for adaptation suggest that we should promoting diversity in our potentially adaptive solutions. Under uncertainty --- such as nonstationarity --- the name of the game is robustness, not optimality. We should increase our tolerance for non-optimal solutions to problems if they contribute to the diversity of approaches. We should pursue policies that promote diversity, that generate hybridity, that add innovative peripheries to cohesive cores, and that increase autonomy for hotbeds of innovation.
+
+Popular approaches to societal problem-solving like effective altruism --- where charities are ranked according to some criterion of effectiveness and donors are encouraged to contribute only to those ranked highest in the resulting league table --- at best are likely to miss transformative adaptive solutions and at worst will inhibit their incubation and emergence.
+
+While we can learn a lot about adaptation and sustainability from looking at adaptations of the past and from economic and engineering studies of efficiency or optimality, this isn't where the transformative ideas that we need to achieve sustainability are going to come from.
+
+Explore/exploit strategies.
+
+### AI and Adaptation
+
+This is clearly a way that people are going to lazily suggest we will adapt
+
+LLMs will always regress to the mean. [Emily Bender talk](https://youtu.be/qpE40jwMilU)
+
+AIs are likely to pursue narrow optimality criteria. Unclear how they will perform on either rugged fitness surfaces or on flat fitness surfaces.
+
+## Normal Accidents Theory
+
+@perrow1984 defines a "normal" accident as one that is inevitable in a high-complexity system. Three system features make a system susceptible to normal accidents:
+
+1.  when the system is highly complex
+2.  when the system is tightly coupled
+3.  when there is possibility for catastrophic
+
+Redundancy is a fundamental strategy for minimizing catastrophic failures.
+
+@sagan2004 argues that redundancy in human systems can often backfire. There are three ways that it can do this:
+
+1.  by making the system more complex
+2.  by leading to overcompensation on the part of the human components of the system
+3.  by leading to "social shirking"
+
+This last problem is reminiscent of @bowles2016 and the notion of moral crowding-out in social contracts.
+
+## Examples of Efficiency Leading to Brittleness
+
+Just-In-Time Logistics (JIT) leads to tight coupling.
+
+Southwest Airlines Supply-chain problems with the pandemic
