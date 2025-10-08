@@ -24,17 +24,25 @@ Yes, we should mitigate the future effects of climate change, but mitigation in 
 
 The structure of the notes follows the structure of the class. What follows are ten chapters:
 
-1.  [Models](@sec-models)
-2.  [Evolutionary Foundations](@sec-evolution)
-3.  [Population Ecology](@sec-pops)
-4.  [Does Culture Evolve?](@sec-culture)
-5.  [Risk & Uncertainty](@sec-decision)
-6.  [Complexity](@sec-complexity)
-7.  [Emergence and Governing the Commons](@sec-commons)
-8.  [Resilience](@sec-resilience)
-9.  [Networks, Exchange, and Traditional Ecological Knowledge](@sec-efficiency)
-10. [Innovation, Complex Contagion, Diffusion](@sec-innovation)
-11. [Structure of Successful Problem-Solving](@sec-robust)
+@sec-models
+
+@sec-evolution
+
+@sec-pops
+
+@sec-culture
+
+@sec-decision
+
+@sec-complexity 
+
+@sec-commons 
+
+@sec-dynamic
+
+@sec-efficiency
+
+@sec-robust
 
 ## Evolution is a Snap
 

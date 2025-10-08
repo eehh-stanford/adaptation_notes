@@ -5,7 +5,7 @@ project:
 book:
   title: "Adaptation Notes"
   author: "James Holland Jones"
-  date: "6/24/2024"
+  date: "10/07/2025"
   chapters:
     - index.qmd
     - models.qmd
