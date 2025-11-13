@@ -8,6 +8,19 @@ We live in a time of nonstationary change. When we optimize, *we are adapting to
 
 Optimality models are important.
 
+When we look at a textbook treatment on mathematical optimization (e.g., @boyd_vandenberghe2004), what you will see is typically something like this.
+
+$$
+\begin{array}{ll}
+{\operatorname{minimize}} & f_0(x) \\
+\text { subject to } & f_i(x) \leq b_i, \quad i=1, \ldots, m
+\end{array}
+$$ {#eq-optim}
+
+where $f_0()$ is the objective function, $x$ is the optimization variable, and the $f_i()$ are the $m$ constraint functions.
+
+You can search your optimization text all you want, but you're not likely to find any discussion of how to translate your real-world problem into the form of equation @eq-optim. There is nothing about how to determine the choice variable, the objective function, the constraints, the possible set of actions, etc. This is where the specific scientific questions---and the subject knowledge of the research---comes in. So what do we need to translate a scientific question into an optimization problem?
+
 There are different definitions of the structure/requirements for optimization models. I like the definition provided by @smith1992a, who provides a bit more structure than, say, @parker_maynardsmith1990.
 
 Smith's Structure of an optimization model requires that we specify four things:

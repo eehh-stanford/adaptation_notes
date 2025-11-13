@@ -101,7 +101,8 @@ From Barfield et al. (2011), the speed of evolution of a quantitative trait in a
 
 $$
 \Delta \bar{z} = \mathbf{G} \sum_{i,j}\frac{\partial \bar{\lambda}}{\partial \bar{a}_{ij}} \nabla_{\bar{z}_{j}} \bar{a}_{ij}
-$$ (equation 1)
+$$ {#eq-Dz}
+
 
 where $\nabla_{\bar{z}_j}=(\partial /\left.\partial \bar{z}_1, \partial / \partial \bar{z}_2, \ldots, \partial / \partial \bar{z}_m\right)$ is the gradient operator with respect to trait means at stage $j$.
 
@@ -113,7 +114,7 @@ From @tulja1990:
 
 $$
 a = \log(\lambda) - \frac{1}{2 \lambda^2} \left( \frac{\partial \lambda}{\partial \bar{a}_{ij}} \right)^2 \sigma^2_{ij}
-$$ (equation 2)
+$$ {#eq-stochfit}
 
 "As a consequence, the demographic robustness of a species is inversely proportional to $\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}$, with a higher sensitivity indicating a lower demographic robustness."
 

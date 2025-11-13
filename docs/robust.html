@@ -386,16 +386,16 @@ window.Quarto = {
 <h2 data-number="10.2" class="anchored" data-anchor-id="trade-off-between-optimality-and-robustness"><span class="header-section-number">10.2</span> Trade-Off Between Optimality and Robustness</h2>
 <p><span class="citation" data-cites="schmid_etal2022">Schmid et al. (<a href="references.html#ref-schmid_etal2022" role="doc-biblioref">2022</a>)</span> recently made the important observation that optimality and robustness trade-off in a formal sense.</p>
 <p>From Barfield et al.&nbsp;(2011), the speed of evolution of a quantitative trait in a stage-structured population is:</p>
-<p><span class="math display">\[
+<p><span id="eq-Dz"><span class="math display">\[
 \Delta \bar{z} = \mathbf{G} \sum_{i,j}\frac{\partial \bar{\lambda}}{\partial \bar{a}_{ij}} \nabla_{\bar{z}_{j}} \bar{a}_{ij}
-\]</span> (equation 1)</p>
+\tag{10.1}\]</span></span></p>
 <p>where <span class="math inline">\(\nabla_{\bar{z}_j}=(\partial /\left.\partial \bar{z}_1, \partial / \partial \bar{z}_2, \ldots, \partial / \partial \bar{z}_m\right)\)</span> is the gradient operator with respect to trait means at stage <span class="math inline">\(j\)</span>.</p>
 <p>What this shows is that the rate of evolution depends linearly on the sensitivities of <span class="math inline">\(\lambda\)</span>, which the authors define as <em>the inverse of the population’s demographic robustness</em>.</p>
 <p>That is a trait with higher sensitivity is less robust.</p>
 <p>From <span class="citation" data-cites="tulja1990">Tuljapurkar (<a href="references.html#ref-tulja1990" role="doc-biblioref">1990</a>)</span>:</p>
-<p><span class="math display">\[
+<p><span id="eq-stochfit"><span class="math display">\[
 a = \log(\lambda) - \frac{1}{2 \lambda^2} \left( \frac{\partial \lambda}{\partial \bar{a}_{ij}} \right)^2 \sigma^2_{ij}
-\]</span> (equation 2)</p>
+\tag{10.2}\]</span></span></p>
 <p>“As a consequence, the demographic robustness of a species is inversely proportional to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span>, with a higher sensitivity indicating a lower demographic robustness.”</p>
 <p>So: 1. The rate of evolution is proportional to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span>, but 2. Demographic robustness is inversely related to <span class="math inline">\(\partial{\bar{\lambda}}/ \partial \bar{a}_{ij}\)</span></p>
 <p>Hence, a trade-off.</p>
