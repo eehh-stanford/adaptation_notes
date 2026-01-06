@@ -166,7 +166,9 @@ $$ V_0(\bar{x},t) = s(t) \{p_f(\bar{x},t) \mathsf{E}[F(\bar{x}',t+1)] + (1-p_f(\
 
 where $s(t)$ is the probability that the woman survives from $t$ to $t+1$, $p_f(\bar{x},t)$ is the probability that the woman, with state $\bar{x}$ forages successfully in that period, $\mathsf{E}$ is the expectation operator, $\bar{x}'$ is the value of the woman's state if she forages successfully that year and $\bar{x}''$ is the value of the state if she is unsuccessful, and $F(\bar{x},t+1)$ is fitness given the state $\bar{x}$ at time $t+1$.
 
-This means that the formula for $V_0\bar{x},t)$ is the sum of two things: (1) the expected fitness if the woman survives the interval, and (2) the expected fitness if she does not. In the former case this is the sum of the expected fitness if she is successful in foraging, $p_f(\bar{x},t) \mathsf{E}[F(\bar{x}',t+1)]$ and if she is not successful, $(1-p_f(\bar{x},t))  \mathsf{E}[F(\bar{x}'',t+1)]$. In the latter case, it is just the survival-weighted sum of her previous reproduction, $\sum \sigma_i n_i $. 
+This means that the formula for $V_0\bar{x},t)$ is the sum of two things: (1) the expected fitness if the woman survives the interval, and (2) the expected fitness if she does not. In the former case this is the sum of the expected fitness if she is successful in foraging, $p_f(\bar{x},t) \mathsf{E}[F(\bar{x}',t+1)]$ and if she is not successful, $(1-p_f(\bar{x},t))  \mathsf{E}[F(\bar{x}'',t+1)]$. In the latter case, it is just the survival-weighted sum of her previous reproduction, 
+
+$$\sum \sigma_i n_i $$. 
 
 A comparable formula applies for $V_1$.
 
