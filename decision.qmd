@@ -57,7 +57,7 @@ Expected utility theory (EUT) has axiomatic foundations and constitutes on the c
 3.  Continuity: there exists a $p$ such that if $A > B$ and $B > C$, $B < pA + (1-p)C$
 4.  Independence: preferences not altered by irrelevant alternatives
 
-As noted by @gintis2007 rationality, in the rational-choice sense, is really about consistency. While it is sometimes framed as focusing on self-regarding behavior, this is not necessarily true. An indidividual can have other-regarding preferences and still be "rational" as long as they are consistent in their preferences.
+As noted by @gintis2007 rationality, in the rational-choice sense, is really about consistency. While it is sometimes framed as focusing on self-regarding behavior, this is not necessarily true. An individual can have other-regarding preferences and still be "rational" as long as they are consistent in their preferences.
 
 Given the above axioms, making decisions by expected utility will produce consistent, coherent preferences. Therefore, the theory of decision-making under risk takes as its objective function *expected utility*. Remember that mathematically, the word "expected" is synonymous with "average". Suppose that there is some variable resource, the acquisition of which is associated with some utility. Following standard statistical convention, we denote our random variable (i.e., the resource in question) using uppercase Roman letter, $X$, and denote specific realizations of this random variable in lowercase, $x$. Expected utility is simply the average of the utilities $u(x)$ associated with each value of $x$:
 
