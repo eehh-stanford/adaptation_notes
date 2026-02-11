@@ -422,41 +422,106 @@ X0 <- 17
 nmax <- 1000
 X <- rep(0,nmax)
 ## mean-zero normal noise
-epsilon <- rnorm(nmax)
+epsilon <- rnorm(nmax) # normal innovations
 X[1] <- X0
 for(i in 2:nmax){
   X[i] <- X[i-1] + dX(X[i-1],15,1) + epsilon[i]
 }
 
 # time series
-plot(1:1000,X, type="l", xlab="Time", ylab=expression(X[t]), ylim=c(8,20))
+plot(1:1000,X, type="l", xlab="Time", ylab=expression(X[t]), ylim=c(0,18))
 
 # correlation
 plot(X[-nmax],X[-1], pch=16, 
-     xlab=expression(X[t]),  ylab=expression(X[t+1]), xlim=c(8,20), ylim=c(8,20))
+     xlab=expression(X[t]),  ylab=expression(X[t+1]), xlim=c(8,18), ylim=c(8,18))
 abline(a=0,b=1)
 cor(X[-nmax],X[-1])
-ac <- acf(X[-nmax],X[-1])
+ac <- acf(X)
 ac[1]
 
 ## low resilience
 X1 <- rep(0,nmax)
-epsilon <- rnorm(nmax)
+epsilon <- rnorm(nmax) 
 X1[1] <- X0
 for(i in 2:nmax){
   X1[i] <- pmax(X1[i-1] + dX(X1[i-1],15,2.6) + epsilon[i],0)
 }
 
 # time series
-plot(1:1000,X1, type="l", xlab="Time", ylab=expression(X[t]), ylim=c(6,18))
+plot(1:1000,X1, type="l", xlab="Time", ylab=expression(X[t]), ylim=c(0,18))
 
 # correlation
 plot(X1[-nmax],X1[-1], pch=16, 
      xlab=expression(X[t]),  ylab=expression(X[t+1]),xlim=c(6,18), ylim=c(6,18))
 abline(a=0,b=1)
 cor(X1[-nmax],X1[-1])
-ac1 <- acf(X1[-nmax],X1[-1])
+ac1 <- acf(X1)
 ac1[1]
+```
+
+Both the variance and the covariance is greater less-resilient scenario with the high extraction rate. The high-frequency fluctuations are larger, making the variance large. This also makes it take longer for the deviations to to dissipate, so it's more likely that two consecutive time steps will be above (or below) the average.
+
+The overall lag-1 autocorrelation is significantly higher in this lower-resilience case. Moreover, the lag-2 autocovariance is also significantly greater than zero (indicated by being above the blue dashed line), indicating a much slower decay in the autocovariance.
+
+```{r}
+#| fig-asp: 1
+#| message: false
+require(zoo)
+set.seed(42)
+## logistic growth with harvesting
+dX <- function(X,K,c) X*(1 - X/K) - c*(X^2/(X^2+1))
+
+X0 <- 17
+nmax <- 1000
+ccc <- c(rep(1,100), seq(1,4,,900))
+X2 <- rep(0,nmax)         
+epsilon <- rnorm(nmax)
+X2[1] <- X0
+
+for(i in 2:nmax){
+  X2[i] <- pmax(X2[i-1] + dX(X2[i-1],15,ccc[i]) + epsilon[i],0)
+  if(X2[i]==0) break # no random resurrection
+}
+
+## index of the extinction
+extinct <- min(which(X2==0))
+
+plot(1:extinct,X2[1:extinct], type="l", xlab="Time", ylab=expression(X[t]), ylim=c(0,18))
+cor(X2[-nmax],X2[-1])
+ac2 <- acf(X2[1:extinct])
+
+sdd <- rollapplyr(X2[1:extinct], 100, sd)
+plot(sdd, type="l", xlab="Time", ylab="Standard Deviation")
+
+```
+
+Now look at how the correlations change over time.
+
+```{r}
+#| fig-asp: 1
+#| message: false
+require(zoo)
+
+## a little function to calculate a rolling autocorrelation
+getacf <- function(x) {
+  tmp <- acf(x,lag.max=1,plot=FALSE)
+  return(tmp$acf[2])
+}
+
+aaa <- rollapplyr(X2[1:extinct], 100, getacf)
+plot(aaa, type="l", xlab="Time", ylab="Autocorrelation")
+
+x2early <- X2[1:200]
+x2late <- X2[(extinct-200):extinct]
+
+plot(x2early[-200],x2early[-1], pch=16, 
+     xlab=expression(X[t]),  ylab=expression(X[t+1]),xlim=c(0,18), ylim=c(0,18))
+abline(a=0,b=1)
+
+plot(x2late[-200],x2late[-1], pch=16, 
+     xlab=expression(X[t]),  ylab=expression(X[t+1]),xlim=c(0,18), ylim=c(0,18))
+abline(a=0,b=1)
+c(cor(x2early[-200],x2early[-1]),cor(x2late[-200],x2late[-1]))
 ```
 
 What happens when a the system is forced onto the unstable part of the attractor? Until it's pushed over the boundary, it will tend to return the stable arm. If this happens repeatedly, you will see flickering
